@@ -1,0 +1,796 @@
+{
+  "banner_heading1": "Learning Platform by  ",
+  "banner_heading2": "Education Experts",
+  "get_started": "Get started - it's free",
+  "log_in": "Log In",
+  "banner_text1": " Digital primary school maths resource aligned to",
+  "banner_text2": " your  curriculum",
+  "slider_title": "A personalised & adaptive learning path",
+  "slider_subtitle": "Mathematics activities for primary school children with a rigorous pedagogy designed by education experts.",
+  "grade": "Grade",
+  "explore_activities": "Explore Activities",
+  "card_array": [
+    {
+      "title": "Form Doesn't (and Shouldn't) Follow Function",
+      "color": "#000"
+    },
+    {
+      "title": "Form Doesn't (and Shouldn't) Follow Function",
+      "color": "#BB2D36"
+    },
+    {
+      "title": "Form Doesn't (and Shouldn't) Follow Function",
+      "color": "#7879F1"
+    },
+    {
+      "title": "Form Doesn't (and Shouldn't) Follow Function",
+      "color": "#F2994A"
+    }
+  ],
+  "about_us_title": "A personalised & adaptive learning path",
+  "about_us": "About Us",
+  "learning_array": [
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary",
+      "color": "#70C1FF"
+    },
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary",
+      "color": "#6FCF97"
+    },
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary",
+      "color": "#F3BE7C"
+    },
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary",
+      "color": "#7DDE92"
+    },
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary",
+      "color": "#E85D75"
+    },
+    {
+      "title": "Adaptive learning paths",
+      "subtitle": "Mathematics activities for primary ",
+      "color": " #F1BCD3"
+    }
+  ],
+  "learning_image_title": "A personalised & adaptive learning path",
+  "learning_image_subtitle": "Mathematics activities for primary school children with a rigorous pedagogy designed by education experts.",
+  "footer_array": [
+    {
+      "title": "Product",
+      "element1": "Maths Activities",
+      "element2": "For Parents",
+      "element3": "Technical Requirements",
+      "element4": " Multilingual"
+    },
+    {
+      "title": "Resources",
+      "element1": "Efficacy Study",
+      "element2": "Blog",
+      "element3": "Professional Development",
+      "element4": "Knowledge Base"
+    },
+
+    {
+      "title": "About",
+      "element1": "Contact",
+      "element2": "Careers",
+      "element3": "Ambassadors",
+      "element4": "The Matific Foundation"
+    },
+    {
+      "title": "Get Started",
+      "element1": "Teachers/ Schools",
+      "element2": "Parents",
+      "element3": "Students",
+      "element4": "Governments/ School Groups"
+    }
+  ],
+  "placeholeder": "What do you want to learn",
+  "logout": "Log out",
+  "tab_section": [
+    { "title": "Mathematics" },
+    { "title": "English" },
+    { "title": "Science" },
+    { "title": "Genaral" }
+  ],
+  "tab_details": [
+    {
+      "title": "Mathematics",
+      "subtitle": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+
+      "tabbox": [
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#70C1FF"
+        },
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#A5E1BE"
+        },
+        {
+          "name": "1st grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#F3BE7C "
+        },
+        {
+          "name": "2nd grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#7DDE92"
+        }
+      ]
+    },
+    {
+      "title": "English",
+      "subtitle": "English is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+      "tabbox": [
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#70C1FF"
+        },
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#A5E1BE"
+        },
+        {
+          "name": "1st grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#F3BE7C "
+        },
+        {
+          "name": "2nd grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#7DDE92"
+        }
+      ]
+    },
+    {
+      "title": "Science",
+      "subtitle": "Science is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+      "tabbox": [
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#70C1FF"
+        },
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#A5E1BE"
+        },
+        {
+          "name": "1st grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#F3BE7C "
+        },
+        {
+          "name": "2nd grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#7DDE92"
+        }
+      ]
+    },
+    {
+      "title": "General",
+      "subtitle": "General is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+      "tabbox": [
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#70C1FF"
+        },
+        {
+          "name": "Kindergarten",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#A5E1BE"
+        },
+        {
+          "name": "1st grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#F3BE7C "
+        },
+        {
+          "name": "2nd grade",
+          "text": [
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ],
+            [
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math",
+              "Addition and subtraction intro: Early math"
+            ]
+          ],
+          "color": "#7DDE92"
+        }
+      ]
+    }
+  ],
+  "see_more": "See More",
+  "see_less": "See Less",
+  "sinhala": "Sinhala",
+  "name": "Craig Botosh",
+  "terms_condition": "I agree with terms and conditions",
+  "back_to_browse": "Back To Browse",
+  "start_where1": "Start where ",
+  "start_where2": " you are",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "input_array": [
+    {
+      "type": "text",
+      "placeholder": "School of Child"
+    },
+    {
+      "type": "text",
+      "placeholder": "Phone Number"
+    },
+    {
+      "type": "email",
+      "placeholder": "Email Address"
+    },
+    {
+      "type": "password",
+      "placeholder": "Password"
+    },
+    {
+      "type": "password",
+      "placeholder": "Cinfirm Password"
+    }
+  ],
+  "not_member": "Not a Member yet",
+  "register": "Register Now",
+
+  "sign_up": "Sign Up",
+  "sign_in": "Sign In",
+  "the_willingness_to_learn": "The willingness to learn",
+  "new_skills_is_very_high": "new skills is very high",
+  "signin_array": [
+    {
+      "type": "email",
+      "placeholder": "Email Address"
+    },
+    {
+      "type": "password",
+      "placeholder": "Password"
+    }
+  ],
+  "the_willingness_to": "The willingness to",
+  "learn_new_skills_is": "learn new skills is",
+  "very_high": "very high",
+  "sign_in_to": "Sign in to",
+  "continue": " continue",
+  "remember_me": "Remember me",
+  "forgot_password": "Forgot your password"
+}

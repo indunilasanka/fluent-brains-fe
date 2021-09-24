@@ -1,0 +1,119 @@
+.slider-counter-container {
+  display: flex;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 8px 0;
+}
+.slider-counter {
+  margin: 0;
+  background: #6fcf97;
+  padding: 5px 10px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #f7f4f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.counter-number {
+  margin: 0px;
+  margin-right: 23px;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.slick-dots {
+  padding: 10px;
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -60px;
+  height: 50px;
+
+  justify-content: center;
+}
+.slick-track {
+  padding: 40px 0;
+}
+.slick-dots li {
+  margin: 8px 10px !important;
+}
+.my-slider {
+  background-color: #fff;
+  border-radius: 50%;
+  color: #e0e0e0;
+  width: 32px;
+  height: 32px;
+
+  position: relative;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-slider-p {
+  position: absolute;
+  top: 50%;
+  left: 50;
+  margin: 10px 0;
+  transform: translate(-50%, -50%);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.slick-active .my-slider {
+  background: #27ae60;
+  color: #fff;
+}
+.sc-fubCzh .iaWVmg {
+  margin-top: 60px;
+}
+.slick-prev {
+  display: none !important;
+}
+.slick-next {
+  display: none !important;
+}
+.slider-containerr {
+  background: #F7F4F2;
+  padding-top: 60px;
+}
+.main-slider {
+  display: flex !important;
+  justify-content: center;
+}
+.sub-slider {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+@media only screen and (max-width: 1199px) {
+  .main-slider {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .sub-slider {
+    flex-direction: column;
+  }
+  .slick-track {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .slider-containerr {
+    padding-top: 100px;
+  }
+  .slick-dots {
+    top: -90px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .slider-containerr {
+    padding-top: 130px;
+  }
+  .slick-dots {
+    top: -115px;
+  }
+}
