@@ -1,9 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Iframe from "react-iframe";
 import { IoMdClose } from "react-icons/io";
 import { useMainContext } from "../../../Context/Context";
 import mobile from "../../../images/Home/mobile.gif";
+import Loder from "./Loder.js";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -29,12 +31,14 @@ const Wrapper = styled.div`
 
   .modal-container {
     width: 960px;
-    height: 670px; //change to control height
+    height: 680px; //change to control height
     display: flex;
     justifycontent: center;
     aling-items: center;
     flex-direction: column;
     z-index: 5 !important;
+    margin: 0;
+    margin-top: 50px;
   }
 
   .modal-container ::-webkit-scrollbar {
@@ -49,6 +53,7 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 15px 20px;
     color: black;
+    margin: 0;
     margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
@@ -69,19 +74,46 @@ const Wrapper = styled.div`
     padding-left: 1%;
   }
 
+  .iframe {
+    background: white;
+  }
+
+  .iframeTransparent {
+    background: none;
+  }
+
+  @media only screen and (max-height: 600px) {
+    .modal-container {
+      margin-top: 250px;
+    }
+  }
+
+  @media only screen and (max-height: 400px) {
+    .modal-container {
+      margin-top: 450px;
+    }
+  }
+
   @media only screen and (max-width: 350px) {
     .mobile {
       display: block;
     }
 
-    .myClassname {
+    .iframe,
+    .iframeTransparent {
       display: none !important;
     }
+
     .modal-container {
       height: 100%;
     }
+
     .m-title {
       padding: 25px 40px;
+    }
+
+    .modal-container {
+      margin-top: 0;
     }
   }
 
@@ -94,9 +126,11 @@ const Wrapper = styled.div`
 
 const Modal = () => {
   const { setModals } = useMainContext();
+  let [loading, setLoading] = useState(true);
+  let [iframeclass, setIFrameClass] = useState("iframe");
 
   return (
-    <Wrapper onClick={() => setModals(false)}>
+    <Wrapper>
       <div className="modal-container">
         <div className="m-title">
           <p>Here will be your title</p>
@@ -117,10 +151,16 @@ const Modal = () => {
           width="100%"
           height="100%"
           id="myId"
-          className="myClassname"
+          className={iframeclass}
           display="initial"
           position="relative"
+          onLoad={() => {
+            setLoading(false);
+            setIFrameClass("iframeTransparent");
+          }}
         ></Iframe>
+
+        <Loder load={loading}></Loder>
       </div>
     </Wrapper>
   );
