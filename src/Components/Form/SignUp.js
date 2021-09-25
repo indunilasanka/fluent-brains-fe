@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
-  background: #F7F4F2;
+  background: #f7f4f2;
   padding: 40px 0;
   overflow-x: hidden;
   .back_to_browse {

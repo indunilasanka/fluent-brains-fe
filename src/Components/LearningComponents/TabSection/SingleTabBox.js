@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     margin: 0;
-    width: 80%;
+    
     font-size: 20px;
     font-weight: 500;
     color: #fff;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     background: #fff;
   }
   .text-container {
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: .1px solid rgba(0, 0, 0, 0.2);
     text-align: center;
   }
   .text-container-align {
@@ -51,6 +51,7 @@ const Wrapper = styled.div`
     font-size: 13px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 400;
+   
   }
   .button-container {
     display: flex;
@@ -70,11 +71,13 @@ const Wrapper = styled.div`
     top: 20px;
     right: 15px;
   }
-  .expand {
+  ${
+    "" /* .expand {
     background: #fff;
     width: 118%;
-    margin-left: -73px;
+   
     padding: 15px 0;
+  } */
   }
 
 
@@ -85,46 +88,7 @@ const Wrapper = styled.div`
    
   }
 
-  @media only screen and (min-width: 1385px) {
-    .expand {
-      margin-left: -77px;
-      
-    }
-    .text{
-      font-size:16px;
-    }
-  }
-  @media only screen and (min-width: 1460px) {
-    .expand {
-      margin-left: -86px;
-    }
-  }
-  @media only screen and (min-width: 1649px) {
-    .expand {
-      margin-left: -95px;
-    }
-  }
-  @media only screen and (min-width: 1830px) {
-    .expand {
-      margin-left: -102px;
-    }
-  }
-  @media only screen and (max-width: 1250px) {
-    .expand {
-      margin-left: -70px;
-    }
-  }
-  @media only screen and (max-width: 1227px) {
-    .text {
-      font-size: 11px;
-    }
-    .button-container {
-      margin-right: 10px;
-    }
-    .expand {
-      margin-left: -68px;
-    }
-  }
+  
 
   @media only screen and (max-width: 1199px) {
     .icon-container {
@@ -138,6 +102,7 @@ const Wrapper = styled.div`
       text-align: center;
       border-left: none;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
+   
     }
     .text-container-align {
       text-align: center;
@@ -172,6 +137,16 @@ const Wrapper = styled.div`
       right: 30px;
     }
   }
+  .side-gap{
+    position:absolute;
+
+    top:0;
+    height:100%;
+  
+    left:-10%;
+    z-index:1;
+  }
+  
 `;
 const SingleTabBox = (props) => {
   const { icon, name, text, color } = props;
@@ -186,7 +161,7 @@ const SingleTabBox = (props) => {
         <Row>
           <Col
             md={12}
-            xl={3}
+            xl={2}
             className="m-0 p-0"
             style={{ background: seeMore ? "" : "#fff" }}
           >
@@ -203,12 +178,12 @@ const SingleTabBox = (props) => {
               </div>
             </div>
           </Col>
-          <Col md={12} lg={10} xl={7} className="main-text-container ">
+          <Col md={12} lg={10} xl={8} className="main-text-container ">
             {!seeMore && (
               <Row className="py-3">
                 {text[0].map((el, i) => {
                   return (
-                    <Col md={6} key={i} className="text-container py-2">
+                    <Col md={6} xl={5} key={i} className="text-container py-2">
                       <span className="text">{el}</span>
                     </Col>
                   );
@@ -216,21 +191,23 @@ const SingleTabBox = (props) => {
               </Row>
             )}
             {seeMore && (
-              <div>
-                {text.map((el, i) => (
-                  <Row className={seeMore ? "expand py-1" : "py-1"} key={i}>
-                    {el.map((el, i) => (
-                      <Col
-                        key={i}
-                        md={6}
-                        xl={5}
-                        className="text-container text-container-align  py-2  px-2"
-                      >
-                        <span className="text">{el}</span>
-                      </Col>
-                    ))}
-                  </Row>
-                ))}
+              <div className="py-3">
+                {text.map((el, i) => {
+                  return (
+                    <Row className="py-2" key={i}>
+                      {el.map((text, i) => (
+                        <Col
+                          md={6}
+                          xl={5}
+                          key={i}
+                          className="text-container py-2"
+                        >
+                          <span className="text">{text}</span>
+                        </Col>
+                      ))}
+                    </Row>
+                  );
+                })}
               </div>
             )}
           </Col>

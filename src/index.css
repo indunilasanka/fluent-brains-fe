@@ -64,11 +64,15 @@ body::-webkit-scrollbar-thumb {
   --learning-path-text: #828282;
   --section-text: #161616;
 }
-/* input {
-  width: 100%;
-  background: none;
 
-  outline: none;
-  padding: 0 15px;
-  padding-right: 30px;
-} */
+.back-to-browse {
+  cursor: pointer;
+
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.back-to-browse a {
+  color: #000 !important;
+}

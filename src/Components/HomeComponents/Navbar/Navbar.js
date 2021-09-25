@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import logo from "../../../images/Home/logo.svg";
 import { Container, Row, Col } from "react-bootstrap";
@@ -117,7 +117,6 @@ const Wrapper = styled.div`
 
 `;
 const Navbar = () => {
-  const [button, setButton] = useState(1);
   const {
     sidebar,
     showSidebar,

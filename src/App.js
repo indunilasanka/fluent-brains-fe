@@ -5,6 +5,8 @@ import Learning from "./pages/Learning";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import ContactUsPage from "./pages/ContactUsPage";
 
 function App() {
   return (
@@ -19,8 +21,14 @@ function App() {
         <Route path="/signup">
           <SignUpPage />
         </Route>
-        <Route>
+        <Route path="/signin">
           <SignInPage />
+        </Route>
+        <Route path="/aboutus">
+          <AboutUsPage />
+        </Route>
+        <Route path="/contactus">
+          <ContactUsPage />
         </Route>
       </Switch>
     </Router>

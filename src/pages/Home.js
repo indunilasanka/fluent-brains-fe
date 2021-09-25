@@ -8,7 +8,6 @@ import LearningPath from "../Components/HomeComponents/LearningPath/LearningPath
 import Navbar from "../Components/HomeComponents/Navbar/Navbar";
 import SliderSection from "../Components/HomeComponents/SliderSection/SliderSection";
 import { useMainContext } from "../Context/Context";
-import AboutUsPage from "./AboutUs";
 
 const Wrapper = styled.div`
   overflow-x: hidden;
@@ -21,7 +20,6 @@ const Home = () => {
     <Wrapper>
       <Navbar />
       <Banner />
-      <AboutUsPage />
 
       <SliderSection />
 

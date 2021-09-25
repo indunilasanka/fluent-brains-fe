@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
-  background: #F7F4F2;
+  background: #f7f4f2;
   padding: 40px 0;
   overflow-x: hidden;
   .back_to_browse {
@@ -236,7 +236,7 @@ const SignIn = () => {
                             className="m-0 forgot"
                             style={{ opacity: ".5" }}
                           >
-                             {t("forgot_password")}
+                            {t("forgot_password")}
                           </span>
                         </div>
                       </Col>
@@ -249,7 +249,7 @@ const SignIn = () => {
                         <div className="not-a-member">
                           <span
                             className="m-0  px-1"
-                            style={{ color: "rgba(0, 0, 0, 0.5);" }}
+                            style={{ color: "rgba(0, 0, 0, 0.5)" }}
                           >
                             {t("not_member")}?
                           </span>{" "}
