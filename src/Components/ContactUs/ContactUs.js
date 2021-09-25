@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   .start {
     font-size: 40px;
     font-weight: 400;
+    padding-top: 20px;
   }
 
   h2 {
@@ -39,38 +40,25 @@ const Wrapper = styled.div`
     margin: 0;
   }
 
-  .contact-with {
+  .address-container {
     font-size: 14px;
   }
 
-  .contact-with h5 {
-    padding: 15px;
-    padding-bottom: 5px;
-    font-size: 14px;
-    font-weight: 800;
-  }
-
-  .address {
+  .address-container {
     background: #fff;
     border-radius: 5px;
 
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
-  .address p {
+  .address-container p {
     padding-top: 10px;
     color: rgba(0, 0, 0, 0.5);
     font-size: 13px;
   }
 
-  .contact-with {
-    font-size: 14px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  }
-
-  .contact-with h5 {
-    padding: 15px 0;
+  .address-container h5 {
+    padding: 15px;
+    padding-top: 25px;
     padding-bottom: 5px;
     font-size: 14px;
     font-weight: 800;
@@ -166,37 +154,27 @@ const ContactUs = () => {
       <Container fluid>
         <Row>
           <Col lg={7}>
-            <Row className="px-2 px-sm-4 py-3 ">
-              <div className="back-to-browse">
-                <BsArrowLeftShort size="25" className="m-0" />
-                <Link to="/">
-                  <span className="m-0  back_to_browse  px-2">
-                    {t("back_to_browse")}
-                  </span>
-                </Link>
-              </div>
-              <h2 className="py-3 start">{t("get_in_touch")}</h2>
+            <Row className="px-2 px-sm-4 py-4 ">
+              <h2 className=" start">{t("get_in_touch")}</h2>
               <Row className="my-2 mx-0 p-0 ">
-                <Col xs={12} sm={7} className="address  p-2 ">
-                  <h3 className="">Sydney, Australia</h3>
-                  <p className="">Level 3,447 Kent Street,Sydny NSW 2000</p>
-                </Col>
-                <Col xs={0} sm={5}></Col>
-              </Row>
-              <Row className="my-2 mx-0 p-0">
-                <Col xs={10} sm={5} className="contact-with">
-                  <h5>{t("general_enquiries")}</h5>
-                  <div className="py-1">
-                    <div>
-                      <FaPhoneAlt /> <span className="px-2">1300 014 419</span>
-                    </div>
+                <Col md={7} sm={8} className="m-0 p-3 px-3 address-container">
+                  <Row>
+                    <h3 className="">Sydney, Australia</h3>
+                    <p className="">Level 3,447 Kent Street,Sydny NSW 2000</p>
+
+                    <h5>{t("general_enquiries")}</h5>
                     <div className="py-1">
-                      <HiMail />{" "}
-                      <span className="px-2"> hello@fluentbrains.com</span>
+                      <div>
+                        <FaPhoneAlt />{" "}
+                        <span className="px-2">1300 014 419</span>
+                      </div>
+                      <div className="py-1">
+                        <HiMail />{" "}
+                        <span className="px-2"> hello@fluentbrains.com</span>
+                      </div>
                     </div>
-                  </div>
+                  </Row>
                 </Col>
-                <Col xs={2} sm={7}></Col>
               </Row>
               <Col xs={12} className="p-0">
                 <div

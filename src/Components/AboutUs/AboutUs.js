@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import staff1 from "../../images/staff1.svg";
 const Wrapper = styled.div`
-  background: #e5e5e5;
+  background: #f7f4f2;
   color: #000;
   font-family: "Noto Serif", serif;
   overflow: hidden;
   img {
     object-fit: cover;
+    width: 200px;
+    height: 150px;
   }
-  .back-to-browse {
+  ${
+    "" /* .back-to-browse {
     padding: 0;
     padding-top: 30px;
+  } */
   }
   .start {
     font-size: 40px;
@@ -37,14 +41,26 @@ const Wrapper = styled.div`
     padding: 15px 0;
   }
   .staff {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
   .staff p {
     font-size: 16px;
   }
+  @media only screen and (max-width: 767px) {
+    img {
+      width: 75%;
+      height: 55%;
+    }
+  }
   @media only screen and (max-width: 575px) {
     h2 {
       font-size: 30px;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    img {
+      width: 75%;
+      height: 45%;
     }
   }
 `;
@@ -70,14 +86,6 @@ const AboutUs = () => {
     <Wrapper>
       <Container fluid>
         <Row className="px-4 py-3">
-          <div className="back-to-browse">
-            <BsArrowLeftShort size="25" className="m-0" />
-            <Link to="/">
-              <span className="m-0  back_to_browse  px-2">
-                {t("back_to_browse")}
-              </span>
-            </Link>
-          </div>
           <h2 className="py-3 start">{t("aboutus")}</h2>
         </Row>
         <Col xs={12} className="text-center">
@@ -93,12 +101,17 @@ const AboutUs = () => {
           </Container>
         </Col>
 
-        <Row className="text-center px-2 px-sm-5 staff ">
+        <Row className="text-center px-2 px-xl-4 staff ">
           <h2 className="py-4">{t("Staff")}</h2>
+
           <Row className="py-2 m-0">
             {aboutusArray.map((el, i) => (
-              <Col md={4} className="px-0 px-sm-4 py-3 py-sm-0 m-0" key={i}>
-                <img src={el.img} alt="" className=" w-100 w-md-75" />
+              <Col
+                md={4}
+                className="px-0 px-sm-4 py-1 py-md-3 py-sm-0 m-0"
+                key={i}
+              >
+                <img src={el.img} alt="" className="" />
                 <p>{el.staff1}</p>
               </Col>
             ))}
