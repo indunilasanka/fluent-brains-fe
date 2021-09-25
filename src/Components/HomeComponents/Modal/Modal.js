@@ -63,7 +63,7 @@ const Wrapper = styled.div`
     font-weight: bold;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    font-family: "Inter",sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   .close {
