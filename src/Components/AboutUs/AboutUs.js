@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     padding: 15px 0;
   }
   p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 26px;
 
     font-weight: 400;
