@@ -25,16 +25,20 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5000000000000000;
-  // overflow: hidden;
+  overflow: auto;
 
   .modal-container {
-    width: 960px;
-    height: 670px; //change to control height
+    max-width: 960px;
+    max-height: 660px; //change to control height
+    height: 95%;
+    width: 100%;
     display: flex;
-    justifycontent: center;
-    aling-items: center;
+    justify-content: center;
+    aline-items: center;
     flex-direction: column;
     z-index: 5 !important;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
 
   .modal-container ::-webkit-scrollbar {
@@ -47,19 +51,23 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 10px;
     color: black;
-    margin-top: 10px;
     font-size: 18px;
     font-weight: bold;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    font-family: "Inter",sans-serif;
   }
 
   .close {
     margin: 0;
-    padding: 1px;
+    padding: 0;
     cursor: pointer;
     background: orange;
     border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;
   }
 
   .mobile {
@@ -112,7 +120,7 @@ const Modal = () => {
         </div>
 
         <Iframe
-          url="http://activities.fluentbrains.com.s3-website.ap-south-1.amazonaws.com/tense/"
+          url="http://activities.fluentbrains.com/tense2/index.html"
           scrolling="no"
           width="100%"
           height="100%"
