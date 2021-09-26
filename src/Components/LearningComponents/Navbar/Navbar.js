@@ -46,9 +46,11 @@ const Wrapper = styled.div`
     right: 15px;
     top: 9px;
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
   }
   .user {
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
   }
   .logout-container {
   
@@ -106,7 +108,7 @@ const Wrapper = styled.div`
     border-radius: 5px;
     position: absolute;
     width: 100%;
-
+    cursor: pointer;
     top: 45px;
     right: 20px;
     box-shadow: 0 3px 10px #b7b7b7;

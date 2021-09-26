@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   
   .img-container {
     position: relative;
+    cursor: pointer;
   }
   .play-container {
     width: 50px;
