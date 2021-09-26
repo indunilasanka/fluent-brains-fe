@@ -13,7 +13,7 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  padding: 15px 5px 15px 20px;
+  padding: 12px 5px 12px 20px;
   position: relative;
   .top-nav {
     display: flex;
@@ -58,9 +58,7 @@ const Wrapper = styled.div`
     width: 100px;
     cursor:pointer;
   }
-  .language-container {
-    padding-top: 7px;
-  }
+
   .language {
     text-align: center;
     background: #fff;
@@ -90,9 +88,7 @@ const Wrapper = styled.div`
     .login-col {
       padding-top: 6px;
     }
-    .language-container {
-      padding-top: 3px;
-    }
+    
     .logo{
       width:158px;
     }
