@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     width: 35%;
     border-radius: 4px;
   }
-  
+
   .logo img {
     max-width: 198px;
     max-height: 44px;
@@ -47,13 +47,15 @@ const Wrapper = styled.div`
     top: 9px;
     color: rgba(0, 0, 0, 0.5);
   }
+
   .user {
     color: rgba(0, 0, 0, 0.5);
   }
+
   .logout-container {
-  
     position: relative;
   }
+
   .logout {
     text-align: center;
     background: #b7b7b7;
@@ -62,28 +64,26 @@ const Wrapper = styled.div`
     position: absolute;
     width: 100%;
     right: 55px;
-    
-    
-    width:120px;
+    width: 120px;
   }
-  .logouts{
+
+  .logouts {
     text-align: center;
     background: #b7b7b7;
     color: #fff;
     border-radius: 5px;
     position: absolute;
     width: 100%;
-
-   left:52%;
-   transform:translateX(-50%);
-    
-    
-    width:120px;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 120px;
   }
+
   .hamburger {
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
+
   .sidebar {
     position: absolute;
     background: #fff;
@@ -94,99 +94,115 @@ const Wrapper = styled.div`
     display: none;
     border-radius: 5px;
   }
+
   .language-container {
-    position:relative;
+    position: relative;
     padding-top: 7px;
-    
   }
+
   .language {
-    text-align: center;
+    text-align: end;
     background: #fff;
     color: #000;
     border-radius: 5px;
     position: absolute;
     width: 100%;
-
     top: 45px;
     right: 20px;
     box-shadow: 0 3px 10px #b7b7b7;
   }
-  .language {
-    text-align: center;
+
+  .languageWeb {
+    text-align: start;
     background: #fff;
     color: #000;
     border-radius: 5px;
     position: absolute;
     width: 100%;
-
     top: 45px;
     right: 0px;
     box-shadow: 0 3px 10px #b7b7b7;
   }
-  
-  .language p:hover {
+
+  .language p:hover,
+  .languageWeb p:hover {
     background: #b7b7b7;
     color: #fff;
   }
+
   @media only screen and (max-width: 1199px) {
     .search-container {
       width: 40%;
     }
-    .logo img{
-      width:158px;
+
+    .logo img {
+      width: 158px;
     }
   }
+
   @media only screen and (max-width: 991px) {
     padding: 0 20px;
+
     .search-container {
       width: 45%;
     }
+
     .language-container {
       padding-top: 2px;
     }
+
     .sidebar {
       display: block;
       width: 89%;
       left: 53px;
     }
+
     .hamburgar {
       padding-top: 4px;
     }
+
     .search-container {
       width: 70%;
     }
   }
+
   @media only screen and (max-width: 767px) {
     .search-container2 {
       width: 70%;
     }
+
     .sidebar {
       left: 14px;
       width: 96%;
     }
   }
+
   @media only screen and (max-width: 520px) {
     .search-container2 {
       width: 96%;
       margin-right: 20px;
       margin-left: 18px;
     }
+
     .search-input {
       margin-left: 10px;
     }
+
     .logo img {
       width: 140px;
     }
   }
+
   @media only screen and (max-width: 420px) {
     .sidebar {
       left: 9px;
     }
+
     padding: 0px;
   }
+
   input {
     font-size: 12px;
-  }
   }
 `;
 const Navbar = () => {
@@ -224,23 +240,27 @@ const Navbar = () => {
             />
             <HiOutlineSearch size="20" className="search" />
           </Col>
+
           <Col lg={4} xs={6} dir="" className="m-0 ">
             <Row className="d-flex justify-content-end">
+              {/* langauge - web view */}
               <Col
                 xs={4}
                 className="logout-container m-0 p-0 d-none d-lg-block"
               >
                 <div className="logout-container m-0 p-0 ">
+                  {/* lang in nav bar */}
                   <div
                     onClick={showLanguageFunc}
-                    className="d-flex align-items-center mx-4 language-container"
+                    className="d-flex align-items-center  language-container"
                   >
-                    <p className="mx-2">{language}</p>
+                    <p className="mx-3">{language}</p>
                     <AiFillCaretDown className=" user" />
                   </div>
 
+                  {/* lang drop down */}
                   {showLanguage && (
-                    <div className="language">
+                    <div className="languageWeb">
                       {LanguageArray.map((el, i) => (
                         <p
                           key={i}
@@ -257,6 +277,7 @@ const Navbar = () => {
                   )}
                 </div>
               </Col>
+
               <Col xs={8} className="logout-container m-0 d-none d-lg-block">
                 <div
                   dir=""
@@ -279,6 +300,7 @@ const Navbar = () => {
                 )}
               </Col>
             </Row>
+
             <div
               dir="rtl"
               className=" m-0 d-flex align-items-center d-lg-none hamburger"
@@ -291,7 +313,10 @@ const Navbar = () => {
                 }}
                 className="p-0 m-0"
               />
+
+              {/* langauge - mobi and tab view */}
               <div className="logout-container m-0 p-0 ">
+                {/* lang in nav bar */}
                 <div
                   onClick={showLanguageFunc}
                   className="d-flex align-items-center mx-4 language-container"
@@ -300,6 +325,7 @@ const Navbar = () => {
                   <p className="mx-2">{language}</p>
                 </div>
 
+                {/* lang drop down */}
                 {showLanguage && (
                   <div className="language">
                     {LanguageArray.map((el, i) => (

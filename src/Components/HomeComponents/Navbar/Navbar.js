@@ -15,50 +15,52 @@ import { useTranslation } from "react-i18next";
 const Wrapper = styled.div`
   padding: 15px 50px;
   position: relative;
+
   .top-nav {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .logo {
     max-width: 198px;
     max-height: 44px;
   }
+
   .login-container {
     display: flex;
-    align-items:center;
-    
-  }
-  .login {
-   
-    border-radius: 5px;
-    border: 2px solid #000;
-   
-    font-family: "Inter", sans-serif;
-    color:#000;
-    
- 
+    align-items: center;
   }
 
-  .login p{
-    color:#000;
+  .login {
+    border-radius: 5px;
+    border: 2px solid #000;
+    font-family: "Inter", sans-serif;
+    color: #000;
+  }
+
+  .login p {
+    color: #000;
     padding: 8px 15px;
     background: #fff;
   }
- 
+
   .hamburger {
     display: none;
   }
+
   .main-language-container {
     position: relative;
     width: 100px;
-    cursor:pointer;
+    cursor: pointer;
   }
+
   .language-container {
     padding-top: 7px;
   }
+
   .language {
-    text-align: center;
+    text-align: end;
     background: #fff;
     color: #000;
     border-radius: 5px;
@@ -69,52 +71,58 @@ const Wrapper = styled.div`
     right: 10px;
     box-shadow: 0 3px 10px #b7b7b7;
   }
+
   .language p:hover {
     background: #b7b7b7;
     color: #fff;
   }
-  .activeButton{
-   
-    color:#fff;
-  }
- .activeButton p{
-   color:#fff;
-   background:#000;
- }
-  @media only screen and (max-width: 991px) {
-    padding:15px 15px
 
+  .activeButton {
+    color: #fff;
   }
+
+  .activeButton p {
+    color: #fff;
+    background: #000;
+  }
+
+  @media only screen and (max-width: 991px) {
+    padding: 15px 15px;
+  }
+
   @media only screen and (max-width: 767px) {
     .language-container {
       padding-top: 2px;
     }
+
     .login-col {
       padding-top: 6px;
     }
+
     .logo {
       width: 170px;
     }
   }
- 
- 
+
   @media only screen and (max-width: 626px) {
     .hamburger {
       display: block;
     }
+
     .logo {
       width: 150px;
     }
+
     padding: 15px 20px;
   }
-  }
+
   @media only screen and (max-width: 400px) {
     padding: 15px 10px;
+
     .login-col {
       padding-top: 3px;
     }
   }
-
 `;
 const Navbar = () => {
   const [button, setButton] = useState(1);
@@ -154,7 +162,10 @@ const Navbar = () => {
                 style={{ marginTop: "6px", cursor: "pointer" }}
                 onClick={showSidebar}
               />
+
+              {/* Language - mobile and tab view */}
               <div className="main-language-container mx-2 m-md-0 p-0 ">
+                {/* lang in navbar */}
                 <div
                   onClick={showLanguageFunc}
                   className="d-flex align-items-center language-container"
@@ -163,6 +174,7 @@ const Navbar = () => {
                   <p className="">{language}</p>
                 </div>
 
+                {/* lang dropdown */}
                 {showLanguage && (
                   <div className="language">
                     {LanguageArray.map((el, i) => (
@@ -192,7 +204,9 @@ const Navbar = () => {
                   </div>
                 ))}
 
+                {/* Language - web view */}
                 <div className="main-language-container m-0 p-0 ">
+                  {/* lang in navbar */}
                   <div
                     onClick={showLanguageFunc}
                     className="d-flex align-items-center language-container"
@@ -201,6 +215,7 @@ const Navbar = () => {
                     <p className="">{language}</p>
                   </div>
 
+                  {/* lang dropdown */}
                   {showLanguage && (
                     <div className="language">
                       {LanguageArray.map((el, i) => (
