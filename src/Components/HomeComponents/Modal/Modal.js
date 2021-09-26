@@ -42,7 +42,6 @@ const Wrapper = styled.div`
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     margin: 0;
-    margin-top: 50px;
   }
 
   .modal-container ::-webkit-scrollbar {
@@ -83,33 +82,16 @@ const Wrapper = styled.div`
     padding-left: 1%;
   }
 
-  .iframe {
-    background: white;
-  }
-
-  .iframeTransparent {
-    background: none;
-  }
-
-  @media only screen and (max-height: 600px) {
-    .modal-container {
-      margin-top: 250px;
-    }
-  }
-
-  @media only screen and (max-height: 400px) {
-    .modal-container {
-      margin-top: 450px;
-    }
-  }
+  // .iframe {
+  //   background: none;
+  // }
 
   @media only screen and (max-width: 350px) {
     .mobile {
       display: block;
     }
 
-    .iframe,
-    .iframeTransparent {
+    .iframe {
       display: none !important;
     }
 
@@ -118,17 +100,7 @@ const Wrapper = styled.div`
     }
 
     .m-title {
-      padding: 25px 40px;
-    }
-
-    .modal-container {
-      margin-top: 0;
-    }
-  }
-
-  @media only screen and (max-width: 300px) {
-    .m-title {
-      padding: 25px 50px;
+      padding: 20px 10px;
     }
   }
 `;
@@ -136,7 +108,6 @@ const Wrapper = styled.div`
 const Modal = () => {
   const { setModals } = useMainContext();
   let [loading, setLoading] = useState(true);
-  let [iframeclass, setIFrameClass] = useState("iframe");
 
   return (
     <Wrapper>
@@ -160,12 +131,11 @@ const Modal = () => {
           width="100%"
           height="100%"
           id="myId"
-          className={iframeclass}
+          className="iframe"
           display="initial"
           position="relative"
           onLoad={() => {
             setLoading(false);
-            setIFrameClass("iframeTransparent");
           }}
         ></Iframe>
 
