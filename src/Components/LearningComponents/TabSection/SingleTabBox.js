@@ -51,6 +51,7 @@ const Wrapper = styled.div`
     font-size: 13px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 400;
+    cursor: pointer;
   }
   .button-container {
     display: flex;
