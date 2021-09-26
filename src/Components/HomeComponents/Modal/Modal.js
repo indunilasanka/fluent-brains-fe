@@ -82,10 +82,6 @@ const Wrapper = styled.div`
     padding-left: 1%;
   }
 
-  // .iframe {
-  //   background: none;
-  // }
-
   @media only screen and (max-width: 350px) {
     .mobile {
       display: block;
