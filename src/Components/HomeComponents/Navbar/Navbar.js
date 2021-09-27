@@ -151,7 +151,7 @@ const Navbar = () => {
             </Link>
           </Col>
 
-          <Col xs={9} dir="rtl" className="login-col">
+          <Col xs={9} dir="rtl" className="login-col m-0 p-0">
             <div className="d-block d-flex d-lg-none">
               <GiHamburgerMenu
                 size="30"
@@ -159,7 +159,7 @@ const Navbar = () => {
                 style={{ marginTop: "6px", cursor: "pointer" }}
                 onClick={showSidebar}
               />
-              <div className="main-language-container mx-4 p-0 ">
+              <div className="main-language-container mx-3 p-0 ">
                 <div
                   onClick={showLanguageFunc}
                   className="d-flex align-items-center hamburger language-container"

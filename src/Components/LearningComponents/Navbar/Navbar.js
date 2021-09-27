@@ -188,7 +188,7 @@ const Wrapper = styled.div`
     .sidebar {
       left: 9px;
     }
-    padding: 0px;
+    padding: 15px 10px;
   }
   input {
     font-size: 12px;
