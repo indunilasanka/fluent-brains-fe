@@ -17,9 +17,13 @@
 }
 .counter-number {
   margin: 0px;
-  margin-right: 23px;
-  padding: 0;
-  margin-bottom: 8px;
+  /* margin-right: 23px; */
+  padding: 0 20px 0 0;
+  /* margin-bottom: 8px; */
+  background-color: #f2f2f2;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  width: auto;
 }
 .slick-dots {
   padding: 10px;
@@ -38,6 +42,8 @@
 }
 .slick-dots li {
   margin: 8px 10px !important;
+  width: 32px;
+  height: 32px;
 }
 .my-slider {
   background-color: #fff;
@@ -76,7 +82,7 @@
   display: none !important;
 }
 .slider-containerr {
-  background: #F7F4F2;
+  background: #f7f4f2;
   padding-top: 60px;
 }
 .main-slider {

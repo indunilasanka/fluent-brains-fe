@@ -13,7 +13,7 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  padding: 15px 50px;
+  padding: 12px 5px 12px 20px;
   position: relative;
 
   .top-nav {
@@ -38,6 +38,9 @@ const Wrapper = styled.div`
     font-family: "Inter", sans-serif;
     color: #000;
   }
+  .user {
+    color: rgba(0, 0, 0, 0.5);
+  }
 
   .login p {
     color: #000;
@@ -46,17 +49,14 @@ const Wrapper = styled.div`
   }
 
   .hamburger {
-    display: none;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
   }
 
   .main-language-container {
     position: relative;
     width: 100px;
     cursor: pointer;
-  }
-
-  .language-container {
-    padding-top: 7px;
   }
 
   .language {
@@ -80,27 +80,24 @@ const Wrapper = styled.div`
   .activeButton {
     color: #fff;
   }
-
   .activeButton p {
     color: #fff;
     background: #000;
   }
-
   @media only screen and (max-width: 991px) {
-    padding: 15px 15px;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .language-container {
-      padding-top: 2px;
-    }
-
+    padding: 15px 20px;
     .login-col {
       padding-top: 6px;
     }
 
     .logo {
-      width: 170px;
+      width: 158px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .sidebar {
+      left: 14px;
+      width: 96%;
     }
   }
 
@@ -108,12 +105,6 @@ const Wrapper = styled.div`
     .hamburger {
       display: block;
     }
-
-    .logo {
-      width: 150px;
-    }
-
-    padding: 15px 20px;
   }
 
   @media only screen and (max-width: 400px) {
@@ -121,6 +112,10 @@ const Wrapper = styled.div`
 
     .login-col {
       padding-top: 3px;
+    }
+
+    .logo {
+      width: 140px;
     }
   }
 `;
@@ -146,7 +141,7 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <Container fluid="xs">
+      <Container fluid>
         <Row className="top-nav">
           <Col xs={3}>
             <Link to="/">
@@ -154,24 +149,24 @@ const Navbar = () => {
             </Link>
           </Col>
 
-          <Col xs={9} dir="rtl" className="login-col">
-            <div className="d-block d-flex d-md-none">
+          <Col xs={9} dir="rtl" className="login-col m-0 p-0">
+            <div className="d-block d-flex d-lg-none">
               <GiHamburgerMenu
                 size="30"
-                className="m-0"
+                className="m-0 hamburger"
                 style={{ marginTop: "6px", cursor: "pointer" }}
                 onClick={showSidebar}
               />
 
               {/* Language - mobile and tab view */}
-              <div className="main-language-container mx-2 m-md-0 p-0 ">
+              <div className="main-language-container mx-3 p-0 ">
                 {/* lang in navbar */}
                 <div
                   onClick={showLanguageFunc}
-                  className="d-flex align-items-center language-container"
+                  className="d-flex align-items-center hamburger language-container"
                 >
                   <AiFillCaretDown className=" user" />
-                  <p className="">{language}</p>
+                  <p className="mx-2">{language}</p>
                 </div>
 
                 {/* lang dropdown */}
@@ -194,7 +189,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="login-container  d-none d-flex d-md-block">
+            <div className="login-container  d-none d-flex d-lg-block">
               <div className="d-flex ">
                 {buttonArray.map((el, i) => (
                   <div key={i} className="login mx-2 dalim">
@@ -205,14 +200,14 @@ const Navbar = () => {
                 ))}
 
                 {/* Language - web view */}
-                <div className="main-language-container m-0 p-0 ">
+                <div className="main-language-container mx-2 p-0 ">
                   {/* lang in navbar */}
                   <div
                     onClick={showLanguageFunc}
-                    className="d-flex align-items-center language-container"
+                    className="d-flex align-items-center"
                   >
                     <AiFillCaretDown className=" user" />
-                    <p className="">{language}</p>
+                    <p className="mx-2">{language}</p>
                   </div>
 
                   {/* lang dropdown */}

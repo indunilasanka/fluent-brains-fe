@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     font-size: 14px;
     font-family: "Noto Serif", serif;
     line-height: 25px;
-
+    cursor: pointer;
     font-weight: 400;
     font-family: "Inter", sans-serif;
   }
