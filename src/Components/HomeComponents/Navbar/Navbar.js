@@ -13,7 +13,7 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  padding: 15px 5px 15px 20px;
+  padding: 12px 5px 12px 20px;
   position: relative;
   .top-nav {
     display: flex;
@@ -58,9 +58,7 @@ const Wrapper = styled.div`
     width: 100px;
     cursor:pointer;
   }
-  .language-container {
-    padding-top: 7px;
-  }
+
   .language {
     text-align: center;
     background: #fff;
@@ -90,9 +88,7 @@ const Wrapper = styled.div`
     .login-col {
       padding-top: 6px;
     }
-    .language-container {
-      padding-top: 3px;
-    }
+    
     .logo{
       width:158px;
     }
@@ -155,7 +151,7 @@ const Navbar = () => {
             </Link>
           </Col>
 
-          <Col xs={9} dir="rtl" className="login-col">
+          <Col xs={9} dir="rtl" className="login-col m-0 p-0">
             <div className="d-block d-flex d-lg-none">
               <GiHamburgerMenu
                 size="30"
@@ -163,7 +159,7 @@ const Navbar = () => {
                 style={{ marginTop: "6px", cursor: "pointer" }}
                 onClick={showSidebar}
               />
-              <div className="main-language-container mx-4 p-0 ">
+              <div className="main-language-container mx-3 p-0 ">
                 <div
                   onClick={showLanguageFunc}
                   className="d-flex align-items-center hamburger language-container"

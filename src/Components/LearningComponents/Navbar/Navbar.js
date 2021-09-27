@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   height: 68px;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px 0 20px;
   position: relative;
 
   .search-container {
@@ -25,6 +25,7 @@ const Wrapper = styled.div`
     padding-right: 20px;
     width: 35%;
     border-radius: 4px;
+    margin-top: 3px
   }
   
   .logo img {
@@ -130,6 +131,9 @@ const Wrapper = styled.div`
     background: #b7b7b7;
     color: #fff;
   }
+  .profile-size{
+    width: auto;
+  }
   @media only screen and (max-width: 1199px) {
     .search-container {
       width: 40%;
@@ -184,7 +188,7 @@ const Wrapper = styled.div`
     .sidebar {
       left: 9px;
     }
-    padding: 0px;
+    padding: 15px 10px;
   }
   input {
     font-size: 12px;
@@ -226,19 +230,19 @@ const Navbar = () => {
             />
             <HiOutlineSearch size="20" className="search" />
           </Col>
-          <Col lg={4} xs={6} dir="" className="m-0 ">
-            <Row className="d-flex justify-content-end">
+          <Col lg={4} xs={6} dir="" className="m-0 p-0 d-inline-flex justify-content-end">
+            <Row className="d-flex justify-content-center align-item-center profile-size m-0">
               <Col
                 xs={4}
-                className="logout-container m-0 p-0 d-none d-lg-block"
+                className="logout-container m-0 p-0 d-none d-lg-flex"
               >
-                <div className="logout-container m-0 p-0 ">
+                <div className="logout-container m-0 d-flex justify-content-center align-item-center" style={{ width: "auto" }}>
                   <div
                     onClick={showLanguageFunc}
-                    className="d-flex align-items-center mx-4 language-container"
+                    className="d-flex align-items-center justify-contend-end mx-2 language-container"
                   >
                     <p className="mx-2">{language}</p>
-                    <AiFillCaretDown className=" user" />
+                    <AiFillCaretDown className="user mx-2"/>
                   </div>
 
                   {showLanguage && (
@@ -259,17 +263,17 @@ const Navbar = () => {
                   )}
                 </div>
               </Col>
-              <Col xs={8} className="logout-container m-0 d-none d-lg-block">
+              <Col xs={8} className="logout-container m-0 p-0 d-none d-lg-flex justify-content-end">
                 <div
                   dir=""
                   onClick={showLogOut}
-                  className="d-flex  justify-content-end align-items-center"
-                  style={{ width: "80%" }}
+                  className="d-flex m-0 justify-content-end align-items-center"
+                  style={{ width: "auto" }}
                 >
-                  <FaUserCircle size="35" className=" mx-3  user" />
-                  <p>{t("name")}</p>
+                  <FaUserCircle size="35" className=" mx-2 user" />
+                  <p className="mx-2">{t("name")}</p>
                   <AiFillCaretDown
-                    className=" user"
+                    className="mx-2 user"
                     style={{ marginRight: "10px" }}
                   />
                 </div>
@@ -344,7 +348,7 @@ const Navbar = () => {
                     <div
                       onClick={showLogOut}
                       className="d-flex align-items-center justify-content-center"
-                      style={{ width: "200px" }}
+                      style={{ width: "230px" }}
                     >
                       <FaUserCircle size="35" className=" mx-3  user" />
                       <p>{t("name")}</p>
