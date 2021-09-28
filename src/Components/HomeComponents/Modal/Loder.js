@@ -5,7 +5,6 @@ import { useMainContext } from "../../../Context/Context";
 
 const style = {
   mainDiv: {
-    border: " 1px solid #000",
     position: "absolute",
     maxWidth: "960px",
     width: "100%",
