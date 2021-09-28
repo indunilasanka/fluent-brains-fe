@@ -5,16 +5,19 @@ import { useMainContext } from "../../../Context/Context";
 
 const style = {
   mainDiv: {
+    border: " 1px solid #000",
     position: "absolute",
     maxWidth: "960px",
     width: "100%",
-    maxHeight: "660px", //change to control height
-    height: "95%",
+    maxHeight: "660px",
+    height: "96.8%",
     background: "#F7F4F2",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
     alingItems: "center",
+    top: "4px",
+    bottom: "4px",
 
     overflow: "hidden",
   },

@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import { GrLinkedinOption } from "react-icons/gr";
 import { BiWorld } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 
@@ -100,11 +101,24 @@ const Footer = () => {
               key={i}
               className="footer-text py-3  py-lg-0"
             >
-              <p className="f-title">{el.title}</p>
-              <p className="f-subtitle">{el.element1}</p>
-              <p className="f-subtitle">{el.element2}</p>
-              <p className="f-subtitle">{el.element3}</p>
-              <p className="f-subtitle">{el.element4}</p>
+              <Link to={el.title_to || ""}>
+                <p className="f-title">
+                  {/* onClick={window.scrollTo({ top: 0 })} */}
+                  {el.title}
+                </p>
+              </Link>
+              <Link to={el.element1_to || ""}>
+                <p className="f-subtitle">{el.element1}</p>
+              </Link>
+              <Link to={el.element2_to || ""}>
+                <p className="f-subtitle">{el.element2}</p>
+              </Link>
+              <Link to={el.element3_to || ""}>
+                <p className="f-subtitle">{el.element3}</p>
+              </Link>
+              <Link to={el.element4_to || ""}>
+                <p className="f-subtitle">{el.element4}</p>
+              </Link>
             </Col>
           ))}
           <div className="social-container2 py-5">

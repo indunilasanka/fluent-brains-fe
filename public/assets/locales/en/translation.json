@@ -66,28 +66,50 @@
   "footer_array": [
     {
       "title": "Product",
+      "title_to": "/",
       "element1": "Maths Activities",
-      "element2": "English Activities",
-      "element3": "Science Activities",
-      "element4": " General Activities"
+      "element2": "For Parents",
+      "element3": "Technical Requirements",
+      "element4": " Multilingual",
+      "element1_to": "/",
+      "element2_to": "/",
+      "element3_to": "/",
+      "element4_to": "/"
     },
     {
       "title": "Resources",
+      "title_to": "/",
       "element1": "Efficacy Study",
-      "element2": "Activity Blog",
-      "element3": "Library"
+      "element2": "Blog",
+      "element3": "Professional Development",
+      "element4": "Knowledge Base",
+      "element1_to": "/",
+      "element2_to": "/",
+      "element3_to": "/",
+      "element4_to": "/"
     },
+
     {
       "title": "About",
+      "title_to": "aboutus",
       "element1": "Contact",
-      "element2": "Teachers"
+
+      "element2": "Teachers",
+
+      "element1_to": "contactus",
+      "element2_to": "aboutus"
     },
     {
       "title": "Get Started",
-      "element1": "Premium Member",
-      "element2": "Silver Member",
-      "element3": "Bronze Member",
-      "element4": "Free Tier"
+      "title_to": "/",
+      "element1": "Teachers/ Schools",
+      "element2": "Parents",
+      "element3": "Students",
+      "element4": "Governments/ School Groups",
+      "element1_to": "/",
+      "element2_to": "/",
+      "element3_to": "/",
+      "element4_to": "/"
     }
   ],
   "placeholeder": "What do you want to learn",
@@ -788,5 +810,40 @@
   "sign_in_to": "Sign in to",
   "continue": " continue",
   "remember_me": "Remember me",
-  "forgot_password": "Forgot your password"
+  "forgot_password": "Forgot your password",
+  "aboutus": "About Us",
+  "our_mission": "Our Mission",
+  "our_mission_text": "Our MissionMathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+  "our_vission": "Our Vision",
+  "our_vission_text": "Our VisionMathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
+  "Staff": "Staff",
+  "staff1": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
+  "staff2": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
+  "staff3": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
+  "send_your_query": "Send your query",
+  "message": "Message",
+  "get_in_touch": "Get in touch",
+  "general_enquiries": "General enquiries",
+  "contact_array": [
+    {
+      "type": "text",
+      "placeholder": "Full Name",
+      "name": "name"
+    },
+    {
+      "type": "text",
+      "placeholder": "Phone Number",
+      "name": "phone"
+    },
+    {
+      "type": "email",
+      "placeholder": "Email Address",
+      "name": "email"
+    },
+    {
+      "type": "password",
+      "placeholder": "Password",
+      "name": "password"
+    }
+  ]
 }

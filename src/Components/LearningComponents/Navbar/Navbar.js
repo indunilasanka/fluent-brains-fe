@@ -60,6 +60,7 @@ const Wrapper = styled.div`
   }
   .logout-container {
     position: relative;
+    cursor:pointer;
   }
   .user-conteiner {
     width: 195px;
@@ -112,6 +113,9 @@ const Wrapper = styled.div`
     position: relative;
     ${"" /* padding-top: 7px; */}
   }
+  .language-container:hover{
+    cursor:pointer;
+  }
 
   .language {
     text-align: center;
@@ -125,11 +129,14 @@ const Wrapper = styled.div`
     left:50%;
     transform:translateX(-50%);
     box-shadow: 0 3px 10px #b7b7b7;
+    cursor:pointer;
+    
   }
 
   .language p:hover {
     background: #b7b7b7;
     color: #fff;
+    cursor:pointer;
   }
   @media only screen and (max-width: 1199px) {
     ${

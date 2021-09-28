@@ -9,6 +9,7 @@ import Loder from "./Loder.js";
 
 const Wrapper = styled.div`
   position: fixed;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,6 +43,7 @@ const Wrapper = styled.div`
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     margin: 0;
+    position: relative;
   }
 
   .modal-container ::-webkit-scrollbar {
