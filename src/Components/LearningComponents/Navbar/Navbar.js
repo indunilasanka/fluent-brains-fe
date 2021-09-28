@@ -234,6 +234,12 @@ const Navbar = () => {
     singleLanguage,
   } = useMainContext();
   const { t } = useTranslation();
+  // if (learningSidebar) {
+  //   document.querySelector("body").style.overflow = "hidden";
+  // }
+  // if (!learningSidebar) {
+  //   document.querySelector("body").style.overflow = "scroll";
+  // }
 
   return (
     <Wrapper>

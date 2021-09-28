@@ -5,7 +5,9 @@ import Navbar from "../Components/LearningComponents/Navbar/Navbar";
 import TabSection from "../Components/LearningComponents/TabSection/TabSection";
 import Footer from "../Components/HomeComponents/Footer/Footer";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  overflow-x: hidden;
+`;
 const Learning = () => {
   return (
     <Wrapper>

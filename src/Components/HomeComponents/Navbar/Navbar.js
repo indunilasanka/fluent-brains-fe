@@ -157,6 +157,8 @@ const Navbar = () => {
     { name: t("get_started"), goto: "signup" },
     { name: t("log_in"), goto: "signin" },
   ];
+  // if (sidebar) document.querySelector("body").style.overflow = "hidden";
+  // if (!sidebar) document.querySelector("body").style.overflow = "scroll";
 
   return (
     <Wrapper>
