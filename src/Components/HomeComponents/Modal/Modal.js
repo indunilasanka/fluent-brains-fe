@@ -134,7 +134,6 @@ const Modal = () => {
             setLoading(false);
           }}
         ></Iframe>
-
         <Loder load={loading}></Loder>
       </div>
     </Wrapper>

@@ -13,7 +13,12 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  padding: 15px 5px 15px 20px;
+  ${"" /* padding: 15px 5px 15px 20px; */}
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
   position: relative;
   .top-nav {
     display: flex;
@@ -26,40 +31,38 @@ const Wrapper = styled.div`
   }
   .login-container {
     display: flex;
-    align-items:center;
-    
+    align-items: center;
   }
   .login {
-   
     border-radius: 5px;
     border: 2px solid #000;
-   
+
     font-family: "Inter", sans-serif;
-    color:#000;
-    
- 
+    color: #000;
   }
   .user {
     color: rgba(0, 0, 0, 0.5);
   }
-
-  .login p{
-    color:#000;
+  .login-col {
+    margin: 0;
+  }
+  .login p {
+    color: #000;
     padding: 8px 15px;
     background: #fff;
   }
- 
+
   .hamburger {
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
   .main-language-container {
     position: relative;
-    width: 100px;
-    cursor:pointer;
+
+    cursor: pointer;
   }
   .language-container {
-    padding-top: 7px;
+    ${"" /* padding-top: 7px; */}
   }
   .language {
     text-align: center;
@@ -67,63 +70,73 @@ const Wrapper = styled.div`
     color: #000;
     border-radius: 5px;
     position: absolute;
-    width: 100%;
-    z-index: 10;
+    width: 150px;
+    z-index: 5;
     top: 45px;
-    right: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     box-shadow: 0 3px 10px #b7b7b7;
   }
   .language p:hover {
     background: #b7b7b7;
     color: #fff;
   }
-  .activeButton{
-   
-    color:#fff;
+  .activeButton {
+    color: #fff;
   }
- .activeButton p{
-   color:#fff;
-   background:#000;
- }
+  .activeButton p {
+    color: #fff;
+    background: #000;
+  }
   @media only screen and (max-width: 991px) {
-    padding:  15px 20px;
-    .login-col {
+    ${"" /* padding:  15px 20px; */}
+    ${
+      "" /* .login-col {
       padding-top: 6px;
+    } */
     }
-    .language-container {
+    ${
+      "" /* .language-container {
       padding-top: 3px;
+    } */
     }
-    .logo{
-      width:158px;
+    .logo {
+      width: 158px;
     }
-    
-
   }
   @media only screen and (max-width: 767px) {
     .sidebar {
       left: 14px;
       width: 96%;
     }
+    padding: 0 10px;
   }
- 
- 
-  @media only screen and (max-width: 626px) {
-    .hamburger {
-      display: block;
-    }
-  }
-  }
-  @media only screen and (max-width: 400px) {
-    padding: 15px 10px;
-    .login-col {
-      padding-top: 3px;
-    }
 
+  @media only screen and (max-width: 520px) {
     .logo {
       width: 140px;
     }
   }
 
+  ${
+    "" /* @media only screen and (max-width: 626px) {
+    .hamburger {
+      display: block;
+    }
+  }
+  } */
+  }
+
+  @media only screen and (max-width: 350px) {
+    padding: 0 5px;
+    .language-container {
+      margin: 0 !important;
+      margin-right: 10px !important;
+    }
+    .language-container p {
+      margin: 0 4px !important;
+    }
+  }
 `;
 const Navbar = () => {
   const [button, setButton] = useState(1);
@@ -156,24 +169,24 @@ const Navbar = () => {
           </Col>
 
           <Col xs={9} dir="rtl" className="login-col">
-            <div className="d-block d-flex d-lg-none">
+            <div className="d-block d-flex align-items-center d-lg-none">
               <GiHamburgerMenu
                 size="30"
                 className="m-0 hamburger"
                 style={{ marginTop: "6px", cursor: "pointer" }}
                 onClick={showSidebar}
               />
-              <div className="main-language-container mx-4 p-0 ">
+              <div className="main-language-container m-0 p-0 ">
                 <div
                   onClick={showLanguageFunc}
-                  className="d-flex align-items-center hamburger language-container"
+                  className="d-flex align-items-center mx-4 hamburger language-container"
                 >
                   <AiFillCaretDown className=" user" />
                   <p className="mx-2">{language}</p>
                 </div>
 
                 {showLanguage && (
-                  <div className="language">
+                  <div className="language ">
                     {LanguageArray.map((el, i) => (
                       <p
                         key={i}
@@ -201,7 +214,7 @@ const Navbar = () => {
                   </div>
                 ))}
 
-                <div className="main-language-container mx-2 p-0 ">
+                <div className="main-language-container mx-4 p-0 ">
                   <div
                     onClick={showLanguageFunc}
                     className="d-flex align-items-center"

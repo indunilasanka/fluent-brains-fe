@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PacmanLoader from "react-spinners/PacmanLoader";
+import { IoMdClose } from "react-icons/io";
+import { useMainContext } from "../../../Context/Context";
 
 const style = {
   mainDiv: {
@@ -11,8 +13,10 @@ const style = {
     background: "#F7F4F2",
     display: "flex",
     justifyContent: "center",
+    flexDirection: "column",
     alingItems: "center",
-    marginTop: "120px",
+
+    overflow: "hidden",
   },
 
   loaderbox: {
@@ -24,19 +28,20 @@ const style = {
 
   loadTextTop: {
     position: "relative",
-    left: "30px",
+
     fontSize: "22px",
     marginBottom: "10px",
   },
 
   loader: {
     height: "50px ",
+    paddingRight: "50px",
   },
 
   loadText: {
     color: "#F4AF09",
     position: "relative",
-    left: "25px",
+
     fontWeight: "bold",
     fontSize: "26px",
     textShadow: "1px 1px 0px rgba(150, 150, 150, 1)",
@@ -46,9 +51,20 @@ const style = {
 
 function Loder(props) {
   let [color, setColor] = useState("#219653");
+  const { setModals } = useMainContext();
 
   return props.load === true ? (
     <div style={style.mainDiv}>
+      <div className="m-title">
+        <p>Here will be your title</p>
+        <IoMdClose
+          className="close"
+          size="20"
+          onClick={() => {
+            setModals(false);
+          }}
+        />
+      </div>
       <div style={style.loaderbox}>
         <div style={style.loadTextTop}>Lets Explore the Wisdom</div>
 
