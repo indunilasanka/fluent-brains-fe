@@ -225,7 +225,7 @@ const Navbar = ({ handleOpen }) => {
             </div>
           </Col>
         </Row>
-        {sidebar && <Sidebar />}
+        {sidebar && <Sidebar handleOpen={handleOpen} />}
       </Container>
     </Wrapper>
   );

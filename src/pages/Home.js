@@ -47,6 +47,8 @@ const Home = () => {
     bgcolor: "background.paper",
     width: "100%",
     display: displayOn,
+
+    width: "fit-content",
     p: 4,
   };
 
@@ -59,12 +61,15 @@ const Home = () => {
     bgcolor: "background.paper",
     width: "100%",
     display: displayOn1,
+    width: "fit-content",
+
     p: 4,
   };
 
   return (
     <Wrapper>
       <Modal
+        disableEnforceFocus
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"

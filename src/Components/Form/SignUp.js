@@ -209,8 +209,8 @@ const SignUp = ({
     event.preventDefault();
     const phoneVal = /^\d{10}$/;
 
-    if (!(firstName && email && password)) {
-      seterr("Please fill in name, email and password");
+    if (!(firstName && email && password && school && phoneNumber)) {
+      seterr("Please fill in name, email, school, phone number and password");
       return;
     } else if (!phoneNumber.match(phoneVal)) {
       seterr("Incorrect phone number");
@@ -260,7 +260,7 @@ const SignUp = ({
   //     </div>
   //   );
 
-  console.log(isAgreed);
+  console.log(phoneNumber);
 
   return (
     <Wrapper>

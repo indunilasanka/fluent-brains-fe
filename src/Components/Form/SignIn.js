@@ -246,7 +246,6 @@ const SignIn = ({
         <CloseButton
           onClick={() => {
             handleClose();
-            handleClose1();
           }}
         />
       </div>

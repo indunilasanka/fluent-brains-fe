@@ -38,22 +38,35 @@ const Wrapper = styled.div`
   }
   
 `;
-const Sidebar = () => {
+const Sidebar = ({ handleOpen }) => {
   const { showSidebar } = useMainContext();
   const { t } = useTranslation();
   return (
     <Wrapper className="d-block d-md-none ">
       <div className="sidebar ">
-        <NavLink to="signup">
-          <div onClick={showSidebar}>
+        <div
+          onClick={() => {
+            showSidebar();
+            handleOpen();
+          }}
+        >
+          <div>
             <Button>{t("get_started")}</Button>
           </div>
-        </NavLink>
-        <Link to="signin">
-          <button onClick={showSidebar} className="login  my-3">
+        </div>
+        <div
+          onClick={() => {
+            showSidebar();
+            handleOpen();
+          }}
+          style={{
+            width: "90%",
+          }}
+        >
+          <button style={{ width: "100%" }} className="login  my-3 ">
             {t("log_in")}
           </button>
-        </Link>
+        </div>
       </div>
     </Wrapper>
   );
