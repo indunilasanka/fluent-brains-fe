@@ -5,24 +5,27 @@ import Learning from "./pages/Learning";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
+import { AuthProvider } from "./Context/AuthContext";
+import PrivateRoute from "./Components/routes/PrivateRoute";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/learning">
-          <Learning />
-        </Route>
-        <Route path="/signup">
-          <SignUpPage />
-        </Route>
-        <Route>
-          <SignInPage />
-        </Route>
-      </Switch>
+      <AuthProvider>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <PrivateRoute path="/learning" component={Learning} />
+
+          <Route path="/signup">
+            <SignUpPage />
+          </Route>
+          <Route path="/signin">
+            <SignInPage />
+          </Route>
+        </Switch>
+      </AuthProvider>
     </Router>
   );
 }

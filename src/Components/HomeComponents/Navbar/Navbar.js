@@ -116,7 +116,7 @@ const Wrapper = styled.div`
   }
 
 `;
-const Navbar = () => {
+const Navbar = ({ handleOpen }) => {
   const [button, setButton] = useState(1);
   const {
     sidebar,
@@ -186,9 +186,12 @@ const Navbar = () => {
               <div className="d-flex ">
                 {buttonArray.map((el, i) => (
                   <div key={i} className="login mx-2 dalim">
-                    <NavLink activeClassName="activeButton" to={el.goto}>
+                    <div
+                      onClick={el.name == "Log In" ? handleOpen : () => {}}
+                      activeClassName="activeButton"
+                    >
                       <p className="button-text">{el.name}</p>
-                    </NavLink>
+                    </div>
                   </div>
                 ))}
 
