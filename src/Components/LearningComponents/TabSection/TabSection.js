@@ -40,6 +40,9 @@ const Wrapper = styled.div`
 
     height: 50px;
   }
+  .pointer{
+    cursor: pointer;
+  }
 
   @media only screen and (max-width: 1199px) {
     background-position: center;
@@ -104,7 +107,7 @@ const TabSection = () => {
               xs={6}
               md={3}
               key={i}
-              className="p-1"
+              className="p-1 pointer"
               onClick={() => setValue(i)}
             >
               <div
