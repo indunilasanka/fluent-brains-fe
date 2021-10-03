@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Col, Container, Row} from "react-bootstrap";
 import styled from "styled-components";
-import { useTranslation } from "react-i18next";
-import { FaPhoneAlt } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import {useTranslation} from "react-i18next";
+import {FaMapMarkerAlt, FaPhoneAlt} from "react-icons/fa";
+import {HiMail} from "react-icons/hi";
 import emailjs from "emailjs-com";
 
 import GoogleMapReact from "google-map-react";
+
 const Wrapper = styled.div`
   background: #f7f4f2;
   color: #000;

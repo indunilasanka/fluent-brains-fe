@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import banner from "../../../images/Home/banner.svg";
+import banner from "../../../images/Home/banner.png";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 const Wrapper = styled.div`

@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { Row, Col } from "react-bootstrap";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { useTranslation } from "react-i18next";
+import {Col, Row} from "react-bootstrap";
+import {BsArrowLeftShort} from "react-icons/bs";
+import {useTranslation} from "react-i18next";
 import i18next from "i18next";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+import {useAuth} from "../../Context/AuthContext";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
@@ -27,7 +29,7 @@ const Wrapper = styled.div`
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
   .img-container {
-    background: url("./images/signin.svg");
+    background: url("./images/signin.png");
 
     background-position: center;
 
@@ -155,18 +157,68 @@ const Wrapper = styled.div`
 `;
 
 const SignUp = () => {
-  const { t } = useTranslation();
-  const inputArray = i18next.t("input_array", { returnObjects: true });
-  if (inputArray.length !== 5)
-    return (
-      <div className="my-2 text-center">
-        <h1>Loading....</h1>
-      </div>
-    );
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [school, setSchool] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [isAgreed, setisAgreed] = useState(false);
+  const [err, seterr] = useState("");
+
+  const {signup, addUserDetailsToFirestore} = useAuth();
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  const [color, setColor] = useState("white");
+
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    const phoneVal = /^\d{10}$/;
+
+    if (!(firstName && email && password && school && phoneNumber)) {
+      seterr("Please fill in name, email, school, phone number and password");
+      return;
+    } else if (!phoneNumber.match(phoneVal)) {
+      seterr("Incorrect phone number");
+      return;
+    } else if (password !== confirmPassword) {
+      seterr("Password should match with confirmation");
+      return;
+    } else if (!isAgreed) {
+      seterr("You need to agree terms and conditions");
+      return;
+    } else {
+      let user;
+
+      var data = {
+        firstName: firstName,
+        lastName: lastName,
+        school: school,
+        phoneNumber: phoneNumber,
+        email: email,
+      };
+
+      try {
+        setLoading(true);
+        await signup(email, password);
+        await addUserDetailsToFirestore(data);
+        history.push("/learning");
+      } catch (error) {
+        console.log(error);
+        seterr(error.message);
+      }
+
+      setLoading(false);
+    }
+  };
+
+  const {t} = useTranslation();
+
   return (
-    <Wrapper>
-      <div>
-        <Row>
+      <Wrapper>
+        <div>
+          <Row>
           <form>
             <Col md={11} lg={9}>
               <Row>
@@ -185,7 +237,7 @@ const SignUp = () => {
                 >
                   <div className="">
                     <div className="back-to-browse">
-                      <BsArrowLeftShort size="25" className="m-0" />
+                      <BsArrowLeftShort size="25" className="m-0"/>
                       <Link to="/">
                         <span className="m-0 back_to_browse px-2">
                           {t("back_to_browse")}
@@ -193,58 +245,124 @@ const SignUp = () => {
                       </Link>
                     </div>
                     <h2 className="py-3 start">
-                      {t("start_where1")} <br /> {t("start_where2")}
+                      {t("start_where1")} <br/> {t("start_where2")}
                     </h2>
+
+                    {err ? (
+                        <div
+                            style={{
+                              fontSize: 15,
+                              color: "red",
+                              marginBottom: 5,
+                              display: "flex",
+                              alignItems: "center",
+                            }}
+                        >
+                          * {err}
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
+
                     <Row>
                       <Col lg={6}>
                         <input
-                          type="text"
-                          placeholder={t("first_name")}
-                          className="w-100"
+                            type="text"
+                            placeholder={t("first_name")}
+                            className="w-100"
+                            onChange={(event) => {
+                              setFirstName(event.target.value);
+                            }}
                         />
                       </Col>
                       <Col lg={6}>
                         {" "}
                         <input
-                          type="text"
-                          placeholder={t("last_name")}
-                          className="w-100"
+                            type="text"
+                            placeholder={t("last_name")}
+                            className="w-100"
+                            onChange={(event) => {
+                              setLastName(event.target.value);
+                            }}
                         />
                       </Col>
                     </Row>
                     <Row>
-                      {inputArray.map((el, i) => (
-                        <Col xs={12} key={i}>
-                          <input
-                            type={el.type}
-                            placeholder={el.placeholder}
+                      <Col xs={12}>
+                        <input
+                            type="text"
+                            placeholder="School of Child"
                             className="w-100"
-                          />
-                        </Col>
-                      ))}
+                            onChange={(event) => {
+                              setSchool(event.target.value);
+                            }}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        <input
+                            type="text"
+                            placeholder="Phone Number"
+                            className="w-100"
+                            onChange={(event) => {
+                              setPhoneNumber(event.target.value);
+                            }}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            className="w-100"
+                            onChange={(event) => {
+                              setEmail(event.target.value);
+                            }}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="w-100"
+                            onChange={(event) => {
+                              setPassword(event.target.value);
+                            }}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            className="w-100"
+                            onChange={(event) => {
+                              setConfirmPassword(event.target.value);
+                            }}
+                        />
+                      </Col>
                     </Row>
                     <Row>
                       <Col xs={12} className="py-2">
                         <label className="main">
                           {t("terms_condition")}
-                          <input type="checkbox" />
+                          <input type="checkbox"/>
                           <span className="geekmark"></span>
                         </label>
                       </Col>
                       <Col xs={12} className="py-3">
-                        <button type="submit" className="w-100 submit-button">
+                        <button type="submit" className="w-100 submit-button" onClick={handleSignup} disabled={loading}>
+                          <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                          <span></span>
                           {t("sign_up")}
                         </button>
                       </Col>
                       <Col xs={12}>
                         <div className="not-a-member">
-                          <span className="m-0  px-1" style={{ opacity: ".8" }}>
+                          <span className="m-0  px-1" style={{opacity: ".8"}}>
                             {t("not_member")}?
                           </span>
                           <Link to="signup">
                             <span
-                              className="m-0 px-1"
-                              style={{ color: "#F3BE7C", cursor: "pointer" }}
+                                className="m-0 px-1"
+                                style={{color: "#F3BE7C", cursor: "pointer"}}
                             >
                               {t("register")}
                             </span>

@@ -14,7 +14,7 @@ import colorGeneral from "../../../images/Learning/color-general.svg";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  background: url("./images/learning.svg");
+  background: url("./images/learning.png");
   background-size: cover;
 
   padding: 0 40px;

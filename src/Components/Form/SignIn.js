@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { Row, Col } from "react-bootstrap";
-import { BsArrowLeftShort } from "react-icons/bs";
-import { useTranslation } from "react-i18next";
+import {Col, Row} from "react-bootstrap";
+import {BsArrowLeftShort} from "react-icons/bs";
+import {useTranslation} from "react-i18next";
 import i18next from "i18next";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import {useAuth} from "../../Context/AuthContext";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
@@ -27,7 +29,7 @@ const Wrapper = styled.div`
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
   .img-container {
-    background: url("./images/signIn.svg");
+    background: url("./images/signin.png");
     background-size: cover;
     background-position: center;
 
@@ -170,86 +172,138 @@ const Wrapper = styled.div`
 `;
 
 const SignIn = () => {
-  const { t } = useTranslation();
-  const inputArray = i18next.t("signin_array", { returnObjects: true });
-  if (inputArray.length !== 2)
-    return (
-      <div className="my-2 text-center">
-        <h1>Loading....</h1>
-      </div>
-    );
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+  const [err, setErr] = useState("");
+  const {login} = useAuth();
+
+  const [color, setColor] = useState("white");
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    if (!(email && password)) {
+      setErr("Please fill email and password");
+      return;
+    } else {
+      try {
+        setLoading(true);
+        await login(email, password);
+        history.push("/learning");
+      } catch (err) {
+        setErr(err.message);
+      }
+
+      setLoading(false);
+    }
+  };
+
+  const {t} = useTranslation();
+
   return (
-    <Wrapper>
-      <div>
-        <Row>
-          <form>
-            <Col md={11} lg={9}>
-              <Row>
-                <Col md={7} className="img-container d-none d-md-block">
-                  <p className="img-title">
-                    {t("the_willingness_to")}
-                    <br />
-                    {t("learn_new_skills_is")}
-                    <br />
-                    {t("very_high")}
-                  </p>
-                </Col>
-                <Col
-                  xs={10}
-                  sm={8}
-                  md={5}
-                  className="from-container p-4   p-sm-4"
-                >
-                  <div className="">
-                    <div className="back-to-browse">
-                      <BsArrowLeftShort size="25" className="m-0" />
-                      <Link to="/">
+      <Wrapper>
+        <div>
+          <Row>
+            <form>
+              <Col md={11} lg={9}>
+                <Row>
+                  <Col md={7} className="img-container d-none d-md-block">
+                    <p className="img-title">
+                      {t("the_willingness_to")}
+                      <br/>
+                      {t("learn_new_skills_is")}
+                      <br/>
+                      {t("very_high")}
+                    </p>
+                  </Col>
+                  <Col
+                      xs={10}
+                      sm={8}
+                      md={5}
+                      className="from-container p-4   p-sm-4"
+                  >
+                    <div className="">
+                      <div className="back-to-browse">
+                        <BsArrowLeftShort size="25" className="m-0"/>
+                        <Link to="/">
                         <span className="m-0  back_to_browse  px-2">
                           {t("back_to_browse")}
                         </span>
-                      </Link>
-                    </div>
-                    <h2 className="py-3 start">
-                      {t("sign_in_to")} <br /> {t("continue")}
-                    </h2>
+                        </Link>
+                      </div>
+                      <h2 className="py-3 start">
+                        {t("sign_in_to")} <br/> {t("continue")}
+                      </h2>
+                      {err ? (
+                          <div
+                              style={{
+                                fontSize: 15,
+                                color: "red",
+                                marginBottom: 5,
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                          >
+                            * {err}
+                          </div>
+                      ) : (
+                          <div></div>
+                      )}
 
-                    <Row>
-                      {inputArray.map((el, i) => (
-                        <Col xs={12} key={i}>
+                      <Row>
+                        <Col xs={12}>
                           <input
-                            type={el.type}
-                            placeholder={el.placeholder}
-                            className="w-100"
+                              type="text"
+                              placeholder="Email"
+                              className="w-100"
+                              onChange={(event) => {
+                                setEmail(event.target.value);
+                              }}
                           />
                         </Col>
-                      ))}
-                    </Row>
-                    <Row>
-                      <Col xs={12} className="py-2">
-                        <div className="d-flex justify-content-between align-items-center">
-                          <label className="main">
-                            {t("remember_me")}
-                            <input type="checkbox" />
-                            <span className="geekmark"></span>
-                          </label>
-                          <span
-                            className="m-0 forgot"
-                            style={{ opacity: ".5" }}
-                          >
+
+                        <Col xs={12}>
+                          <input
+                              type="password"
+                              placeholder="Password"
+                              className="w-100"
+                              onChange={(event) => {
+                                setPassword(event.target.value);
+                              }}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col xs={12} className="py-2">
+                          <div className="d-flex justify-content-between align-items-center">
+                            <label className="main">
+                              {t("remember_me")}
+                              <input type="checkbox"/>
+                              <span className="geekmark"></span>
+                            </label>
+                            <span
+                                className="m-0 forgot"
+                                style={{opacity: ".5"}}
+                            >
                              {t("forgot_password")}
                           </span>
-                        </div>
-                      </Col>
-                      <Col xs={12} className="py-3">
-                        <button type="submit" className="w-100 submit-button">
-                          {t("sign_in")}
-                        </button>
-                      </Col>
-                      <Col xs={12}>
-                        <div className="not-a-member">
+                          </div>
+                        </Col>
+                        <Col xs={12} className="py-3">
+                          <button type="submit" className="w-100 submit-button" onClick={handleLogin}
+                                  disabled={loading}>
+                            <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                            <span></span>
+                            {t("sign_in")}
+                          </button>
+                        </Col>
+                        <Col xs={12}>
+                          <div className="not-a-member">
                           <span
-                            className="m-0  px-1"
-                            style={{ color: "rgba(0, 0, 0, 0.5);" }}
+                              className="m-0  px-1"
+                              style={{color: "rgba(0, 0, 0, 0.5);"}}
                           >
                             {t("not_member")}?
                           </span>{" "}

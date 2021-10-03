@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useMainContext } from "../../../Context/Context";
-import { useTranslation } from "react-i18next";
-import Button from "../Button/Button";
-import { NavLink, Link } from "react-router-dom";
+import {useMainContext} from "../../../Context/Context";
+import {useTranslation} from "react-i18next";
+import {Link, NavLink} from "react-router-dom";
+
 const Wrapper = styled.div`
   position: absolute;
   background: #fff;

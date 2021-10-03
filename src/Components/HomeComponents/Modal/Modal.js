@@ -5,7 +5,7 @@ import Iframe from "react-iframe";
 import { IoMdClose } from "react-icons/io";
 import { useMainContext } from "../../../Context/Context";
 import mobile from "../../../images/Home/mobile.gif";
-import Loder from "./Loder.js";
+import Loader from "./Loader.js";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -136,7 +136,7 @@ const Modal = () => {
             setLoading(false);
           }}
         ></Iframe>
-        <Loder load={loading}></Loder>
+        <Loader load={loading}></Loader>
       </div>
     </Wrapper>
   );
