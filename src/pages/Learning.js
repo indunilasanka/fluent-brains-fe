@@ -13,7 +13,6 @@ const Learning = () => {
     <Wrapper>
       <Navbar />
       <TabSection />
-
       <Footer />
     </Wrapper>
   );

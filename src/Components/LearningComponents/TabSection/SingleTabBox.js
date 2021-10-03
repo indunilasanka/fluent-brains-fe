@@ -16,26 +16,31 @@ const Wrapper = styled.div`
     flex-direction: column;
     height: 100%;
     margin: 0;
-    
+
     font-size: 20px;
     font-weight: 500;
     color: #fff;
   }
+
   .icon-container img {
     width: 75px;
     height: 60px;
     margin: 0;
   }
+
   .main-text-container {
     background: #fff;
   }
+
   .text-container {
     border-left: 1px solid rgba(0, 0, 0, 0.2);
     text-align: center;
   }
+
   .text-container-align {
     text-align: right;
   }
+
   .all-text {
     position: absolute;
     top: 0;
@@ -47,31 +52,38 @@ const Wrapper = styled.div`
     box-shadow: 0 5px 5px rgba(0 0 0 / 0.8);
     z-index: 1;
   }
+
   .text {
     font-size: 13px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 400;
     cursor: pointer;
   }
+
   .button-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     height: 100%;
     margin-right: 15px;
   }
+
   button {
     font-size: 14px;
   }
+
   .right {
     margin-left: 0px;
   }
+
   .close-more {
     position: absolute;
     top: 20px;
     right: 15px;
   }
-  ${  "" /*.expand {
+
+  ${
+    "" /*.expand {
     background: #fff;
     width: 118%;
     margin-left: -73px;
@@ -79,10 +91,8 @@ const Wrapper = styled.div`
   }*/
   }
 
-    .text {
-      font-size: 11px;
-    }
-   
+  .text {
+    font-size: 11px;
   }
 
   @media only screen and (max-width: 1199px) {
@@ -90,27 +100,34 @@ const Wrapper = styled.div`
       width: 100%;
       padding: 20px 0;
     }
+
     .text {
       font-size: 13px;
     }
+
     .text-container {
       text-align: center;
       border-left: none;
       border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
+
     .text-container-align {
       text-align: center;
     }
+
     .button-container {
       justify-content: center;
       padding: 15px 0;
     }
+
     .right {
       margin-left: 0px;
     }
+
     button {
       font-size: 11px;
     }
+
     .expand {
       background: #fff;
       width: 100%;
@@ -118,20 +135,24 @@ const Wrapper = styled.div`
       padding: 15px 0;
     }
   }
+
   @media only screen and (max-width: 991px) {
     .text-container {
       border-right: 1px solid rgba(0, 0, 0, 0.2);
     }
+
     .all-text {
       left: 13px;
     }
   }
+
   @media only screen and (max-width: 767px) {
     .close-more {
       right: 30px;
     }
   }
 `;
+
 const SingleTabBox = (props) => {
   const { icon, name, text, color } = props;
   const [seeMore, setSeeMore] = useState(false);
@@ -201,6 +222,7 @@ const SingleTabBox = (props) => {
             className="m-0 "
             style={{ padding: "0", background: "#fff" }}
           >
+            {/* See more, See less button */}
             <div className="button-container py-4">
               <button
                 onClick={() => setSeeMore((prev) => !prev)}
