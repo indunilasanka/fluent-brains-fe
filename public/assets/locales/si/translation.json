@@ -788,6 +788,8 @@
     }
   ],
   "not_member": "තවමත් සාමාජිකයෙකු නොවේ",
+  "already_member": "Already a Member",
+  "login_now": "Login Now",
   "register": "දැන්ම ලියාපදිංචි වන්න",
   "sign_up": "ලියාපදිංචි වන්න",
   "sign_in": "පුරන්න",

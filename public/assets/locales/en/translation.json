@@ -788,7 +788,9 @@
     }
   ],
   "not_member": "Not a Member yet",
+  "already_member": "Already a Member",
   "register": "Register Now",
+  "login_now": "Login Now",
 
   "sign_up": "Sign Up",
   "sign_in": "Sign In",

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {Col, Row} from "react-bootstrap";
 import {BsArrowLeftShort} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
-import i18next from "i18next";
 import {Link, useHistory} from "react-router-dom";
 import {useAuth} from "../../Context/AuthContext";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -191,7 +190,7 @@ const SignIn = () => {
       try {
         setLoading(true);
         await login(email, password);
-        history.push("/learning");
+        history.goBack();
       } catch (err) {
         setErr(err.message);
       }
@@ -199,6 +198,10 @@ const SignIn = () => {
       setLoading(false);
     }
   };
+
+  const handleGoBack = async (event) => {
+    history.goBack();
+  }
 
   const {t} = useTranslation();
 
@@ -227,11 +230,9 @@ const SignIn = () => {
                     <div className="">
                       <div className="back-to-browse">
                         <BsArrowLeftShort size="25" className="m-0"/>
-                        <Link to="/">
-                        <span className="m-0  back_to_browse  px-2">
+                        <span className="m-0  back_to_browse  px-2" onClick={handleGoBack}>
                           {t("back_to_browse")}
                         </span>
-                        </Link>
                       </div>
                       <h2 className="py-3 start">
                         {t("sign_in_to")} <br/> {t("continue")}

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {Col, Row} from "react-bootstrap";
 import {BsArrowLeftShort} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
-import i18next from "i18next";
 import {Link, useHistory} from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import {useAuth} from "../../Context/AuthContext";
@@ -164,8 +163,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isAgreed, setisAgreed] = useState(false);
-  const [err, seterr] = useState("");
+  const [isAgreed, setIsAgreed] = useState(false);
+  const [err, setErr] = useState("");
 
   const {signup, addUserDetailsToFirestore} = useAuth();
   const [loading, setLoading] = useState(false);
@@ -177,16 +176,16 @@ const SignUp = () => {
     const phoneVal = /^\d{10}$/;
 
     if (!(firstName && email && password && school && phoneNumber)) {
-      seterr("Please fill in name, email, school, phone number and password");
+      setErr("Please fill in name, email, school, phone number and password");
       return;
     } else if (!phoneNumber.match(phoneVal)) {
-      seterr("Incorrect phone number");
+      setErr("Incorrect phone number");
       return;
     } else if (password !== confirmPassword) {
-      seterr("Password should match with confirmation");
+      setErr("Password should match with confirmation");
       return;
     } else if (!isAgreed) {
-      seterr("You need to agree terms and conditions");
+      setErr("You need to agree terms and conditions");
       return;
     } else {
       let user;
@@ -203,15 +202,19 @@ const SignUp = () => {
         setLoading(true);
         await signup(email, password);
         await addUserDetailsToFirestore(data);
-        history.push("/learning");
+        history.goBack();
       } catch (error) {
         console.log(error);
-        seterr(error.message);
+        setErr(error.message);
       }
 
       setLoading(false);
     }
   };
+
+  const handleGoBack = async (event) => {
+    history.goBack();
+  }
 
   const {t} = useTranslation();
 
@@ -219,34 +222,32 @@ const SignUp = () => {
       <Wrapper>
         <div>
           <Row>
-          <form>
-            <Col md={11} lg={9}>
-              <Row>
-                <Col md={7} className="img-container d-none d-md-block">
-                  <p className="img-title">
-                    {t("the_willingness_to_learn")}
-                    <br />
-                    {t("new_skills_is_very_high")}.
-                  </p>
-                </Col>
-                <Col
-                  xs={10}
-                  sm={8}
-                  md={5}
-                  className="from-container p-4     p-sm-4"
-                >
-                  <div className="">
-                    <div className="back-to-browse">
-                      <BsArrowLeftShort size="25" className="m-0"/>
-                      <Link to="/">
-                        <span className="m-0 back_to_browse px-2">
-                          {t("back_to_browse")}
-                        </span>
-                      </Link>
-                    </div>
-                    <h2 className="py-3 start">
-                      {t("start_where1")} <br/> {t("start_where2")}
-                    </h2>
+            <form>
+              <Col md={11} lg={9}>
+                <Row>
+                  <Col md={7} className="img-container d-none d-md-block">
+                    <p className="img-title">
+                      {t("the_willingness_to_learn")}
+                      <br/>
+                      {t("new_skills_is_very_high")}.
+                    </p>
+                  </Col>
+                  <Col
+                      xs={10}
+                      sm={8}
+                      md={5}
+                      className="from-container p-4     p-sm-4"
+                  >
+                    <div className="">
+                      <div className="back-to-browse">
+                        <BsArrowLeftShort size="25" className="m-0"/>
+                        <span className="m-0 back_to_browse px-2" onClick={handleGoBack}>
+                        {t("back_to_browse")}
+                      </span>
+                      </div>
+                      <h2 className="py-3 start">
+                        {t("start_where1")} <br/> {t("start_where2")}
+                      </h2>
 
                     {err ? (
                         <div
@@ -343,7 +344,11 @@ const SignUp = () => {
                       <Col xs={12} className="py-2">
                         <label className="main">
                           {t("terms_condition")}
-                          <input type="checkbox"/>
+                          <input type="checkbox"
+                             onChange={(event) => {
+                               setIsAgreed(event.target.checked);
+                             }}
+                          />
                           <span className="geekmark"></span>
                         </label>
                       </Col>
@@ -357,14 +362,14 @@ const SignUp = () => {
                       <Col xs={12}>
                         <div className="not-a-member">
                           <span className="m-0  px-1" style={{opacity: ".8"}}>
-                            {t("not_member")}?
+                            {t("already_member")}?
                           </span>
-                          <Link to="signup">
+                          <Link to="signin">
                             <span
                                 className="m-0 px-1"
                                 style={{color: "#F3BE7C", cursor: "pointer"}}
                             >
-                              {t("register")}
+                              {t("login_now")}
                             </span>
                           </Link>
                         </div>
