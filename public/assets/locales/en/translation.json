@@ -31,8 +31,8 @@
   "about_us": "About Us",
   "learning_array": [
     {
-      "title": "Adaptive learning paths",
-      "subtitle": "Mathematics activities for primary",
+      "title": "Mathematics activities",
+      "subtitle": "Solve mathematics activities",
       "color": "#70C1FF"
     },
     {
@@ -66,50 +66,38 @@
   "footer_array": [
     {
       "title": "Product",
-      "title_to": "/",
+      "title_to": "/learning",
       "element1": "Maths Activities",
-      "element2": "For Parents",
-      "element3": "Technical Requirements",
-      "element4": " Multilingual",
-      "element1_to": "/",
-      "element2_to": "/",
-      "element3_to": "/",
-      "element4_to": "/"
+      "element2": "Science Activities",
+      "element3": "English Activities",
+      "element4": " General",
+      "element1_to": "/learning",
+      "element2_to": "/learning",
+      "element3_to": "/learning",
+      "element4_to": "/learning"
     },
     {
       "title": "Resources",
-      "title_to": "/",
-      "element1": "Efficacy Study",
-      "element2": "Blog",
-      "element3": "Professional Development",
+      "title_to": "/learning",
       "element4": "Knowledge Base",
-      "element1_to": "/",
-      "element2_to": "/",
-      "element3_to": "/",
-      "element4_to": "/"
+      "element4_to": "/learning"
     },
 
     {
       "title": "About",
       "title_to": "aboutus",
       "element1": "Contact",
-
       "element2": "Teachers",
-
       "element1_to": "contactus",
       "element2_to": "aboutus"
     },
     {
       "title": "Get Started",
-      "title_to": "/",
-      "element1": "Teachers/ Schools",
-      "element2": "Parents",
-      "element3": "Students",
-      "element4": "Governments/ School Groups",
-      "element1_to": "/",
-      "element2_to": "/",
-      "element3_to": "/",
-      "element4_to": "/"
+      "title_to": "/signup",
+      "element1": "Sign up",
+      "element2": "Membership",
+      "element1_to": "/signup",
+      "element2_to": "/membership"
     }
   ],
   "placeholeder": "What do you want to learn",
@@ -814,6 +802,7 @@
   "remember_me": "Remember me",
   "forgot_password": "Forgot your password",
   "aboutus": "About Us",
+  "paymentplans": "Membership Plans",
   "our_mission": "Our Mission",
   "our_mission_text": "Our MissionMathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
   "our_vission": "Our Vision",
@@ -822,6 +811,16 @@
   "staff1": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
   "staff2": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
   "staff3": "Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, ",
+  "mp1title": "Fluent Starter",
+  "mp2title": "Fluent Standard",
+  "mp3title": "Fluent Premium",
+  "mp1value": "Rs. 300/=",
+  "mp2value": "Rs. 600/=",
+  "mp2ovalue": "Rs. 1000/=",
+  "mp3value": "Rs. 2000/=",
+  "mp3ovalue": "Rs. 3000/=",
+  "benefits": "Benefits",
+  "howtoregister": "How to apply membership",
   "send_your_query": "Send your query",
   "message": "Message",
   "get_in_touch": "Get in touch",

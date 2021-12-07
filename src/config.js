@@ -3,12 +3,14 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_opHa6a2G5XP3zciZjkdiWBCbQfrccgk",
-  authDomain: "fluent-brain-test.firebaseapp.com",
-  projectId: "fluent-brain-test",
-  storageBucket: "fluent-brain-test.appspot.com",
-  messagingSenderId: "909402625302",
-  appId: "1:909402625302:web:6ed7ccdebac283f5cd2c37",
+    apiKey: "AIzaSyCiX7TsdY9m9AULHSVrvVp4MVX9VoH9j-U",
+    authDomain: "fluent-brains.firebaseapp.com",
+    databaseURL: "https://fluent-brains-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "fluent-brains",
+    storageBucket: "fluent-brains.appspot.com",
+    messagingSenderId: "954494391499",
+    appId: "1:954494391499:web:3daf9991c44c31a9bb774e",
+    measurementId: "G-0R29NGWJKR"
 };
 
 const app = Firebase.initializeApp(firebaseConfig);

@@ -189,7 +189,7 @@ const SignIn = () => {
     } else {
       try {
         setLoading(true);
-        await login(email, password);
+        const user = await login(email, password);
         history.goBack();
       } catch (err) {
         setErr(err.message);

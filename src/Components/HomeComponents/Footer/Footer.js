@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../../images/Home/footer-logo.svg";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
-import { GrLinkedinOption } from "react-icons/gr";
-import { BiWorld } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import {Col, Container, Row} from "react-bootstrap";
+import {AiFillFacebook, AiOutlineInstagram, AiOutlineTwitter} from "react-icons/ai";
+import {GrLinkedinOption} from "react-icons/gr";
+import {BiWorld} from "react-icons/bi";
+import {Link} from "react-router-dom";
 
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 const Wrapper = styled.div`
   background: var(--section-button);
@@ -61,88 +61,86 @@ const Wrapper = styled.div`
   }
 `;
 const Footer = () => {
-  const { t } = useTranslation();
-  const newArray = t("footer_array", { returnObjects: true });
+    const {t} = useTranslation();
+    const newArray = t("footer_array", {returnObjects: true});
 
-  const footerArray = Array.from(newArray);
+    const footerArray = Array.from(newArray);
 
-  return (
-    <Wrapper>
-      <Container fluid>
-        <Row className="py-0 py-xl-5 m-auto">
-          <Col xl={3} lg={12}>
-            <div className=" mx-2 footer-logo ">
-              <img src={logo} alt="#" />
-            </div>
-            <div className="social-container py-4 ">
-              <AiOutlineTwitter
-                size="25"
-                color="#fff"
-                className="mx-2 social-icon"
-              />
-              <GrLinkedinOption
-                size="25"
-                color="#fff"
-                className="mx-2 social-icon"
-              />
-              <AiOutlineInstagram
-                size="25"
-                color="#fff"
-                className="mx-2 social-icon"
-              />
-              <BiWorld size="25" color="#fff" className="mx-2 social-icon" />
-            </div>
-          </Col>
-          {footerArray.map((el, i) => (
-            <Col
-              md={6}
-              lg={3}
-              xl={2}
-              key={i}
-              className="footer-text py-3  py-lg-0"
-            >
-              <Link to={el.title_to || ""}>
-                <p className="f-title">
-                  {/* onClick={window.scrollTo({ top: 0 })} */}
-                  {el.title}
-                </p>
-              </Link>
-              <Link to={el.element1_to || ""}>
-                <p className="f-subtitle">{el.element1}</p>
-              </Link>
-              <Link to={el.element2_to || ""}>
-                <p className="f-subtitle">{el.element2}</p>
-              </Link>
-              <Link to={el.element3_to || ""}>
-                <p className="f-subtitle">{el.element3}</p>
-              </Link>
-              <Link to={el.element4_to || ""}>
-                <p className="f-subtitle">{el.element4}</p>
-              </Link>
-            </Col>
-          ))}
-          <div className="social-container2 py-5">
-            <AiOutlineTwitter
-              size="30"
-              color="#fff"
-              className="mx-3 social-icon"
-            />
-            <GrLinkedinOption
-              size="30"
-              color="#fff"
-              className="mx-3 social-icon"
-            />
-            <AiOutlineInstagram
-              size="30"
-              color="#fff"
-              className="mx-3 social-icon"
-            />
-            <BiWorld size="30" color="#fff" className="mx-3  social-icon" />
-          </div>
-        </Row>
-      </Container>
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <Container fluid>
+                <Row className="py-0 py-xl-5 m-auto">
+                    <Col xl={3} lg={12}>
+                        <div className=" mx-2 footer-logo ">
+                            <img src={logo} alt="/"/>
+                        </div>
+                        <div className="social-container py-4 ">
+                            <a href="https://www.facebook.com/fluentbrains">
+                                <AiFillFacebook
+                                    size="25"
+                                    color="#fff"
+                                    className="mx-2 social-icon"
+                                />
+                            </a>
+                            <a href="https://www.linkedin.com/company/fluent-brains">
+                                <GrLinkedinOption
+                                    size="25"
+                                    color="#fff"
+                                    className="mx-2 social-icon"
+                                />
+                            </a>
+                        </div>
+                    </Col>
+                    {footerArray.map((el, i) => (
+                        <Col
+                            md={6}
+                            lg={3}
+                            xl={2}
+                            key={i}
+                            className="footer-text py-3  py-lg-0"
+                        >
+                            <Link to={el.title_to || ""}>
+                                <p className="f-title">
+                                    {/* onClick={window.scrollTo({ top: 0 })} */}
+                                    {el.title}
+                                </p>
+                            </Link>
+                            <Link to={el.element1_to || ""}>
+                                <p className="f-subtitle">{el.element1}</p>
+                            </Link>
+                            <Link to={el.element2_to || ""}>
+                                <p className="f-subtitle">{el.element2}</p>
+                            </Link>
+                            <Link to={el.element3_to || ""}>
+                                <p className="f-subtitle">{el.element3}</p>
+                            </Link>
+                            <Link to={el.element4_to || ""}>
+                                <p className="f-subtitle">{el.element4}</p>
+                            </Link>
+                        </Col>
+                    ))}
+                    <div className="social-container2 py-5">
+                        <AiOutlineTwitter
+                            size="30"
+                            color="#fff"
+                            className="mx-3 social-icon"
+                        />
+                        <GrLinkedinOption
+                            size="30"
+                            color="#fff"
+                            className="mx-3 social-icon"
+                        />
+                        <AiOutlineInstagram
+                            size="30"
+                            color="#fff"
+                            className="mx-3 social-icon"
+                        />
+                        <BiWorld size="30" color="#fff" className="mx-3  social-icon"/>
+                    </div>
+                </Row>
+            </Container>
+        </Wrapper>
+    );
 };
 
 export default Footer;
