@@ -54,7 +54,7 @@ const Sidebar = () => {
       <div className="sidebar ">
         <NavLink to="signup">
           <div onClick={showSidebar}>
-            <button className="login active">{t("get_started")}</button>
+            <button className="login active">{t("register_action")}</button>
           </div>
         </NavLink>
         <Link to="signin">

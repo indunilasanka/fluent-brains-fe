@@ -8,17 +8,20 @@ import { useMainContext } from "../../../Context/Context";
 const Wrapper = styled.div`
   background: #e0e0e0;
   margin: 0 8px;
+  
   .c-title {
-    font-size: 13px;
+    font-size: 16px;
     padding: 10px 0;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
+    font-family: Manrope, sans-serif;
+    font-weight: 00;
   }
   
   .img-container {
     position: relative;
     cursor: pointer;
+    height: 200px;
   }
+  
   .play-container {
     width: 50px;
     height: 50px;
@@ -42,47 +45,55 @@ const Wrapper = styled.div`
   .c-title-container {
     padding: 2px 0;
   }
+  
   @media only screen and (max-width: 991px) {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
+  
   @media only screen and (max-width: 880px) {
     .c-title {
-      font-size: 13px;
+      font-size: 16px;
       padding: 10px 0;
     }
   }
+  
   @media only screen and (max-width: 576px) {
-    margin-bottom: 50px !important;
+    margin-bottom: 25px !important;
+    .img-container{
+      height: 125px;
+    }
   }
+  
   @media only screen and (max-width: 550px) {
     .c-title {
-      font-size: 18px;
+      font-size: 16px;
     }
 
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
+  
   @media only screen and (max-width: 500px) {
     .c-title {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 `;
 const SliderCard = (props) => {
-  const { title, color } = props;
+  const { title, url } = props;
   const { showModals } = useMainContext();
   const showModalna = () => {
-    showModals();
+    showModals(title, url);
   };
 
   return (
     <>
       <Wrapper>
-        <div className="px-2 mx-2 " style={{ color: color }}>
+        <div className="px-2 mx-2 " style={{ color: "#000" }}>
           <div className="c-title-container">
             <p className="py-2 c-title">{title} </p>
           </div>
           <div className="img-container">
-            <img src={props.img} alt="" className="w-100" />
+            <img src={props.img} alt="" className="w-100 h-100" />
             <div className="play-container" onClick={showModalna}>
               <BiPlay className="play" color="#BDBDBD" size="25" />
             </div>

@@ -75,16 +75,20 @@
 .sc-fubCzh .iaWVmg {
   margin-top: 60px;
 }
+
 .slick-prev {
   display: none !important;
 }
+
 .slick-next {
   display: none !important;
 }
-.slider-containerr {
+
+.slider-container {
   background: #f7f4f2;
   padding-top: 60px;
 }
+
 .main-slider {
   display: flex !important;
   justify-content: center;
@@ -108,7 +112,7 @@
   }
 }
 @media only screen and (max-width: 550px) {
-  .slider-containerr {
+  .slider-container {
     padding-top: 100px;
   }
   .slick-dots {
@@ -116,7 +120,7 @@
   }
 }
 @media only screen and (max-width: 450px) {
-  .slider-containerr {
+  .slider-container {
     padding-top: 130px;
   }
   .slick-dots {

@@ -53,12 +53,12 @@ const style = {
 
 function Loader(props) {
   let [color, setColor] = useState("#219653");
-  const { setModals } = useMainContext();
+  const { setModals, currentActivity } = useMainContext();
 
   return props.load === true ? (
     <div style={style.mainDiv}>
       <div className="m-title">
-        <p>Here will be your title</p>
+        <p>{currentActivity.title}</p>
         <IoMdClose
           className="close"
           size="20"

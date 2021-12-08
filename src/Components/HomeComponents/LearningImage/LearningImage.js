@@ -16,9 +16,9 @@ const Wrapper = styled.div`
     font-weight: 500;
   }
   .a-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     width: 70%;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 400;
   }
   .a-image {
@@ -28,14 +28,14 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 1199px) {
     padding: 0 150px;
     .a-subtitle {
-      font-size: 14px;
+      font-size: 15px;
       width: 80%;
     }
 
     @media only screen and (max-width: 991px) {
       padding: 0 50px;
       .a-subtitle {
-        font-size: 14px;
+        font-size: 15px;
         width: 85%;
       }
     }
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
         font-size: 23px;
       }
       .a-subtitle {
-        font-size: 12px;
+        font-size: 15px;
         width: 100%;
       }
     }

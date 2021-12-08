@@ -11,6 +11,8 @@ import card4 from "../../../images/Home/card4.svg";
 
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import {useMainContext} from "../../../Context/Context";
+import {forEach} from "react-bootstrap/ElementChildren";
 const Sliders = () => {
   const settings = {
     dots: true,
@@ -37,14 +39,26 @@ const Sliders = () => {
   };
 
   const { t } = useTranslation();
+  const { language } = useMainContext();
   const cardsArray = i18next.t("card_array", { returnObjects: true });
 
+  let urls = ["http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html"];
+  let newUrls = [];
+  if(language != "English"){
+    urls.forEach((url) => {
+      url = url.replace("/en/", "/si/");
+      newUrls.push(url);
+    });
+  } else {
+    newUrls = urls;
+  }
+
   return (
-    <div className="slider-containerr">
+    <div className="slider-container">
       <Slider {...settings}>
         <div className="main-slider">
           <div className="sub-slider ">
-            <SliderCard {...cardsArray[0]} img={card1} />
+            <SliderCard title={cardsArray[0].title} url={newUrls[0]} img={card1} />
             <SliderCard {...cardsArray[1]} img={card2} />
           </div>
           <div className="sub-slider ">

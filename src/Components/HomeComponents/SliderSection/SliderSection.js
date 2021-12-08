@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   .s-subtitle {
     font-size: 15px;
     line-height: 30px;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 400;
   }
   @media only screen and (max-width: 575px) {
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
       font-size: 23px;
     }
     .s-subtitle {
-      font-size: 12px;
+      font-size: 15px;
     }
   }
   @media only screen and (max-width: 550px) {

@@ -20,12 +20,9 @@ const Home = () => {
     <Wrapper>
       <Navbar />
       <Banner />
-
       <SliderSection />
-
       <LearningPath />
       <LearningImage />
-
       <Footer />
     </Wrapper>
   );

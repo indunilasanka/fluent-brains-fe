@@ -1,7 +1,8 @@
 {
   "banner_heading1": "Learning Platform by  ",
   "banner_heading2": "Education Experts",
-  "get_started": "Get started - it's free",
+  "get_started": "Get started!",
+  "register_action": "Register",
   "log_in": "Log In",
   "banner_text1": " Digital primary school maths resource aligned to",
   "banner_text2": " your  curriculum",
@@ -11,20 +12,16 @@
   "explore_activities": "Explore Activities",
   "card_array": [
     {
-      "title": "Form Doesn't (and Shouldn't) Follow Function",
-      "color": "#000"
+      "title": "Color patterns and shape patterns"
     },
     {
-      "title": "Form Doesn't (and Shouldn't) Follow Function",
-      "color": "#BB2D36"
+      "title": "Form Doesn't (and Shouldn't) Follow Function"
     },
     {
-      "title": "Form Doesn't (and Shouldn't) Follow Function",
-      "color": "#7879F1"
+      "title": "Form Doesn't (and Shouldn't) Follow Function"
     },
     {
-      "title": "Form Doesn't (and Shouldn't) Follow Function",
-      "color": "#F2994A"
+      "title": "Form Doesn't (and Shouldn't) Follow Function"
     }
   ],
   "about_us_title": "A personalised & adaptive learning path",
@@ -846,5 +843,7 @@
       "placeholder": "Password",
       "name": "password"
     }
-  ]
+  ],
+  "activity1title": "Color patterns and Shape Patterns",
+  "activity1url": "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html"
 }

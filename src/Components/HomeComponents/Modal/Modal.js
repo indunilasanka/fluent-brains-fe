@@ -1,9 +1,8 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import Iframe from "react-iframe";
-import { IoMdClose } from "react-icons/io";
-import { useMainContext } from "../../../Context/Context";
+import {IoMdClose} from "react-icons/io";
+import {useMainContext} from "../../../Context/Context";
 import mobile from "../../../images/Home/mobile.gif";
 import Loader from "./Loader.js";
 
@@ -104,18 +103,18 @@ const Wrapper = styled.div`
 `;
 
 const Modal = () => {
-  const { setModals } = useMainContext();
+  const {setModals, currentActivity} = useMainContext();
   let [loading, setLoading] = useState(true);
 
   return (
     <Wrapper>
       <div className="modal-container">
         <div className="m-title">
-          <p>Here will be your title</p>
+          <p>{currentActivity.title}</p>
           <IoMdClose
-            className="close"
-            size="20"
-            onClick={() => setModals(false)}
+              className="close"
+              size="20"
+              onClick={() => setModals(false)}
           />
         </div>
 
@@ -124,15 +123,15 @@ const Modal = () => {
         </div>
 
         <Iframe
-          url="http://activities.fluentbrains.com/tense2/index.html"
-          scrolling="no"
-          width="100%"
-          height="100%"
-          id="myId"
-          className="iframe"
-          display="initial"
-          position="relative"
-          onLoad={() => {
+            url={currentActivity.url}
+            scrolling="no"
+            width="100%"
+            height="100%"
+            id="myId"
+            className="iframe"
+            display="initial"
+            position="relative"
+            onLoad={() => {
             setLoading(false);
           }}
         ></Iframe>

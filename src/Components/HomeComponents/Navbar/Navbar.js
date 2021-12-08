@@ -154,7 +154,7 @@ const Navbar = () => {
   } = useMainContext();
   const { t } = useTranslation();
   const buttonArray = [
-    { name: t("get_started"), goto: "signup" },
+    { name: t("register_action"), goto: "signup" },
     { name: t("log_in"), goto: "signin" },
   ];
   // if (sidebar) document.querySelector("body").style.overflow = "hidden";

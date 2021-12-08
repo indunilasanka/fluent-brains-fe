@@ -120,22 +120,20 @@ const Footer = () => {
                         </Col>
                     ))}
                     <div className="social-container2 py-5">
-                        <AiOutlineTwitter
-                            size="30"
-                            color="#fff"
-                            className="mx-3 social-icon"
-                        />
-                        <GrLinkedinOption
-                            size="30"
-                            color="#fff"
-                            className="mx-3 social-icon"
-                        />
-                        <AiOutlineInstagram
-                            size="30"
-                            color="#fff"
-                            className="mx-3 social-icon"
-                        />
-                        <BiWorld size="30" color="#fff" className="mx-3  social-icon"/>
+                        <a href="https://www.facebook.com/fluentbrains">
+                            <AiFillFacebook
+                                size="25"
+                                color="#fff"
+                                className="mx-2 social-icon"
+                            />
+                        </a>
+                        <a href="https://www.linkedin.com/company/fluent-brains">
+                            <GrLinkedinOption
+                                size="25"
+                                color="#fff"
+                                className="mx-2 social-icon"
+                            />
+                        </a>
                     </div>
                 </Row>
             </Container>
