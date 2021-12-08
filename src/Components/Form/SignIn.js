@@ -39,10 +39,9 @@ const Wrapper = styled.div`
   }
   .back-to-browse {
     cursor: pointer;
-
     margin: 0;
     display: flex;
-    justifycontent: flex-start;
+    justify-content: flex-start;
     align-items: center;
   }
   .img {

@@ -23,23 +23,34 @@ const Wrapper = styled.div`
   }
   .f-title {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 35px;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
   }
   .f-subtitle {
     font-size: 14px;
-    font-family: "Noto Serif", serif;
+    font-family: "Manrope", serif;
     line-height: 25px;
     cursor: pointer;
     font-weight: 400;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
   }
   .footer-text {
     text-align: left;
   }
+  
   .social-icon {
     cursor: pointer;
+  }
+  
+  .rights{
+    font-size: 10px;
+    right: 0;
+    float: right;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Manrope", sans-serif;
   }
 
   @media only screen and (max-width: 1199px) {
@@ -57,6 +68,12 @@ const Wrapper = styled.div`
     }
     .footer-text {
       text-align: center;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+   .rights{
+        justify-content: center;
     }
   }
 `;
@@ -119,7 +136,7 @@ const Footer = () => {
                             </Link>
                         </Col>
                     ))}
-                    <div className="social-container2 py-5">
+                    <div className="social-container2 py-2">
                         <a href="https://www.facebook.com/fluentbrains">
                             <AiFillFacebook
                                 size="25"
@@ -135,6 +152,7 @@ const Footer = () => {
                             />
                         </a>
                     </div>
+                    <p className="rights">© 2022 Fluent Bitz Private Limited. All right reserved</p>
                 </Row>
             </Container>
         </Wrapper>

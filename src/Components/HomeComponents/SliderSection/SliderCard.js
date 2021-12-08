@@ -81,7 +81,7 @@ const Wrapper = styled.div`
 const SliderCard = (props) => {
   const { title, url } = props;
   const { showModals } = useMainContext();
-  const showModalna = () => {
+  const showActivityModal = () => {
     showModals(title, url);
   };
 
@@ -94,7 +94,7 @@ const SliderCard = (props) => {
           </div>
           <div className="img-container">
             <img src={props.img} alt="" className="w-100 h-100" />
-            <div className="play-container" onClick={showModalna}>
+            <div className="play-container" onClick={showActivityModal}>
               <BiPlay className="play" color="#BDBDBD" size="25" />
             </div>
           </div>

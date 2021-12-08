@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
-import { BiChevronRight } from "react-icons/bi";
+import {Col, Container, Row} from "react-bootstrap";
+import {BiChevronRight} from "react-icons/bi";
 
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
+import {useMainContext} from "../../../Context/Context";
+
 const Wrapper = styled.div`
   ${"" /* background: #fff; */}
   font-family: "Roboto", sans-serif;
@@ -54,7 +56,7 @@ const Wrapper = styled.div`
   }
 
   .text {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 400;
     cursor: pointer;
@@ -82,17 +84,8 @@ const Wrapper = styled.div`
     right: 15px;
   }
 
-  ${
-    "" /*.expand {
-    background: #fff;
-    width: 118%;
-    margin-left: -73px;
-    padding: 15px 0;
-  }*/
-  }
-
   .text {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   @media only screen and (max-width: 1199px) {
@@ -102,7 +95,7 @@ const Wrapper = styled.div`
     }
 
     .text {
-      font-size: 13px;
+      font-size: 16px;
     }
 
     .text-container {
@@ -153,22 +146,65 @@ const Wrapper = styled.div`
   }
 `;
 
-const SingleTabBox = (props) => {
-  const { icon, name, text, color } = props;
-  const [seeMore, setSeeMore] = useState(false);
-  const { t } = useTranslation();
-  const seemore = t("see_more");
-  const seeless = t("see_less");
+const urlArray = [
+    [
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+    ],
+    [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+    ],
+    [
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns"
+    ],
+    [
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns",
+        "Color patterns and shape patterns"
+    ]
+];
 
-  return (
-    <Wrapper>
-      <Container fluid className="p-0 m-0">
-        <Row>
-          <Col
-            md={12}
-            xl={2}
-            className="m-0 p-0"
-            style={{ background: seeMore ? "" : "#fff" }}
+const SingleTabBox = (props) => {
+    const {icon, name, text, color, title} = props;
+    const [seeMore, setSeeMore] = useState(false);
+    const {t} = useTranslation();
+    const seemore = t("see_more");
+    const seeless = t("see_less");
+    const {showModals} = useMainContext();
+
+    console.log(title);
+
+    const showActivityModal = (title, url) => {
+        console.log(title, url);
+        showModals(title, url);
+    };
+
+    return (
+        <Wrapper>
+            <Container fluid className="p-0 m-0">
+                <Row>
+                    <Col
+                        md={12}
+                        xl={2}
+                        className="m-0 p-0"
+                        style={{background: seeMore ? "" : "#fff"}}
           >
             <div
               className=""
@@ -188,26 +224,26 @@ const SingleTabBox = (props) => {
               <Row className="py-3">
                 {text[0].map((el, i) => {
                   return (
-                    <Col md={6} xl={5} key={i} className="text-container py-2">
-                      <span className="text">{el}</span>
-                    </Col>
+                      <Col md={6} xl={5} key={i} className="text-container py-2">
+                          <span className="text" onClick={ () => showActivityModal(el, urlArray[0][i]) }>{el}</span>
+                      </Col>
                   );
                 })}
               </Row>
             )}
             {seeMore && (
               <div className="py-3">
-                {text.map((el, i) => (
-                  <Row className="py-2">
-                    {el.map((el, i) => (
-                      <Col
-                        key={i}
-                        md={6}
-                        xl={5}
-                        className="text-container py-2 "
-                      >
-                        <span className="text">{el}</span>
-                      </Col>
+                  {text.map((el, j) => (
+                      <Row className="py-2">
+                          {el.map((el, i) => (
+                              <Col
+                                  key={"a"+i+j}
+                                  md={6}
+                                  xl={5}
+                                  className="text-container py-2 "
+                              >
+                                  <span className="text" onClick={ () => showActivityModal(el, urlArray[j][i]) }>{el}</span>
+                              </Col>
                     ))}
                   </Row>
                 ))}
@@ -227,17 +263,16 @@ const SingleTabBox = (props) => {
               <button
                 onClick={() => setSeeMore((prev) => !prev)}
                 style={{
-                  background: "#219653",
-
-                  color: "#fff",
-                  padding: "6px 10px",
-                  borderRadius: "5px",
-                  border: "none",
-
-                  fontFamily: " 'Inter', sans-serif",
-                  display: props.learn ? "flex" : "",
-                  justifyContent: "space-between",
-                  alignItems: "center",
+                    background: "#219653",
+                    color: "#fff",
+                    padding: "6px 10px",
+                    borderRadius: "5px",
+                    border: "none",
+                    fontSize: "16px",
+                    fontFamily: " 'Manrope', sans-serif",
+                    display: props.learn ? "flex" : "",
+                    justifyContent: "space-between",
+                    alignItems: "center",
                 }}
               >
                 {seeMore ? seeless : seemore}

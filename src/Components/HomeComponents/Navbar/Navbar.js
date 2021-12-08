@@ -13,7 +13,6 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Wrapper = styled.div`
-  ${"" /* padding: 15px 5px 15px 20px; */}
   padding: 0 15px;
   display: flex;
   justify-content: center;
@@ -25,45 +24,49 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+  
   .logo {
     max-width: 198px;
     max-height: 44px;
   }
+  
   .login-container {
     display: flex;
     align-items: center;
   }
+  
   .login {
     border-radius: 5px;
     border: 2px solid #000;
-
-    font-family: "Inter", sans-serif;
+    font-family: Manrope, sans-serif;
     color: #000;
   }
+  
   .user {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5)
   }
+  
   .login-col {
     margin: 0;
   }
+  
   .login p {
     color: #000;
     padding: 8px 15px;
     background: #fff;
+    border-radius: 3px;
   }
 
   .hamburger {
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
+  
   .main-language-container {
     position: relative;
-
     cursor: pointer;
   }
-  .language-container {
-    ${"" /* padding-top: 7px; */}
-  }
+  
   .language {
     text-align: center;
     background: #fff;
@@ -77,33 +80,24 @@ const Wrapper = styled.div`
     transform: translateX(-50%);
     box-shadow: 0 3px 10px #b7b7b7;
   }
+  
   .language p:hover {
     background: #b7b7b7;
     color: #fff;
   }
-  .activeButton {
-    color: #fff;
-  }
+  
   .activeButton p {
     color: #fff;
     background: #000;
+    border-radius: 3px;
   }
+  
   @media only screen and (max-width: 991px) {
-    ${"" /* padding:  15px 20px; */}
-    ${
-      "" /* .login-col {
-      padding-top: 6px;
-    } */
-    }
-    ${
-      "" /* .language-container {
-      padding-top: 3px;
-    } */
-    }
     .logo {
       width: 158px;
     }
   }
+  
   @media only screen and (max-width: 767px) {
     .sidebar {
       left: 14px;
@@ -117,14 +111,6 @@ const Wrapper = styled.div`
       width: 140px;
     }
   }
-
-  ${
-    "" /* @media only screen and (max-width: 626px) {
-    .hamburger {
-      display: block;
-    }
-  }
-  } */
   }
 
   @media only screen and (max-width: 350px) {

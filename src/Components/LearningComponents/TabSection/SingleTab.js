@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row } from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import SingleTabBox from "./SingleTabBox";
 
 import kindergarten from "../../../images/Learning/kindergarten.svg";
-import kindergarten2 from "../../../images/Learning/kindergarten.svg";
 import firstgrade from "../../../images/Learning/firstgrade.svg";
-import secondgrade from "../../../images/Learning/secondgrade.svg";
+import Modal from "../../HomeComponents/Modal/Modal";
+import {useMainContext} from "../../../Context/Context";
+
 const Wrapper = styled.div`
   padding: 0 50px;
   text-align: center;
@@ -40,26 +41,31 @@ const Wrapper = styled.div`
   }
 `;
 const SingleTab = (props) => {
-  const icon = [kindergarten, kindergarten2, firstgrade, secondgrade];
+  const { modals } = useMainContext();
+  const icon = [kindergarten, firstgrade, firstgrade];
   const newTabbox = props.tabbox.map((el, i) => {
-    return { ...el, icon: icon[i] };
+    return {...el, icon: icon[i]};
   });
+
   return (
-    <Wrapper>
-      <Container fluid className="p-0">
-        <Row>
-          <div className="title-container">
-            <h1 className="title">{props.title}</h1>
-            <p className="subtitle py-5">{props.subtitle}</p>
-          </div>
-          <div>
-            {newTabbox.map((el, i) => (
-              <SingleTabBox {...el} key={i} />
-            ))}
-          </div>
-        </Row>
-      </Container>
-    </Wrapper>
+      <>
+        <Wrapper>
+          <Container fluid className="p-0">
+            <Row>
+              <div className="title-container">
+                <h1 className="title">{props.title}</h1>
+                <p className="subtitle py-5">{props.subtitle}</p>
+              </div>
+              <div>
+                {newTabbox.map((el, i) => (
+                    <SingleTabBox {...el} title={props.title} key={i}/>
+                ))}
+              </div>
+            </Row>
+          </Container>
+        </Wrapper>
+        {modals && <Modal/>}
+      </>
   );
 };
 

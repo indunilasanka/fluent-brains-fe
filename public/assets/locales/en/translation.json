@@ -112,156 +112,118 @@
 
       "tabbox": [
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade I",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#70C1FF"
         },
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade II",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#A5E1BE"
         },
         {
-          "name": "1st grade",
+          "name": "Fluent Grade III",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#F3BE7C "
-        },
-        {
-          "name": "2nd grade",
-          "text": [
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ]
-          ],
-          "color": "#7DDE92"
         }
       ]
     },
@@ -270,156 +232,118 @@
       "subtitle": "English is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
       "tabbox": [
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade I",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#70C1FF"
         },
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade II",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#A5E1BE"
         },
         {
-          "name": "1st grade",
+          "name": "Fluent Grade III",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#F3BE7C "
-        },
-        {
-          "name": "2nd grade",
-          "text": [
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ]
-          ],
-          "color": "#7DDE92"
         }
       ]
     },
@@ -428,156 +352,118 @@
       "subtitle": "Science is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
       "tabbox": [
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade I",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#70C1FF"
         },
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade II",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#A5E1BE"
         },
         {
-          "name": "1st grade",
+          "name": "Fluent Grade III",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#F3BE7C "
-        },
-        {
-          "name": "2nd grade",
-          "text": [
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ]
-          ],
-          "color": "#7DDE92"
         }
       ]
     },
@@ -586,156 +472,118 @@
       "subtitle": "General is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports.",
       "tabbox": [
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade I",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#70C1FF"
         },
         {
-          "name": "Kindergarten",
+          "name": "Fluent Grade II",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#A5E1BE"
         },
         {
-          "name": "1st grade",
+          "name": "Fluent Grade III",
           "text": [
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ],
             [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns",
+              "Color patterns and shape patterns"
             ]
           ],
           "color": "#F3BE7C "
-        },
-        {
-          "name": "2nd grade",
-          "text": [
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ],
-            [
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math",
-              "Addition and subtraction intro: Early math"
-            ]
-          ],
-          "color": "#7DDE92"
         }
       ]
     }

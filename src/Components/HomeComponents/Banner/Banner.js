@@ -8,6 +8,7 @@ const Wrapper = styled.div`
     position: relative;
     height: 580px;
   }
+  
   .banner {
     width: 100%;
     height: 100%;

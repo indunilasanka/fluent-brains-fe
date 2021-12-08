@@ -10,9 +10,10 @@ import card3 from "../../../images/Home/card3.svg";
 import card4 from "../../../images/Home/card4.svg";
 
 import i18next from "i18next";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import {useMainContext} from "../../../Context/Context";
-import {forEach} from "react-bootstrap/ElementChildren";
+const roman = ['I', 'II', 'III'];
+
 const Sliders = () => {
   const settings = {
     dots: true,
@@ -31,9 +32,10 @@ const Sliders = () => {
         </div>
       </div>
     ),
+
     customPaging: (i) => (
       <div className="my-slider">
-        <p> {i + 1}</p>
+        <p> {roman[i]}</p>
       </div>
     ),
   };
