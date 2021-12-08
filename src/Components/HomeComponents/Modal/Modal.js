@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Iframe from "react-iframe";
 import {IoMdClose} from "react-icons/io";
 import {useMainContext} from "../../../Context/Context";
-import mobile from "../../../images/Home/mobile.gif";
 import Loader from "./Loader.js";
 
 const Wrapper = styled.div`
@@ -84,20 +83,8 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 350px) {
-    .mobile {
-      display: block;
-    }
-
-    .iframe {
-      display: none !important;
-    }
-
     .modal-container {
       height: 100%;
-    }
-
-    .m-title {
-      padding: 20px 10px;
     }
   }
 `;
@@ -116,10 +103,6 @@ const Modal = () => {
               size="20"
               onClick={() => setModals(false)}
           />
-        </div>
-
-        <div className="mobile">
-          <img src={mobile} alt="" />
         </div>
 
         <Iframe
