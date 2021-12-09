@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Col, Row} from "react-bootstrap";
 import {BsArrowLeftShort} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {useAuth} from "../../Context/AuthContext";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -192,6 +192,13 @@ const Reset = () => {
         setErr("");
         setSucess("Password reset link sent. Check your email and click on the link to proceed");
       } catch (err) {
+        if (err.code == 'auth/user-not-found') {
+          err.message = "There is no user record corresponding to this email address. Please register first";
+        } else if (err.code == 'auth/invalid-email') {
+          err.message = "The email address is invalid";
+        } else if (err.code == 'auth/wrong-password') {
+          err.message = "The password is invalid";
+        }
         setErr(err.message);
       }
 
@@ -290,15 +297,15 @@ const Reset = () => {
                             {t("send_reset_link")}
                           </button>
                         </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </form>
-        </Row>
-      </div>
-    </Wrapper>
+                      </Row>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
+            </form>
+          </Row>
+        </div>
+      </Wrapper>
   );
 };
 export default Reset;

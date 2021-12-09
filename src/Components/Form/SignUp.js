@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 import {Link, useHistory} from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import {useAuth} from "../../Context/AuthContext";
+import {useMainContext} from "../../Context/Context";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
@@ -156,236 +157,250 @@ const Wrapper = styled.div`
 `;
 
 const SignUp = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [school, setSchool] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [isAgreed, setIsAgreed] = useState(false);
-  const [err, setErr] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [school, setSchool] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [isAgreed, setIsAgreed] = useState(false);
+    const [err, setErr] = useState("");
 
-  const {signup, addUserDetailsToFirestore} = useAuth();
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
-  const [color, setColor] = useState("white");
+    const {signup, addUserDetailsToFirestore} = useAuth();
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+    const [color, setColor] = useState("white");
 
-  const handleSignup = async (event) => {
-    event.preventDefault();
-    const phoneVal = /^\d{10}$/;
+    const succMessage = () => {
+        updateSuccessMessage("Registration is successful. We have sent an email with a confirmation link to your email address.  " +
+            "Open it up to activate your account. After that you can sign-in to the portal with registered email and password.");
+    };
 
-    if (!(firstName && email && password && school && phoneNumber)) {
-      setErr("Please fill in name, email, school, phone number and password");
-      return;
-    } else if (!phoneNumber.match(phoneVal)) {
-      setErr("Incorrect phone number");
-      return;
-    } else if (password !== confirmPassword) {
-      setErr("Password should match with confirmation");
-      return;
-    } else if (!isAgreed) {
-      setErr("You need to agree terms and conditions");
-      return;
-    } else {
-      let user;
+    const {
+        successMessage, updateSuccessMessage,
+    } = useMainContext();
 
-      var data = {
-        firstName: firstName,
-        lastName: lastName,
-        school: school,
-        phoneNumber: phoneNumber,
-        email: email,
-      };
+    const handleSignup = async (event) => {
+        event.preventDefault();
+        const regex = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
 
-      try {
-        setLoading(true);
-        const result = await signup(email, password);
-        await addUserDetailsToFirestore(data);
-        await result.user.updateProfile({
-          displayName: data.firstName +' '+ data.lastName,
-        });
-        await result.user.sendEmailVerification();
+        if (!(firstName && email && password && phoneNumber)) {
+            setErr("Please fill in name, email, phone number and password");
+            return;
+        } else if (!regex.test(phoneNumber)) {
+            setErr("The phone number is invalid");
+            return;
+        } else if (password !== confirmPassword) {
+            setErr("Password should match with confirmation");
+            return;
+        } else if (!isAgreed) {
+            setErr("You need to agree terms and conditions");
+            return;
+        } else {
+            let user;
+
+            var data = {
+                firstName: firstName,
+                lastName: lastName,
+                school: school,
+                phoneNumber: phoneNumber,
+                email: email,
+            };
+
+            try {
+                setLoading(true);
+                const result = await signup(email, password);
+                await addUserDetailsToFirestore(data);
+                await result.user.updateProfile({
+                    displayName: data.firstName + ' ' + data.lastName,
+                });
+                await result.user.sendEmailVerification();
+                succMessage();
+                history.push('/signin');
+            } catch (error) {
+                if (error.code == 'auth/invalid-email') {
+                    error.message = "The email address is invalid";
+                }
+                setErr(error.message);
+            }
+
+            setLoading(false);
+        }
+    };
+
+    const handleGoBack = async (event) => {
         history.goBack();
-      } catch (error) {
-        setErr(error.message);
-      }
-
-      setLoading(false);
     }
-  };
 
-  const handleGoBack = async (event) => {
-    history.goBack();
-  }
+    const {t} = useTranslation();
 
-  const {t} = useTranslation();
-
-  return (
-      <Wrapper>
-        <div>
-          <Row>
-            <form>
-              <Col md={11} lg={9}>
+    return (
+        <Wrapper>
+            <div>
                 <Row>
-                  <Col md={7} className="img-container d-none d-md-block">
-                    <p className="img-title">
-                      {t("the_willingness_to_learn")}
-                      <br/>
-                      {t("new_skills_is_very_high")}.
-                    </p>
-                  </Col>
-                  <Col
-                      xs={10}
-                      sm={8}
-                      md={5}
-                      className="from-container p-4     p-sm-4"
-                  >
-                    <div className="">
-                      <div className="back-to-browse">
-                        <BsArrowLeftShort size="25" className="m-0"/>
-                        <span className="m-0 back_to_browse px-2" onClick={handleGoBack}>
+                    <form>
+                        <Col md={11} lg={9}>
+                            <Row>
+                                <Col md={7} className="img-container d-none d-md-block">
+                                    <p className="img-title">
+                                        {t("the_willingness_to_learn")}
+                                        <br/>
+                                        {t("new_skills_is_very_high")}.
+                                    </p>
+                                </Col>
+                                <Col
+                                    xs={10}
+                                    sm={8}
+                                    md={5}
+                                    className="from-container p-4     p-sm-4"
+                                >
+                                    <div className="">
+                                        <div className="back-to-browse">
+                                            <BsArrowLeftShort size="25" className="m-0"/>
+                                            <span className="m-0 back_to_browse px-2" onClick={handleGoBack}>
                         {t("back_to_browse")}
                       </span>
-                      </div>
-                      <h2 className="py-3 start">
-                        {t("start_where1")} <br/> {t("start_where2")}
-                      </h2>
+                                        </div>
+                                        <h2 className="py-3 start">
+                                            {t("start_where1")} <br/> {t("start_where2")}
+                                        </h2>
 
-                    {err ? (
-                        <div
-                            style={{
-                              fontSize: 15,
-                              color: "red",
-                              marginBottom: 5,
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                        >
-                          * {err}
-                        </div>
-                    ) : (
-                        <div></div>
-                    )}
+                                        {err ? (
+                                            <div
+                                                style={{
+                                                    fontSize: 15,
+                                                    color: "red",
+                                                    marginBottom: 5,
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                * {err}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
 
-                    <Row>
-                      <Col lg={6}>
-                        <input
-                            type="text"
-                            placeholder={t("first_name")}
-                            className="w-100"
-                            onChange={(event) => {
-                              setFirstName(event.target.value);
-                            }}
-                        />
-                      </Col>
-                      <Col lg={6}>
-                        {" "}
-                        <input
-                            type="text"
-                            placeholder={t("last_name")}
-                            className="w-100"
-                            onChange={(event) => {
-                              setLastName(event.target.value);
-                            }}
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={12}>
-                        <input
-                            type="text"
-                            placeholder="School of Child"
-                            className="w-100"
-                            onChange={(event) => {
-                              setSchool(event.target.value);
-                            }}
-                        />
-                      </Col>
-                      <Col xs={12}>
-                        <input
-                            type="text"
-                            placeholder="Phone Number"
-                            className="w-100"
-                            onChange={(event) => {
-                              setPhoneNumber(event.target.value);
-                            }}
-                        />
-                      </Col>
-                      <Col xs={12}>
-                        <input
-                            type="text"
-                            placeholder="Email"
-                            className="w-100"
-                            onChange={(event) => {
-                              setEmail(event.target.value);
-                            }}
-                        />
-                      </Col>
-                      <Col xs={12}>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className="w-100"
-                            onChange={(event) => {
-                              setPassword(event.target.value);
-                            }}
-                        />
-                      </Col>
-                      <Col xs={12}>
-                        <input
-                            type="password"
-                            placeholder="Confirm Password"
-                            className="w-100"
-                            onChange={(event) => {
-                              setConfirmPassword(event.target.value);
-                            }}
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={12} className="py-2">
-                        <label className="main">
-                          {t("terms_condition")}
-                          <input type="checkbox"
-                             onChange={(event) => {
-                               setIsAgreed(event.target.checked);
-                             }}
-                          />
-                          <span className="geekmark"></span>
-                        </label>
-                      </Col>
-                      <Col xs={12} className="py-3">
-                        <button type="submit" className="w-100 submit-button" onClick={handleSignup} disabled={loading}>
-                          <ClipLoader color={color} loading={loading} size={18}/>{" "}
-                          <span></span>
-                          {t("sign_up")}
-                        </button>
-                      </Col>
-                      <Col xs={12}>
-                        <div className="not-a-member">
+                                        <Row>
+                                            <Col lg={6}>
+                                                <input
+                                                    type="text"
+                                                    placeholder={t("first_name")}
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setFirstName(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                            <Col lg={6}>
+                                                {" "}
+                                                <input
+                                                    type="text"
+                                                    placeholder={t("last_name")}
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setLastName(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="School of Child"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setSchool(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Phone Number"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setPhoneNumber(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setEmail(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Password"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setPassword(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Confirm Password"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setConfirmPassword(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={12} className="py-2">
+                                                <label className="main">
+                                                    {t("terms_condition")}
+                                                    <input type="checkbox"
+                                                           onChange={(event) => {
+                                                               setIsAgreed(event.target.checked);
+                                                           }}
+                                                    />
+                                                    <span className="geekmark"></span>
+                                                </label>
+                                            </Col>
+                                            <Col xs={12} className="py-3">
+                                                <button type="submit" className="w-100 submit-button"
+                                                        onClick={handleSignup} disabled={loading}>
+                                                    <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                                                    <span></span>
+                                                    {t("sign_up")}
+                                                </button>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <div className="not-a-member">
                           <span className="m-0  px-1" style={{opacity: ".8"}}>
                             {t("already_member")}?
                           </span>
-                          <Link to="signin">
+                                                    <Link to="signin">
                             <span
                                 className="m-0 px-1"
                                 style={{color: "#F3BE7C", cursor: "pointer"}}
                             >
                               {t("login_now")}
                             </span>
-                          </Link>
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </form>
-        </Row>
-      </div>
-    </Wrapper>
-  );
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </form>
+                </Row>
+            </div>
+        </Wrapper>
+    );
 };
 export default SignUp;

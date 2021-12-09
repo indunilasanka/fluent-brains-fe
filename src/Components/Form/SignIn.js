@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 import {Link, useHistory} from "react-router-dom";
 import {useAuth} from "../../Context/AuthContext";
 import ClipLoader from "react-spinners/ClipLoader";
+import {useMainContext} from "../../Context/Context";
 
 const Wrapper = styled.div`
   font-family: "Inter", sans-serif;
@@ -170,168 +171,195 @@ const Wrapper = styled.div`
 `;
 
 const SignIn = () => {
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const history = useHistory();
-  const [err, setErr] = useState("");
-  const {login} = useAuth();
+    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const history = useHistory();
+    const [err, setErr] = useState("");
+    const {login} = useAuth();
+    const {
+      successMessage, updateSuccessMessage,
+    } = useMainContext();
 
-  const [color, setColor] = useState("white");
+    const [color, setColor] = useState("white");
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
+    const handleLogin = async (event) => {
+        event.preventDefault();
 
-    if (!(email && password)) {
-      setErr("Please fill email and password");
-      return;
-    } else {
-      try {
-        setLoading(true);
-        const result = await login(email, password);
-        if(result.user.emailVerified === false){
-          setErr("Email not verified");
-          setLoading(false);
-          return;
+        if (!(email && password)) {
+            setErr("Please fill email and password");
+            return;
+        } else {
+            try {
+                setLoading(true);
+                const result = await login(email, password);
+                if (result.user.emailVerified === false) {
+                    setErr("Email not verified");
+                    setLoading(false);
+                    return;
+                }
+                history.push('/learning');
+            } catch (err) {
+                if (err.code == 'auth/user-not-found') {
+                    err.message = "There is no user record corresponding to this email address. Please register first";
+                } else if (err.code == 'auth/invalid-email') {
+                    err.message = "The email address is invalid";
+                } else if (err.code == 'auth/wrong-password') {
+                    err.message = "The password is invalid";
+                }
+                setErr(err.message);
+            }
+
+            setLoading(false);
         }
-        history.push('/learning');
-      } catch (err) {
-        setErr(err.message);
-      }
+    };
 
-      setLoading(false);
+    const handleGoBack = async (event) => {
+        history.goBack();
     }
-  };
 
-  const handleGoBack = async (event) => {
-    history.goBack();
-  }
+    const {t} = useTranslation();
 
-  const {t} = useTranslation();
-
-  return (
-      <Wrapper>
-        <div>
-          <Row>
-            <form>
-              <Col md={11} lg={9}>
+    return (
+        <Wrapper>
+            <div>
                 <Row>
-                  <Col md={7} className="img-container d-none d-md-block">
-                    <p className="img-title">
-                      {t("the_willingness_to")}
-                      <br/>
-                      {t("learn_new_skills_is")}
-                      <br/>
-                      {t("very_high")}
-                    </p>
-                  </Col>
-                  <Col
-                      xs={10}
-                      sm={8}
-                      md={5}
-                      className="from-container p-4   p-sm-4"
-                  >
-                    <div className="">
-                      <div className="back-to-browse">
-                        <BsArrowLeftShort size="25" className="m-0"/>
-                        <span className="m-0  back_to_browse  px-2" onClick={handleGoBack}>
+                    <form>
+                        <Col md={11} lg={9}>
+                            <Row>
+                                <Col md={7} className="img-container d-none d-md-block">
+                                    <p className="img-title">
+                                        {t("the_willingness_to")}
+                                        <br/>
+                                        {t("learn_new_skills_is")}
+                                        <br/>
+                                        {t("very_high")}
+                                    </p>
+                                </Col>
+                                <Col
+                                    xs={10}
+                                    sm={8}
+                                    md={5}
+                                    className="from-container p-4   p-sm-4"
+                                >
+                                    <div className="">
+                                        <div className="back-to-browse">
+                                            <BsArrowLeftShort size="25" className="m-0"/>
+                                            <span className="m-0  back_to_browse  px-2" onClick={handleGoBack}>
                           {t("back_to_browse")}
                         </span>
-                      </div>
-                      <h2 className="py-3 start">
-                        {t("sign_in_to")} <br/> {t("continue")}
-                      </h2>
-                      {err ? (
-                          <div
-                              style={{
-                                fontSize: 15,
-                                color: "red",
-                                marginBottom: 5,
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                          >
-                            * {err}
-                          </div>
-                      ) : (
-                          <div></div>
-                      )}
+                                        </div>
+                                        <h2 className="py-3 start">
+                                            {t("sign_in_to")} <br/> {t("continue")}
+                                        </h2>
+                                        {successMessage === "" && err ? (
+                                            <div
+                                                style={{
+                                                    fontSize: 15,
+                                                    color: "red",
+                                                    marginBottom: 5,
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                * {err}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
 
-                      <Row>
-                        <Col xs={12}>
-                          <input
-                              type="text"
-                              placeholder="Email"
-                              className="w-100"
-                              onChange={(event) => {
-                                setEmail(event.target.value);
-                              }}
-                          />
-                        </Col>
+                                        {successMessage ? (
+                                            <div
+                                                style={{
+                                                    fontSize: 15,
+                                                    color: "green",
+                                                    marginBottom: 5,
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                * {successMessage}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
 
-                        <Col xs={12}>
-                          <input
-                              type="password"
-                              placeholder="Password"
-                              className="w-100"
-                              onChange={(event) => {
-                                setPassword(event.target.value);
-                              }}
-                          />
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col xs={12} className="py-2">
-                          <div className="d-flex justify-content-between align-items-center">
-                            <label className="main">
-                              {t("remember_me")}
-                              <input type="checkbox"/>
-                              <span className="geekmark"></span>
-                            </label>
-                            <Link to="reset">
+                                        <Row>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setEmail(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+
+                                            <Col xs={12}>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Password"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setPassword(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={12} className="py-2">
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <label className="main">
+                                                        {t("remember_me")}
+                                                        <input type="checkbox"/>
+                                                        <span className="geekmark"></span>
+                                                    </label>
+                                                    <Link to="reset">
                               <span
                                   className="m-0 forgot"
-                                  style={{color: "#F3BE7C", cursor: "pointer" }}>
+                                  style={{color: "#F3BE7C", cursor: "pointer"}}>
                                {t("forgot_password")}
                               </span>
-                            </Link>
-                          </div>
-                        </Col>
-                        <Col xs={12} className="py-3">
-                          <button type="submit" className="w-100 submit-button" onClick={handleLogin}
-                                  disabled={loading}>
-                            <ClipLoader color={color} loading={loading} size={18}/>{" "}
-                            <span></span>
-                            {t("sign_in")}
-                          </button>
-                        </Col>
-                        <Col xs={12}>
-                          <div className="not-a-member">
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                            <Col xs={12} className="py-3">
+                                                <button type="submit" className="w-100 submit-button"
+                                                        onClick={handleLogin}
+                                                        disabled={loading}>
+                                                    <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                                                    <span></span>
+                                                    {t("sign_in")}
+                                                </button>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <div className="not-a-member">
                           <span
                               className="m-0  px-1"
                               style={{color: "rgba(0, 0, 0, 0.5);"}}
                           >
                             {t("not_member")}?
                           </span>{" "}
-                          <Link to="signup">
+                                                    <Link to="signup">
                             <span
-                              className="m-0 px-1"
-                              style={{ color: "#F3BE7C", cursor: "pointer" }}
+                                className="m-0 px-1"
+                                style={{color: "#F3BE7C", cursor: "pointer"}}
                             >
                               {t("register")}
                             </span>
-                          </Link>
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </form>
-        </Row>
-      </div>
-    </Wrapper>
-  );
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </form>
+                </Row>
+            </div>
+        </Wrapper>
+    );
 };
 export default SignIn;

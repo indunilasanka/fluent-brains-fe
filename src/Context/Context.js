@@ -11,6 +11,7 @@ export const ContextProvider = ({ children }) => {
   const [logout, setLogOut] = useState(false);
   const [learningSidebar, setLearningSidebar] = useState(false);
   const [language, setLanguage] = useState("English");
+  const [successMessage, setSuccessMessage] = useState("");
   const LanguageArray = [
     { name: "English", code: "en" },
     { name: "සිංහල", code: "si" },
@@ -24,6 +25,10 @@ export const ContextProvider = ({ children }) => {
   const showModals = (title, url) => {
     setModals((prev) => !prev);
     setCurrentActivity({title, url});
+  };
+
+  const updateSuccessMessage = (message) => {
+    setSuccessMessage(message);
   };
 
   const showLogOut = () => {
@@ -57,6 +62,8 @@ export const ContextProvider = ({ children }) => {
         showLanguageFunc,
         currentActivity,
         setCurrentActivity,
+        updateSuccessMessage,
+        setSuccessMessage,
         logout,
         setLogOut,
         showLogOut,
@@ -66,6 +73,7 @@ export const ContextProvider = ({ children }) => {
         setLanguage,
         LanguageArray,
         singleLanguage,
+        successMessage,
       }}
     >
       {children}
