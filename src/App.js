@@ -9,6 +9,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import {AuthProvider} from "./Context/AuthContext";
 import PaymentPlansPage from "./pages/PaymentPlansPage";
+import ResetPage from "./pages/ResetPage";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/membership">
               <PaymentPlansPage/>
+            </Route>
+            <Route path="/reset">
+              <ResetPage/>
             </Route>
           </Switch>
         </AuthProvider>

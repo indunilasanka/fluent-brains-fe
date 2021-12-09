@@ -627,6 +627,8 @@
 
   "sign_up": "Sign Up",
   "sign_in": "Sign In",
+  "send_reset_link": "Send Password Reset Link",
+  "reset_password": "Reset password",
   "the_willingness_to_learn": "The willingness to learn",
   "new_skills_is_very_high": "new skills is very high",
   "signin_array": [

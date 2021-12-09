@@ -50,6 +50,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     signup,
     addUserDetailsToFirestore,
+    resetPassword,
   };
 
   return (

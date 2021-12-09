@@ -169,32 +169,28 @@ const Wrapper = styled.div`
   }
 `;
 
-const SignIn = () => {
+const Reset = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const history = useHistory();
   const [err, setErr] = useState("");
-  const {login} = useAuth();
+  const [success, setSucess] = useState("");
+  const {resetPassword} = useAuth();
 
   const [color, setColor] = useState("white");
 
-  const handleLogin = async (event) => {
+  const handleReset = async (event) => {
     event.preventDefault();
 
-    if (!(email && password)) {
-      setErr("Please fill email and password");
+    if (!(email)) {
+      setErr("Please fill email address");
       return;
     } else {
       try {
         setLoading(true);
-        const result = await login(email, password);
-        if(result.user.emailVerified === false){
-          setErr("Email not verified");
-          setLoading(false);
-          return;
-        }
-        history.push('/learning');
+        const result = await resetPassword(email);
+        setErr("");
+        setSucess("Password reset link sent. Check your email and click on the link to proceed");
       } catch (err) {
         setErr(err.message);
       }
@@ -239,7 +235,7 @@ const SignIn = () => {
                         </span>
                       </div>
                       <h2 className="py-3 start">
-                        {t("sign_in_to")} <br/> {t("continue")}
+                        {t("reset_password")}
                       </h2>
                       {err ? (
                           <div
@@ -257,6 +253,22 @@ const SignIn = () => {
                           <div></div>
                       )}
 
+                      {success ? (
+                          <div
+                              style={{
+                                fontSize: 15,
+                                color: "green",
+                                marginBottom: 5,
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                          >
+                            * {success}
+                          </div>
+                      ) : (
+                          <div></div>
+                      )}
+
                       <Row>
                         <Col xs={12}>
                           <input
@@ -268,61 +280,16 @@ const SignIn = () => {
                               }}
                           />
                         </Col>
-
-                        <Col xs={12}>
-                          <input
-                              type="password"
-                              placeholder="Password"
-                              className="w-100"
-                              onChange={(event) => {
-                                setPassword(event.target.value);
-                              }}
-                          />
-                        </Col>
                       </Row>
                       <Row>
-                        <Col xs={12} className="py-2">
-                          <div className="d-flex justify-content-between align-items-center">
-                            <label className="main">
-                              {t("remember_me")}
-                              <input type="checkbox"/>
-                              <span className="geekmark"></span>
-                            </label>
-                            <Link to="reset">
-                              <span
-                                  className="m-0 forgot"
-                                  style={{color: "#F3BE7C", cursor: "pointer" }}>
-                               {t("forgot_password")}
-                              </span>
-                            </Link>
-                          </div>
-                        </Col>
                         <Col xs={12} className="py-3">
-                          <button type="submit" className="w-100 submit-button" onClick={handleLogin}
+                          <button type="submit" className="w-100 submit-button" onClick={handleReset}
                                   disabled={loading}>
                             <ClipLoader color={color} loading={loading} size={18}/>{" "}
                             <span></span>
-                            {t("sign_in")}
+                            {t("send_reset_link")}
                           </button>
                         </Col>
-                        <Col xs={12}>
-                          <div className="not-a-member">
-                          <span
-                              className="m-0  px-1"
-                              style={{color: "rgba(0, 0, 0, 0.5);"}}
-                          >
-                            {t("not_member")}?
-                          </span>{" "}
-                          <Link to="signup">
-                            <span
-                              className="m-0 px-1"
-                              style={{ color: "#F3BE7C", cursor: "pointer" }}
-                            >
-                              {t("register")}
-                            </span>
-                          </Link>
-                        </div>
-                      </Col>
                     </Row>
                   </div>
                 </Col>
@@ -334,4 +301,4 @@ const SignIn = () => {
     </Wrapper>
   );
 };
-export default SignIn;
+export default Reset;
