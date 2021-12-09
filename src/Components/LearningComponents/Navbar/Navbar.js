@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaUserCircle } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useMainContext } from "../../../Context/Context";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
+import {useAuth} from "../../../Context/AuthContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,9 +23,6 @@ const Wrapper = styled.div`
 
   .search-container {
     position: relative;
-    background: #f5f5f5;
-
-    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +43,10 @@ const Wrapper = styled.div`
     padding: 12px 0;
     ${"" /* padding: 0 15px; */}
     ${"" /* padding-right: 30px; */}
+  }
+  
+  .name-text{
+    font-size: 14px;
   }
 
   .search {
@@ -74,8 +76,8 @@ const Wrapper = styled.div`
     top: 40px;
     width: 80%;
     left: 55%;
-
     transform: translateX(-50%) !important;
+    z-index: 10;
   }
   .logouts {
     text-align: center;
@@ -124,13 +126,12 @@ const Wrapper = styled.div`
     border-radius: 5px;
     position: absolute;
     width: 150px;
-
     top: 45px;
     left:50%;
     transform:translateX(-50%);
     box-shadow: 0 3px 10px #b7b7b7;
     cursor:pointer;
-    
+    z-index: 10;
   }
 
   .language p:hover {
@@ -219,27 +220,34 @@ const Wrapper = styled.div`
   }
 `;
 const Navbar = () => {
+  const history = useHistory();
+  const [userState, setUserState] = useState({});
   const {
     showLanguage,
     setShowLanguage,
     showLanguageFunc,
     logout,
-
     showLogOut,
     learningSidebar,
     setLearningSidebar,
     language,
-
     LanguageArray,
     singleLanguage,
   } = useMainContext();
+
   const { t } = useTranslation();
-  // if (learningSidebar) {
-  //   document.querySelector("body").style.overflow = "hidden";
-  // }
-  // if (!learningSidebar) {
-  //   document.querySelector("body").style.overflow = "scroll";
-  // }
+
+  const user = useAuth();
+
+  const handleLogout = async () => {
+    await user.logout();
+    showLogOut(false);
+    history.go(0);
+  }
+
+  useEffect(() => {
+      setUserState(user.currentUser);
+  }, []);
 
   return (
     <Wrapper>
@@ -252,12 +260,6 @@ const Navbar = () => {
           </Col>
 
           <Col md={5} className="search-container d-none d-lg-block">
-            <input
-              type="text"
-              className="search-input "
-              placeholder={t("placeholeder")}
-            />
-            <HiOutlineSearch size="20" className="search" />
           </Col>
           <Col lg={4} xs={7} md={6} dir="" className="m-0 ">
             <Row className="d-flex justify-content-end align-items-center">
@@ -302,12 +304,12 @@ const Navbar = () => {
                   className="d-flex  justify-content-end align-items-center"
                 >
                   <FaUserCircle size="35" className=" mx-0  user" />
-                  <p className="mx-2">{t("name")}</p>
+                  <p className="mx-2 name-text">{userState != null && userState.displayName}</p>
                   <AiFillCaretDown className=" user m-0" />
                 </div>
 
                 {logout && (
-                  <div className="logout py-2 my-2" onClick={showLogOut}>
+                  <div className="logout py-2 my-2" onClick={handleLogout}>
                     {t("logout")}
                   </div>
                 )}
@@ -363,17 +365,6 @@ const Navbar = () => {
           style={{ paddingBottom: logout && "50px" }}
         >
           <Row className=" d-flex justify-content-center py-2">
-            <Col
-              xs={12}
-              className="search-container search-container2 d-lg-none d-block"
-            >
-              <input
-                type="text"
-                className="search-input "
-                placeholder={t("placeholeder")}
-              />
-              <HiOutlineSearch size="20" className="search" />
-            </Col>
             <Col xs={12} className="my-3">
               <div className="logout-container m-auto d-block d-lg-none user-container">
                 <div
@@ -382,7 +373,7 @@ const Navbar = () => {
                   style={{ width: "200px" }}
                 >
                   <FaUserCircle size="35" className=" mx-0  user" />
-                  <p className="mx-2">{t("name")}</p>
+                  <p className="mx-2">{userState != null && userState.displayName}</p>
                   <AiFillCaretDown className=" user m-0" />
                 </div>
                 {logout && (

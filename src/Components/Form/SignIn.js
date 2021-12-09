@@ -188,8 +188,13 @@ const SignIn = () => {
     } else {
       try {
         setLoading(true);
-        const user = await login(email, password);
-        history.goBack();
+        const result = await login(email, password);
+        if(result.user.emailVerified === false){
+          setErr("Email not verified");
+          setLoading(false);
+          return;
+        }
+        history.push('/learning');
       } catch (err) {
         setErr(err.message);
       }

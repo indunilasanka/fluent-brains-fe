@@ -200,11 +200,14 @@ const SignUp = () => {
 
       try {
         setLoading(true);
-        await signup(email, password);
+        const result = await signup(email, password);
         await addUserDetailsToFirestore(data);
+        await result.user.updateProfile({
+          displayName: data.firstName +' '+ data.lastName,
+        });
+        await result.user.sendEmailVerification();
         history.goBack();
       } catch (error) {
-        console.log(error);
         setErr(error.message);
       }
 

@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log(user);
+      setCurrentUser(user);
       setLoading(false);
     });
 
@@ -47,6 +47,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     login,
+    logout,
     signup,
     addUserDetailsToFirestore,
   };
