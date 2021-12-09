@@ -2,14 +2,14 @@
   "banner_heading1": "Learning Platform by  ",
   "banner_heading2": "Education Experts",
   "get_started": "Get started!",
-  "register_action": "Register",
+  "register_action": "Sign Up",
   "log_in": "Log In",
   "banner_text1": " Digital primary school maths resource aligned to",
   "banner_text2": " your  curriculum",
   "slider_title": "A personalised & adaptive learning path",
   "slider_subtitle": "Mathematics activities for primary school children with a rigorous pedagogy designed by education experts.",
   "grade": "Grade",
-  "explore_activities": "Explore Activities",
+  "explore_activities": "Explore More",
   "card_array": [
     {
       "title": "Color patterns and shape patterns"
@@ -91,8 +91,8 @@
     {
       "title": "Get Started",
       "title_to": "/signup",
-      "element1": "Sign up",
-      "element2": "Membership",
+      "element1": "Sign Up",
+      "element2": "Apply Membership",
       "element1_to": "/signup",
       "element2_to": "/membership"
     }
@@ -623,9 +623,9 @@
   "already_member": "Already a Member",
   "register": "Register Now",
   "login_now": "Login Now",
-
   "sign_up": "Sign Up",
   "sign_in": "Sign In",
+  "submit": "Submit",
   "send_reset_link": "Send Password Reset Link",
   "reset_password": "Reset password",
   "the_willingness_to_learn": "The willingness to learn",
@@ -645,8 +645,8 @@
   "very_high": "very high",
   "sign_in_to": "Sign in to",
   "continue": " continue",
-  "remember_me": "Remember me",
-  "forgot_password": "Forgot your password",
+  "remember_me": "Remember",
+  "forgot_password": "Forgot password",
   "aboutus": "About Us",
   "paymentplans": "Membership Plans",
   "our_mission": "Our Mission",
@@ -661,10 +661,10 @@
   "mp2title": "Fluent Standard",
   "mp3title": "Fluent Premium",
   "mp1value": "Rs. 300/=",
-  "mp2value": "Rs. 600/=",
-  "mp2ovalue": "Rs. 1000/=",
+  "mp2value": "Rs. 500/=",
+  "mp2ovalue": "Rs. 1500/=",
   "mp3value": "Rs. 2000/=",
-  "mp3ovalue": "Rs. 3000/=",
+  "mp3ovalue": "Rs. 3500/=",
   "benefits": "Benefits",
   "howtoregister": "How to apply membership",
   "send_your_query": "Send your query",

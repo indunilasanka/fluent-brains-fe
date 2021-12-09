@@ -170,142 +170,143 @@ const Wrapper = styled.div`
 `;
 
 const Reset = () => {
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
-  const history = useHistory();
-  const [err, setErr] = useState("");
-  const [success, setSucess] = useState("");
-  const {resetPassword} = useAuth();
+    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
+    const history = useHistory();
+    const [err, setErr] = useState("");
+    const [success, setSucess] = useState("");
+    const {resetPassword} = useAuth();
 
-  const [color, setColor] = useState("white");
+    const [color, setColor] = useState("white");
 
-  const handleReset = async (event) => {
-    event.preventDefault();
+    const handleReset = async (event) => {
+        event.preventDefault();
 
-    if (!(email)) {
-      setErr("Please fill email address");
-      return;
-    } else {
-      try {
-        setLoading(true);
-        const result = await resetPassword(email);
-        setErr("");
-        setSucess("Password reset link sent. Check your email and click on the link to proceed");
-      } catch (err) {
-        if (err.code == 'auth/user-not-found') {
-          err.message = "There is no user record corresponding to this email address. Please register first";
-        } else if (err.code == 'auth/invalid-email') {
-          err.message = "The email address is invalid";
-        } else if (err.code == 'auth/wrong-password') {
-          err.message = "The password is invalid";
+        if (!(email)) {
+            setErr("Please fill email address");
+
+        } else {
+            try {
+                setLoading(true);
+                const result = await resetPassword(email);
+                setErr("");
+                setSucess("Password reset link sent. Check your email and click on the link to proceed");
+            } catch (err) {
+                if (err.code == 'auth/user-not-found') {
+                    err.message = "There is no user record corresponding to this email address. Please register first";
+                } else if (err.code == 'auth/invalid-email') {
+                    err.message = "The email address is invalid";
+                } else if (err.code == 'auth/wrong-password') {
+                    err.message = "The password is invalid";
+                }
+                setErr(err.message);
+            }
+
+            setLoading(false);
         }
-        setErr(err.message);
-      }
+    };
 
-      setLoading(false);
+    const handleGoBack = async (event) => {
+        history.goBack();
     }
-  };
 
-  const handleGoBack = async (event) => {
-    history.goBack();
-  }
+    const {t} = useTranslation();
 
-  const {t} = useTranslation();
-
-  return (
-      <Wrapper>
-        <div>
-          <Row>
-            <form>
-              <Col md={11} lg={9}>
+    return (
+        <Wrapper>
+            <div>
                 <Row>
-                  <Col md={7} className="img-container d-none d-md-block">
-                    <p className="img-title">
-                      {t("the_willingness_to")}
-                      <br/>
-                      {t("learn_new_skills_is")}
-                      <br/>
-                      {t("very_high")}
-                    </p>
-                  </Col>
-                  <Col
-                      xs={10}
-                      sm={8}
-                      md={5}
-                      className="from-container p-4   p-sm-4"
-                  >
-                    <div className="">
-                      <div className="back-to-browse">
-                        <BsArrowLeftShort size="25" className="m-0"/>
-                        <span className="m-0  back_to_browse  px-2" onClick={handleGoBack}>
+                    <form>
+                        <Col md={11} lg={9}>
+                            <Row>
+                                <Col md={7} className="img-container d-none d-md-block">
+                                    <p className="img-title">
+                                        {t("the_willingness_to")}
+                                        <br/>
+                                        {t("learn_new_skills_is")}
+                                        <br/>
+                                        {t("very_high")}
+                                    </p>
+                                </Col>
+                                <Col
+                                    xs={10}
+                                    sm={8}
+                                    md={5}
+                                    className="from-container p-4   p-sm-4"
+                                >
+                                    <div className="">
+                                        <div className="back-to-browse">
+                                            <BsArrowLeftShort size="25" className="m-0"/>
+                                            <span className="m-0  back_to_browse  px-2" onClick={handleGoBack}>
                           {t("back_to_browse")}
                         </span>
-                      </div>
-                      <h2 className="py-3 start">
-                        {t("reset_password")}
-                      </h2>
-                      {err ? (
-                          <div
-                              style={{
-                                fontSize: 15,
-                                color: "red",
-                                marginBottom: 5,
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                          >
-                            * {err}
-                          </div>
-                      ) : (
-                          <div></div>
-                      )}
+                                        </div>
+                                        <h2 className="py-3 start">
+                                            {t("reset_password")}
+                                        </h2>
+                                        {err ? (
+                                            <div
+                                                style={{
+                                                    fontSize: 15,
+                                                    color: "red",
+                                                    marginBottom: 5,
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                * {err}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
 
-                      {success ? (
-                          <div
-                              style={{
-                                fontSize: 15,
-                                color: "green",
-                                marginBottom: 5,
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                          >
-                            * {success}
-                          </div>
-                      ) : (
-                          <div></div>
-                      )}
+                                        {success ? (
+                                            <div
+                                                style={{
+                                                    fontSize: 15,
+                                                    color: "green",
+                                                    marginBottom: 5,
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                * {success}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
 
-                      <Row>
-                        <Col xs={12}>
-                          <input
-                              type="text"
-                              placeholder="Email"
-                              className="w-100"
-                              onChange={(event) => {
-                                setEmail(event.target.value);
-                              }}
-                          />
+                                        <Row>
+                                            <Col xs={12}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Email"
+                                                    className="w-100"
+                                                    onChange={(event) => {
+                                                        setEmail(event.target.value);
+                                                    }}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={12} className="py-3">
+                                                <button type="submit" className="w-100 submit-button"
+                                                        onClick={handleReset}
+                                                        disabled={loading}>
+                                                    <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                                                    <span></span>
+                                                    {t("send_reset_link")}
+                                                </button>
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
                         </Col>
-                      </Row>
-                      <Row>
-                        <Col xs={12} className="py-3">
-                          <button type="submit" className="w-100 submit-button" onClick={handleReset}
-                                  disabled={loading}>
-                            <ClipLoader color={color} loading={loading} size={18}/>{" "}
-                            <span></span>
-                            {t("send_reset_link")}
-                          </button>
-                        </Col>
-                      </Row>
-                    </div>
-                  </Col>
+                    </form>
                 </Row>
-              </Col>
-            </form>
-          </Row>
-        </div>
-      </Wrapper>
-  );
+            </div>
+        </Wrapper>
+    );
 };
 export default Reset;

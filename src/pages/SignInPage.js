@@ -23,7 +23,7 @@ const SignInPage = () => {
             <SignIn/>
             <Footer/>
         </>
-  );
+    );
 };
 
 export default SignInPage;

@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     height: 60px;
     margin: 0;
   }
-
+ 
   .main-text-container {
     background: #fff;
   }
@@ -192,7 +192,6 @@ const SingleTabBox = (props) => {
     console.log(title);
 
     const showActivityModal = (title, url) => {
-        console.log(title, url);
         showModals(title, url);
     };
 
@@ -205,85 +204,87 @@ const SingleTabBox = (props) => {
                         xl={2}
                         className="m-0 p-0"
                         style={{background: seeMore ? "" : "#fff"}}
-          >
-            <div
-              className=""
-              style={{
-                background: seeMore && "#fff",
-                height: seeMore ? "160px" : "100%",
-              }}
-            >
-              <div className="icon-container" style={{ background: color }}>
-                <img src={icon} alt="" />
-                <p>{name}</p>
-              </div>
-            </div>
-          </Col>
-          <Col md={12} lg={10} xl={8} className="main-text-container ">
-            {!seeMore && (
-              <Row className="py-3">
-                {text[0].map((el, i) => {
-                  return (
-                      <Col md={6} xl={5} key={i} className="text-container py-2">
-                          <span className="text" onClick={ () => showActivityModal(el, urlArray[0][i]) }>{el}</span>
-                      </Col>
-                  );
-                })}
-              </Row>
-            )}
-            {seeMore && (
-              <div className="py-3">
-                  {text.map((el, j) => (
-                      <Row className="py-2">
-                          {el.map((el, i) => (
-                              <Col
-                                  key={"a"+i+j}
-                                  md={6}
-                                  xl={5}
-                                  className="text-container py-2 "
-                              >
-                                  <span className="text" onClick={ () => showActivityModal(el, urlArray[j][i]) }>{el}</span>
-                              </Col>
-                    ))}
-                  </Row>
-                ))}
-              </div>
-            )}
-          </Col>
+                    >
+                        <div
+                            className=""
+                            style={{
+                                background: seeMore && "#fff",
+                                height: seeMore ? "160px" : "100%",
+                            }}
+                        >
+                            <div className="icon-container" style={{background: color}}>
+                                <img src={icon} alt=""/>
+                                <p>{name}</p>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col md={12} lg={10} xl={8} className="main-text-container ">
+                        {!seeMore && (
+                            <Row className="py-3">
+                                {text[0].map((el, i) => {
+                                    return (
+                                        <Col md={6} xl={5} key={i} className="text-container py-2">
+                                            <span className="text"
+                                                  onClick={() => showActivityModal(el, urlArray[0][i])}>{el}</span>
+                                        </Col>
+                                    );
+                                })}
+                            </Row>
+                        )}
+                        {seeMore && (
+                            <div className="py-3">
+                                {text.map((el, j) => (
+                                    <Row className="py-2">
+                                        {el.map((el, i) => (
+                                            <Col
+                                                key={"a" + i + j}
+                                                md={6}
+                                                xl={5}
+                                                className="text-container py-2 "
+                                            >
+                                                <span className="text"
+                                                      onClick={() => showActivityModal(el, urlArray[j][i])}>{el}</span>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                ))}
+                            </div>
+                        )}
+                    </Col>
 
-          <Col
-            xs={12}
-            lg={2}
-            xl={2}
-            className="m-0 "
-            style={{ padding: "0", background: "#fff" }}
-          >
-            {/* See more, See less button */}
-            <div className="button-container py-4">
-              <button
-                onClick={() => setSeeMore((prev) => !prev)}
-                style={{
-                    background: "#219653",
-                    color: "#fff",
-                    padding: "6px 10px",
-                    borderRadius: "5px",
-                    border: "none",
-                    fontSize: "16px",
-                    fontFamily: " 'Manrope', sans-serif",
-                    display: props.learn ? "flex" : "",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                }}
-              >
-                {seeMore ? seeless : seemore}
-                <BiChevronRight className="right" size="20" />
-              </button>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </Wrapper>
-  );
+                    <Col
+                        xs={12}
+                        lg={2}
+                        xl={2}
+                        className="m-0 "
+                        style={{padding: "0", background: "#fff"}}
+                    >
+                        {/* See more, See less button */}
+                        <div className="button-container py-4">
+                            <button
+                                onClick={() => setSeeMore((prev) => !prev)}
+                                style={{
+                                    background: "#219653",
+                                    color: "#fff",
+                                    padding: "6px 10px",
+                                    borderRadius: "5px",
+                                    border: "none",
+                                    fontSize: "16px",
+                                    fontFamily: " 'Manrope', sans-serif",
+                                    display: props.learn ? "flex" : "",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                }}
+                            >
+                                {seeMore ? seeless : seemore}
+                                <BiChevronRight className="right" size="20"/>
+                            </button>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </Wrapper>
+    );
 };
 
 export default SingleTabBox;

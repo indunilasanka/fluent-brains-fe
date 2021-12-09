@@ -47,24 +47,24 @@ const Wrapper = styled.div`
   }
 `;
 const Sidebar = () => {
-  const { showSidebar } = useMainContext();
-  const { t } = useTranslation();
-  return (
-    <Wrapper className="d-block d-lg-none ">
-      <div className="sidebar ">
-        <NavLink to="signup">
-          <div onClick={showSidebar}>
-            <button className="login active">{t("register_action")}</button>
-          </div>
-        </NavLink>
-        <Link to="signin">
-          <button onClick={showSidebar} className="login  my-3">
-            {t("log_in")}
-          </button>
-        </Link>
-      </div>
-    </Wrapper>
-  );
+    const {showSidebar} = useMainContext();
+    const {t} = useTranslation();
+    return (
+        <Wrapper className="d-block d-lg-none ">
+            <div className="sidebar ">
+                <NavLink to="signup">
+                    <div onClick={showSidebar}>
+                        <button className="login active">{t("register_action")}</button>
+                    </div>
+                </NavLink>
+                <Link to="signin">
+                    <button onClick={showSidebar} className="login  my-3">
+                        {t("log_in")}
+                    </button>
+                </Link>
+            </div>
+        </Wrapper>
+    );
 };
 
 export default Sidebar;

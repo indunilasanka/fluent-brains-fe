@@ -227,7 +227,7 @@ const PaymentPlans = () => {
                                         <br></br>
                                         <p>FLUENT BITZ Pvt Ltd</p>
                                         <p>104314026549</p>
-                                        <p>Embilipitiya</p>
+                                        <p>Embilipitiya Branch</p>
                                     </pre>
 
                                     <li className="benefits">
@@ -288,6 +288,14 @@ const PaymentPlans = () => {
                                         />
                                         Leaderboard Access
                                     </li>
+                                    <li className="benefits">
+                                        <AiFillCheckCircle
+                                            size="25"
+                                            color="purple"
+                                            className="mx-2 social-icon"
+                                        />
+                                        Compete and win gifts
+                                    </li>
                                 </ul>
                                 <p className="h-title">{t("howtoregister")}</p>
                                 <ul className="benefits-list">
@@ -312,7 +320,7 @@ const PaymentPlans = () => {
                                         <br></br>
                                         <p>FLUENT BITZ Pvt Ltd</p>
                                         <p>104314026549</p>
-                                        <p>Embilipitiya</p>
+                                        <p>Embilipitiya Branch</p>
                                     </pre>
                                     <li className="benefits">
                                         <AiFillCaretRight
@@ -378,7 +386,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Signup gift
+                                        Sign up gift
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -386,7 +394,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Eligible to compete and win gifts
+                                        Compete and win gifts
                                     </li>
                                 </ul>
                                 <p className="h-title">{t("howtoregister")}</p>
@@ -412,7 +420,7 @@ const PaymentPlans = () => {
                                         <br></br>
                                         <p>FLUENT BITZ Pvt Ltd</p>
                                         <p>104314026549</p>
-                                        <p>Embilipitiya</p>
+                                        <p>Embilipitiya Branch</p>
                                     </pre>
                                     <li className="benefits">
                                         <AiFillCaretRight

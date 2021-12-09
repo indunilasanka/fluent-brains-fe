@@ -1,26 +1,29 @@
 .section-button {
-  background: #219653;
-  padding: 5px 45px;
+    background: #219653;
+    padding: 10px 20px;
 
-  color: #fff;
-  border: none;
-  font-family: "Inter", sans-serif;
-  justify-content: space-between;
-  align-items: "center";
+    color: #fff;
+    border: none;
+    font-family: "Inter", sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
 }
+
 .button {
-  background: var(--header-button);
-  padding: 10px 15px;
-  border: none;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  justify-content: space-between;
-  border-radius: 5px;
+    background: var(--header-button);
+    padding: 10px 15px;
+    border: none;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    justify-content: space-between;
+    border-radius: 5px;
 
-  align-items: "center";
+    align-items: center;
 }
+
 @media only screen and (max-width: 360px) {
-  .section-button {
-    padding: 5px 25px;
-  }
+    .section-button {
+        padding: 5px 25px;
+    }
 }

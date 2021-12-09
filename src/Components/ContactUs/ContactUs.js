@@ -121,126 +121,126 @@ const Wrapper = styled.div`
     }
   }
 `;
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 const ContactUs = () => {
-  const { t } = useTranslation();
-  const [center] = useState({
-    lat: 59.95,
-    lng: 30.33,
-  });
-  const [zoom] = useState(11);
+    const {t} = useTranslation();
+    const [center] = useState({
+        lat: 59.95,
+        lng: 30.33,
+    });
+    const [zoom] = useState(11);
 
-  const inputArray = t("contact_array", { returnObjects: true });
-  if (inputArray.length !== 4) {
+    const inputArray = t("contact_array", {returnObjects: true});
+    if (inputArray.length !== 4) {
+        return (
+            <div className="my-2 text-center">
+                <h1>Loading....</h1>
+            </div>
+        );
+    }
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm("gmail", "template_q2ou9r9", "local_2h8hBygX1dcsRWL9p3oue")
+            .then(
+                (result) => {
+                    console.log("dalim");
+                },
+                (error) => {
+                    console.log("kumar");
+                }
+            );
+    };
+
     return (
-      <div className="my-2 text-center">
-        <h1>Loading....</h1>
-      </div>
+        <Wrapper>
+            <Container fluid>
+                <Row className="px-2 px-sm-4">
+                    <h2 className=" start">{t("get_in_touch")}</h2>
+                    <Col lg={7}>
+
+                        <Row className="my-2 mx-0 p-0 ">
+                            <Col lg={12} className="m-0 p-3 px-3 address-container">
+                                <Row>
+                                    <h3 className="">Colombo, Sri Lanka</h3>
+                                    <p className="">No 22, Perera Tower, Sri Dharmakeerthiyarama Road, Colombo 03</p>
+
+                                    <h5>{t("general_enquiries")}</h5>
+                                    <div className="py-1">
+                                        <div>
+                                            <FaPhoneAlt/>{" "}
+                                            <span className="px-2">1300 014 419</span>
+                                        </div>
+                                        <div className="py-1">
+                                            <HiMail/>{" "}
+                                            <span className="px-2"> hello@fluentbrains.com</span>
+                                        </div>
+                                    </div>
+                                </Row>
+                            </Col>
+                        </Row>
+                        <Col xs={12} className="p-0">
+                            <div
+                                style={{height: "400px", width: "100%"}}
+                                className="py-2"
+                            >
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{
+                                        key: "AIzaSyAXRvVzqUDhKugKkBNnRYOK7ayp65Ulwxk",
+                                    }}
+                                    defaultCenter={center}
+                                    defaultZoom={zoom}
+                                >
+                                    <AnyReactComponent
+                                        lat={6.9108605}
+                                        lng={79.8565388}
+                                        text={<FaMapMarkerAlt size="30" color="#219653"/>}
+                                    />
+                                </GoogleMapReact>
+                            </div>
+                        </Col>
+                    </Col>
+                    <Col sm={9} md={7} lg={5} className="query-container py-2">
+                        <div className="query  ">
+                            <h2>{t("send_your_query")}</h2>
+
+                            <Row>
+                                <form onSubmit={sendEmail}>
+                                    {inputArray.map((el, i) => (
+                                        <Col xs={12} key={i}>
+                                            <input
+                                                type={el.type}
+                                                placeholder={el.placeholder}
+                                                className="w-100"
+                                                name={el.name}
+                                            />
+                                        </Col>
+                                    ))}
+                                    <Col xs={12}>
+                                        <textarea
+                                            name=""
+                                            id=""
+                                            cols="30"
+                                            rows="7"
+                                            className="w-100"
+                                            placeholder={t("message")}
+                                        ></textarea>
+                                    </Col>
+
+                                    <Col xs={12} className="py-3">
+                                        <button type="submit" className="w-100 submit-button">
+                                            {t("submit")}
+                                        </button>
+                                    </Col>
+                                </form>
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </Wrapper>
     );
-  }
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("gmail", "template_q2ou9r9", "local_2h8hBygX1dcsRWL9p3oue")
-      .then(
-        (result) => {
-          console.log("dalim");
-        },
-        (error) => {
-          console.log("kumar");
-        }
-      );
-  };
-
-  return (
-    <Wrapper>
-      <Container fluid>
-            <Row className="px-2 px-sm-4">
-              <h2 className=" start">{t("get_in_touch")}</h2>
-              <Col lg={7}>
-
-              <Row className="my-2 mx-0 p-0 ">
-                <Col lg={12} className="m-0 p-3 px-3 address-container">
-                  <Row>
-                    <h3 className="">Colombo, Sri Lanka</h3>
-                    <p className="">No 22, Perera Tower, Sri Dharmakeerthiyarama Road, Colombo 03</p>
-
-                    <h5>{t("general_enquiries")}</h5>
-                    <div className="py-1">
-                      <div>
-                        <FaPhoneAlt />{" "}
-                        <span className="px-2">1300 014 419</span>
-                      </div>
-                      <div className="py-1">
-                        <HiMail />{" "}
-                        <span className="px-2"> hello@fluentbrains.com</span>
-                      </div>
-                    </div>
-                  </Row>
-                </Col>
-              </Row>
-              <Col xs={12} className="p-0">
-                <div
-                  style={{ height: "400px", width: "100%" }}
-                  className="py-2"
-                >
-                  <GoogleMapReact
-                    bootstrapURLKeys={{
-                      key: "AIzaSyAXRvVzqUDhKugKkBNnRYOK7ayp65Ulwxk",
-                    }}
-                    defaultCenter={center}
-                    defaultZoom={zoom}
-                  >
-                    <AnyReactComponent
-                      lat={6.9108605}
-                      lng={79.8565388}
-                      text={<FaMapMarkerAlt size="30" color="#219653" />}
-                    />
-                  </GoogleMapReact>
-                </div>
-              </Col>
-              </Col>
-              <Col sm={9} md={7} lg={5} className="query-container py-2">
-                <div className="query  ">
-                  <h2>{t("send_your_query")}</h2>
-
-                  <Row>
-                    <form onSubmit={sendEmail}>
-                      {inputArray.map((el, i) => (
-                          <Col xs={12} key={i}>
-                            <input
-                                type={el.type}
-                                placeholder={el.placeholder}
-                                className="w-100"
-                                name={el.name}
-                            />
-                          </Col>
-                      ))}
-                      <Col xs={12}>
-                    <textarea
-                        name=""
-                        id=""
-                        cols="30"
-                        rows="7"
-                        className="w-100"
-                        placeholder={t("message")}
-                    ></textarea>
-                      </Col>
-
-                      <Col xs={12} className="py-3">
-                        <button type="submit" className="w-100 submit-button">
-                          {t("sign_up")}
-                        </button>
-                      </Col>
-                    </form>
-                  </Row>
-                </div>
-              </Col>
-            </Row>
-      </Container>
-    </Wrapper>
-  );
 };
 export default ContactUs;

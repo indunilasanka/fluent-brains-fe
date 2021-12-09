@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../../images/Home/footer-logo.svg";
 import {Col, Container, Row} from "react-bootstrap";
-import {AiFillFacebook, AiOutlineInstagram, AiOutlineTwitter} from "react-icons/ai";
+import {AiFillFacebook} from "react-icons/ai";
 import {GrLinkedinOption} from "react-icons/gr";
-import {BiWorld} from "react-icons/bi";
 import {Link} from "react-router-dom";
 
 import {useTranslation} from "react-i18next";
@@ -62,14 +61,17 @@ const Wrapper = styled.div`
     .social-container {
       display: none;
     }
+    
     .footer-logo {
       text-align: center;
-      margin: 50px 0;
+      margin-top: 30px;
+      margin-bottom: 20px;
     }
     .footer-text {
       text-align: center;
     }
   }
+  
   
   @media only screen and (max-width: 500px) {
    .rights{

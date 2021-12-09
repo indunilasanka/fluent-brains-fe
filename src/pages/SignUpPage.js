@@ -24,7 +24,7 @@ const SignUpPage = () => {
 
             <Footer/>
         </>
-  );
+    );
 };
 
 export default SignUpPage;

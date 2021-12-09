@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   .title {
     font-size: 48px;
     line-height: 65px;
-    padding-top: 100px;
+    padding-top: 50px;
   }
   .subtitle {
     font-weight: 400;
@@ -41,32 +41,32 @@ const Wrapper = styled.div`
   }
 `;
 const SingleTab = (props) => {
-  const { modals } = useMainContext();
-  const icon = [kindergarten, firstgrade, firstgrade];
-  const newTabbox = props.tabbox.map((el, i) => {
-    return {...el, icon: icon[i]};
-  });
+    const {modals} = useMainContext();
+    const icon = [kindergarten, firstgrade, firstgrade];
+    const newTabbox = props.tabbox.map((el, i) => {
+        return {...el, icon: icon[i]};
+    });
 
-  return (
-      <>
-        <Wrapper>
-          <Container fluid className="p-0">
-            <Row>
-              <div className="title-container">
-                <h1 className="title">{props.title}</h1>
-                <p className="subtitle py-5">{props.subtitle}</p>
-              </div>
-              <div>
-                {newTabbox.map((el, i) => (
-                    <SingleTabBox {...el} title={props.title} key={i}/>
-                ))}
-              </div>
-            </Row>
-          </Container>
-        </Wrapper>
-        {modals && <Modal/>}
-      </>
-  );
+    return (
+        <>
+            <Wrapper>
+                <Container fluid className="p-0">
+                    <Row>
+                        <div className="title-container">
+                            <h1 className="title">{props.title}</h1>
+                            <p className="subtitle py-5">{props.subtitle}</p>
+                        </div>
+                        <div>
+                            {newTabbox.map((el, i) => (
+                                <SingleTabBox {...el} title={props.title} key={i}/>
+                            ))}
+                        </div>
+                    </Row>
+                </Container>
+            </Wrapper>
+            {modals && <Modal/>}
+        </>
+    );
 };
 
 export default SingleTab;

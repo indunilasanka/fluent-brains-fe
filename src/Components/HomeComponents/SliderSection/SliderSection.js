@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Row } from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import Sliders from "./Slider";
 import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
-import { useMainContext } from "../../../Context/Context";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import {useMainContext} from "../../../Context/Context";
+import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const Wrapper = styled.div`
   position: relative;
@@ -41,28 +41,28 @@ const Wrapper = styled.div`
   }
 `;
 const SliderSection = () => {
-  const { modals } = useMainContext();
-  const { t } = useTranslation();
+    const {modals} = useMainContext();
+    const {t} = useTranslation();
 
-  return (
-    <>
-      <Wrapper>
-        <Container fluid className="py-5 my-slider-section-container">
-          <h3 className="s-title text-center">{t("slider_title")}</h3>
-          <p className="s-subtitle text-center py-3">{t("slider_subtitle")}</p>
-          <Row>
-            <Sliders />
-          </Row>
-          <Link to="learning">
-            <div className="text-center btn-container">
-              <Button section>{t("explore_activities")}</Button>
-            </div>
-          </Link>
-        </Container>
-      </Wrapper>
-      {modals && <Modal />}
-    </>
-  );
+    return (
+        <>
+            <Wrapper>
+                <Container fluid className="py-4 my-slider-section-container">
+                    <h3 className="s-title text-center">{t("slider_title")}</h3>
+                    <p className="s-subtitle text-center py-3">{t("slider_subtitle")}</p>
+                    <Row>
+                        <Sliders/>
+                    </Row>
+                    <Link to="learning">
+                        <div className="text-center btn-container py-2">
+                            <Button section>{t("explore_activities")}</Button>
+                        </div>
+                    </Link>
+                </Container>
+            </Wrapper>
+            {modals && <Modal/>}
+        </>
+    );
 };
 
 export default SliderSection;

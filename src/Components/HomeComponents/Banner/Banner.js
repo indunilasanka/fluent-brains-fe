@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import banner from "../../../images/Home/banner.png";
 import Button from "../Button/Button";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
+
 const Wrapper = styled.div`
   .banner-container {
     position: relative;
@@ -75,27 +76,27 @@ const Wrapper = styled.div`
   }
 `;
 const Banner = () => {
-  const { t } = useTranslation();
-  return (
-    <Wrapper>
-      <div className="banner-container">
-        <img src={banner} alt="banner" className="banner" />
-        <div className="banner-text">
-          <h2 className="banner-heading">
-            {t("banner_heading1")} <br />
-            {t("banner_heading2")}
-          </h2>
+    const {t} = useTranslation();
+    return (
+        <Wrapper>
+            <div className="banner-container">
+                <img src={banner} alt="banner" className="banner"/>
+                <div className="banner-text">
+                    <h2 className="banner-heading">
+                        {t("banner_heading1")} <br/>
+                        {t("banner_heading2")}
+                    </h2>
 
-          <p className="banner-summary py-3">
-            {t("banner_text1")}
-            <br /> {t("banner_text2")}
-          </p>
+                    <p className="banner-summary py-3">
+                        {t("banner_text1")}
+                        <br/> {t("banner_text2")}
+                    </p>
 
-          <Button>{t("get_started")}</Button>
-        </div>
-      </div>
-    </Wrapper>
-  );
+                    <Button>{t("get_started")}</Button>
+                </div>
+            </div>
+        </Wrapper>
+    );
 };
 
 export default Banner;

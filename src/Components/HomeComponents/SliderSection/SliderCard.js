@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import "video-react/dist/video-react.css";
-import { BiPlay } from "react-icons/bi";
-import { useMainContext } from "../../../Context/Context";
+import {BiPlay} from "react-icons/bi";
+import {useMainContext} from "../../../Context/Context";
 
 const Wrapper = styled.div`
   background: #e0e0e0;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     width: 50px;
     height: 50px;
     position: absolute;
-    background: #f2f2f2;
+    background: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -79,29 +79,29 @@ const Wrapper = styled.div`
   }
 `;
 const SliderCard = (props) => {
-  const { title, url } = props;
-  const { showModals } = useMainContext();
-  const showActivityModal = () => {
-    showModals(title, url);
-  };
+    const {title, url} = props;
+    const {showModals} = useMainContext();
+    const showActivityModal = () => {
+        showModals(title, url);
+    };
 
-  return (
-    <>
-      <Wrapper>
-        <div className="px-2 mx-2 " style={{ color: "#000" }}>
-          <div className="c-title-container">
-            <p className="py-2 c-title">{title} </p>
-          </div>
-          <div className="img-container">
-            <img src={props.img} alt="" className="w-100 h-100" />
-            <div className="play-container" onClick={showActivityModal}>
-              <BiPlay className="play" color="#BDBDBD" size="25" />
-            </div>
-          </div>
-        </div>
-      </Wrapper>
-    </>
-  );
+    return (
+        <>
+            <Wrapper>
+                <div className="px-2 mx-2 " style={{color: "#000"}}>
+                    <div className="c-title-container">
+                        <p className="py-2 c-title">{title} </p>
+                    </div>
+                    <div className="img-container">
+                        <img src={props.img} alt="" className="w-100 h-100"/>
+                        <div className="play-container" onClick={showActivityModal}>
+                            <BiPlay className="play" color="#BDBDBD" size="25"/>
+                        </div>
+                    </div>
+                </div>
+            </Wrapper>
+        </>
+    );
 };
 
 export default SliderCard;

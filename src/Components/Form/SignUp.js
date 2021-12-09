@@ -187,16 +187,16 @@ const SignUp = () => {
 
         if (!(firstName && email && password && phoneNumber)) {
             setErr("Please fill in name, email, phone number and password");
-            return;
+
         } else if (!regex.test(phoneNumber)) {
             setErr("The phone number is invalid");
-            return;
+
         } else if (password !== confirmPassword) {
             setErr("Password should match with confirmation");
-            return;
-        } else if (!isAgreed) {
-            setErr("You need to agree terms and conditions");
-            return;
+
+            // } else if (!isAgreed) {
+            //     setErr("You need to agree terms and conditions");
+
         } else {
             let user;
 
@@ -358,17 +358,17 @@ const SignUp = () => {
                                             </Col>
                                         </Row>
                                         <Row>
-                                            <Col xs={12} className="py-2">
-                                                <label className="main">
-                                                    {t("terms_condition")}
-                                                    <input type="checkbox"
-                                                           onChange={(event) => {
-                                                               setIsAgreed(event.target.checked);
-                                                           }}
-                                                    />
-                                                    <span className="geekmark"></span>
-                                                </label>
-                                            </Col>
+                                            {/*<Col xs={12} className="py-2">*/}
+                                            {/*    <label className="main">*/}
+                                            {/*        {t("terms_condition")}*/}
+                                            {/*        <input type="checkbox"*/}
+                                            {/*               onChange={(event) => {*/}
+                                            {/*                   setIsAgreed(event.target.checked);*/}
+                                            {/*               }}*/}
+                                            {/*        />*/}
+                                            {/*        <span className="geekmark"></span>*/}
+                                            {/*    </label>*/}
+                                            {/*</Col>*/}
                                             <Col xs={12} className="py-3">
                                                 <button type="submit" className="w-100 submit-button"
                                                         onClick={handleSignup} disabled={loading}>

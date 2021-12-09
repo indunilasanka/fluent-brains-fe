@@ -178,7 +178,7 @@ const SignIn = () => {
     const [err, setErr] = useState("");
     const {login} = useAuth();
     const {
-      successMessage, updateSuccessMessage,
+        successMessage, updateSuccessMessage,
     } = useMainContext();
 
     const [color, setColor] = useState("white");
@@ -188,7 +188,7 @@ const SignIn = () => {
 
         if (!(email && password)) {
             setErr("Please fill email and password");
-            return;
+
         } else {
             try {
                 setLoading(true);

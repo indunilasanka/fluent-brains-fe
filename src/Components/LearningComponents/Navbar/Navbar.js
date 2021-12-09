@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Link, useHistory} from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-import { HiOutlineSearch } from "react-icons/hi";
-import { FaUserCircle } from "react-icons/fa";
-import { AiFillCaretDown } from "react-icons/ai";
+import {Col, Container, Row} from "react-bootstrap";
+import {AiFillCaretDown} from "react-icons/ai";
 import logo from "../../../images/Learning/logo.svg";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useMainContext } from "../../../Context/Context";
+import profile from "../../../images/Learning/profile.svg";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {useMainContext} from "../../../Context/Context";
 import i18next from "i18next";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import {useAuth} from "../../../Context/AuthContext";
 
 const Wrapper = styled.div`
@@ -46,7 +45,7 @@ const Wrapper = styled.div`
   }
   
   .name-text{
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .search {
@@ -60,11 +59,19 @@ const Wrapper = styled.div`
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
+  
+  .profile{
+    width: 30px !important;
+    height: 30px !important;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  
   .logout-container {
     position: relative;
     cursor:pointer;
   }
-  .user-conteiner {
+  .user-container {
     width: 195px;
   }
   .logout {
@@ -141,10 +148,10 @@ const Wrapper = styled.div`
   }
   @media only screen and (max-width: 1199px) {
     ${
-      "" /* .search-container {
+    "" /* .search-container {
       width: 40%;
     } */
-    }
+}
 
     .logo img {
       width: 158px;
@@ -153,24 +160,24 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 991px) {
     ${"" /* padding: 0 20px; */}
     ${
-      "" /* .search-container {
+    "" /* .search-container {
       width: 45%;
     } */
-    }
+}
     ${
-      "" /* .language-container {
+    "" /* .language-container {
       padding-top: 2px;
     } */
-    }
+}
     .sidebar {
       display: block;
     }
 
     ${
-      "" /* .hamburgar {
+    "" /* .hamburgar {
       padding-top: 4px;
     } */
-    }
+}
     .search-container {
       width: 85%;
     }
@@ -183,12 +190,12 @@ const Wrapper = styled.div`
   }
   @media only screen and (max-width: 520px) {
     ${
-      "" /* .search-container2 {
+    "" /* .search-container2 {
       width: 96%;
       margin-right: 20px;
       margin-left: 18px;
     } */
-    }
+}
     .search-input {
       margin-left: 10px;
     }
@@ -220,172 +227,172 @@ const Wrapper = styled.div`
   }
 `;
 const Navbar = () => {
-  const history = useHistory();
-  const [userState, setUserState] = useState({});
-  const {
-    showLanguage,
-    setShowLanguage,
-    showLanguageFunc,
-    logout,
-    showLogOut,
-    learningSidebar,
-    setLearningSidebar,
-    language,
-    LanguageArray,
-    singleLanguage,
-  } = useMainContext();
+    const history = useHistory();
+    const [userState, setUserState] = useState({});
+    const {
+        showLanguage,
+        setShowLanguage,
+        showLanguageFunc,
+        logout,
+        showLogOut,
+        learningSidebar,
+        setLearningSidebar,
+        language,
+        LanguageArray,
+        singleLanguage,
+    } = useMainContext();
 
-  const { t } = useTranslation();
+    const {t} = useTranslation();
 
-  const user = useAuth();
+    const user = useAuth();
 
-  const handleLogout = async () => {
-    await user.logout();
-    showLogOut(false);
-    history.go(0);
-  }
+    const handleLogout = async () => {
+        await user.logout();
+        showLogOut(false);
+        history.go(0);
+    }
 
-  useEffect(() => {
-      setUserState(user.currentUser);
-  }, []);
+    useEffect(() => {
+        setUserState(user.currentUser);
+    }, []);
 
-  return (
-    <Wrapper>
-      <Container fluid>
-        <Row className="align-items-center p-relative">
-          <Col xs={5} md={6} lg={3} className="m-0 logo">
-            <Link to="/">
-              <img src={logo} alt="" />
-            </Link>
-          </Col>
+    return (
+        <Wrapper>
+            <Container fluid>
+                <Row className="align-items-center p-relative">
+                    <Col xs={5} md={6} lg={3} className="m-0 logo">
+                        <Link to="/">
+                            <img src={logo} alt=""/>
+                        </Link>
+                    </Col>
 
-          <Col md={5} className="search-container d-none d-lg-block">
-          </Col>
-          <Col lg={4} xs={7} md={6} dir="" className="m-0 ">
-            <Row className="d-flex justify-content-end align-items-center">
-              <Col
-                xs={4}
-                className="logout-container m-0 p-0 d-none d-lg-block"
-              >
-                <div className="logout-container m-0 p-0 ">
-                  <div
-                    onClick={showLanguageFunc}
-                    className="d-flex align-items-center justify-content-center  language-container"
-                  >
-                    <p className="mx-2">{language}</p>
-                    <AiFillCaretDown className=" user m-0" />
-                  </div>
+                    <Col md={5} className="search-container d-none d-lg-block">
+                    </Col>
+                    <Col lg={4} xs={7} md={6} dir="" className="m-0 ">
+                        <Row className="d-flex justify-content-end align-items-center">
+                            <Col
+                                xs={3}
+                                className="logout-container m-0 p-0 d-none d-lg-block"
+                            >
+                                <div className="logout-container m-0 p-0 ">
+                                    <div
+                                        onClick={showLanguageFunc}
+                                        className="d-flex align-items-center justify-content-center language-container"
+                                    >
+                                        <p className="mx-2">{language}</p>
+                                        <AiFillCaretDown className=" user m-0"/>
+                                    </div>
 
-                  {showLanguage && (
-                    <div className="language">
-                      {LanguageArray.map((el, i) => (
-                        <p
-                          key={i}
-                          onClick={() => {
-                            singleLanguage(el.name);
-                            i18next.changeLanguage(el.code);
-                          }}
-                          className=" py-2 px-2 "
+                                    {showLanguage && (
+                                        <div className="language">
+                                            {LanguageArray.map((el, i) => (
+                                                <p
+                                                    key={i}
+                                                    onClick={() => {
+                                                        singleLanguage(el.name);
+                                                        i18next.changeLanguage(el.code);
+                                                    }}
+                                                    className=" py-2 px-2 "
+                                                >
+                                                    {el.name}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </Col>
+                            <Col
+                                xs={8}
+                                className="logout-container user-container m-0 d-none d-lg-block"
+                            >
+                                <div
+                                    dir=""
+                                    onClick={showLogOut}
+                                    className="d-flex  justify-content-end align-items-center"
+                                >
+                                    <img src={profile} className=" mx-0 profile" alt=""/>
+                                    <p className="mx-2 name-text">{userState != null && userState.displayName}</p>
+                                    <AiFillCaretDown className=" user m-0"/>
+                                </div>
+
+                                {logout && (
+                                    <div className="logout py-2 my-2" onClick={handleLogout}>
+                                        {t("logout")}
+                                    </div>
+                                )}
+                            </Col>
+                        </Row>
+                        <div
+                            dir="rtl"
+                            className=" m-0 d-flex align-items-center d-lg-none hamburger"
                         >
-                          {el.name}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </Col>
-              <Col
-                xs={8}
-                className="logout-container user-conteiner m-0 d-none d-lg-block"
-              >
-                <div
-                  dir=""
-                  onClick={showLogOut}
-                  className="d-flex  justify-content-end align-items-center"
-                >
-                  <FaUserCircle size="35" className=" mx-0  user" />
-                  <p className="mx-2 name-text">{userState != null && userState.displayName}</p>
-                  <AiFillCaretDown className=" user m-0" />
-                </div>
+                            <GiHamburgerMenu
+                                size="30"
+                                onClick={() => {
+                                    setLearningSidebar((prev) => !prev);
+                                    setShowLanguage(false);
+                                }}
+                                className="p-0 m-0"
+                            />
+                            <div className="logout-container m-0 p-0 ">
+                                <div
+                                    onClick={showLanguageFunc}
+                                    className="d-flex align-items-center mx-4 language-container"
+                                >
+                                    <AiFillCaretDown className=" user"/>
+                                    <p className="mx-2">{language}</p>
+                                </div>
 
-                {logout && (
-                  <div className="logout py-2 my-2" onClick={handleLogout}>
-                    {t("logout")}
-                  </div>
-                )}
-              </Col>
-            </Row>
-            <div
-              dir="rtl"
-              className=" m-0 d-flex align-items-center d-lg-none hamburger"
-            >
-              <GiHamburgerMenu
-                size="30"
-                onClick={() => {
-                  setLearningSidebar((prev) => !prev);
-                  setShowLanguage(false);
-                }}
-                className="p-0 m-0"
-              />
-              <div className="logout-container m-0 p-0 ">
-                <div
-                  onClick={showLanguageFunc}
-                  className="d-flex align-items-center mx-4 language-container"
+                                {showLanguage && (
+                                    <div className="language">
+                                        {LanguageArray.map((el, i) => (
+                                            <p
+                                                key={i}
+                                                onClick={() => {
+                                                    singleLanguage(el.name);
+                                                    i18next.changeLanguage(el.code);
+                                                }}
+                                                className=" py-2 px-2 "
+                                            >
+                                                {el.name}
+                                            </p>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            {learningSidebar && (
+                <Col
+                    xs={12}
+                    sm={6}
+                    className="sidebar "
+                    style={{paddingBottom: logout && "50px"}}
                 >
-                  <AiFillCaretDown className=" user" />
-                  <p className="mx-2">{language}</p>
-                </div>
-
-                {showLanguage && (
-                  <div className="language">
-                    {LanguageArray.map((el, i) => (
-                      <p
-                        key={i}
-                        onClick={() => {
-                          singleLanguage(el.name);
-                          i18next.changeLanguage(el.code);
-                        }}
-                        className=" py-2 px-2 "
-                      >
-                        {el.name}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      {learningSidebar && (
-        <Col
-          xs={12}
-          sm={6}
-          className="sidebar "
-          style={{ paddingBottom: logout && "50px" }}
-        >
-          <Row className=" d-flex justify-content-center py-2">
-            <Col xs={12} className="my-3">
-              <div className="logout-container m-auto d-block d-lg-none user-container">
-                <div
-                  onClick={showLogOut}
-                  className="d-flex align-items-center justify-content-center "
-                  style={{ width: "200px" }}
-                >
-                  <FaUserCircle size="35" className=" mx-0  user" />
-                  <p className="mx-2">{userState != null && userState.displayName}</p>
-                  <AiFillCaretDown className=" user m-0" />
-                </div>
-                {logout && (
-                  <div className="logouts py-2 my-3">{t("logout")}</div>
-                )}
-              </div>
-            </Col>
-          </Row>
-        </Col>
-      )}
-    </Wrapper>
-  );
+                    <Row className=" d-flex justify-content-center py-2">
+                        <Col xs={12} className="my-3">
+                            <div className="logout-container m-auto d-block d-lg-none user-container">
+                                <div
+                                    onClick={showLogOut}
+                                    className="d-flex align-items-center justify-content-center "
+                                    style={{width: "200px"}}
+                                >
+                                    <img src={profile} className=" mx-0  profile" alt=""/>
+                                    <p className="mx-2">{userState != null && userState.displayName}</p>
+                                    <AiFillCaretDown className=" user m-0"/>
+                                </div>
+                                {logout && (
+                                    <div className="logouts py-2 my-3">{t("logout")}</div>
+                                )}
+                            </div>
+                        </Col>
+                    </Row>
+                </Col>
+            )}
+        </Wrapper>
+    );
 };
 
 export default Navbar;

@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   align-items: center;
   z-index: 5000000000000000;
   overflow: auto;
+  padding: 0 !important;
 
   .modal-container {
     max-width: 960px;
@@ -90,38 +91,38 @@ const Wrapper = styled.div`
 `;
 
 const Modal = () => {
-  const {setModals, currentActivity} = useMainContext();
-  let [loading, setLoading] = useState(true);
+    const {setModals, currentActivity} = useMainContext();
+    let [loading, setLoading] = useState(true);
 
-  return (
-    <Wrapper>
-      <div className="modal-container">
-        <div className="m-title">
-          <p>{currentActivity.title}</p>
-          <IoMdClose
-              className="close"
-              size="20"
-              onClick={() => setModals(false)}
-          />
-        </div>
+    return (
+        <Wrapper>
+            <div className="modal-container">
+                <div className="m-title">
+                    <p>{currentActivity.title}</p>
+                    <IoMdClose
+                        className="close"
+                        size="20"
+                        onClick={() => setModals(false)}
+                    />
+                </div>
 
-        <Iframe
-            url={currentActivity.url}
-            scrolling="no"
-            width="100%"
-            height="100%"
-            id="myId"
-            className="iframe"
-            display="initial"
-            position="relative"
-            onLoad={() => {
-            setLoading(false);
-          }}
-        ></Iframe>
-        <Loader load={loading}></Loader>
-      </div>
-    </Wrapper>
-  );
+                <Iframe
+                    url={currentActivity.url}
+                    scrolling="no"
+                    width="100%"
+                    height="100%"
+                    id="myId"
+                    className="iframe"
+                    display="initial"
+                    position="relative"
+                    onLoad={() => {
+                        setLoading(false);
+                    }}
+                ></Iframe>
+                <Loader load={loading}></Loader>
+            </div>
+        </Wrapper>
+    );
 };
 
 export default Modal;

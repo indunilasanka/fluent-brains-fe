@@ -39,7 +39,7 @@ const Home = () => {
             <LearningImage/>
             <Footer/>
         </Wrapper>
-  );
+    );
 };
 
 export default Home;
