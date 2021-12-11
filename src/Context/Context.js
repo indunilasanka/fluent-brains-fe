@@ -3,7 +3,6 @@ import React, {useContext, useState} from "react";
 const ProductsContext = React.createContext();
 
 export const ContextProvider = ({children}) => {
-
     const [currentActivity, setCurrentActivity] = useState();
     const [sidebar, setSidebar] = useState(false);
     const [modals, setModals] = useState(false);

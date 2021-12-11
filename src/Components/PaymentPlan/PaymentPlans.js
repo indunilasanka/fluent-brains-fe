@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import styled from "styled-components";
 
 import {useTranslation} from "react-i18next";
 import {AiFillCaretRight, AiFillCheckCircle} from "react-icons/all";
+import {useAuth} from "../../Context/AuthContext";
+import {Link} from "react-router-dom";
 
 const Wrapper = styled.div`
   background: #f7f4f2;
@@ -91,6 +93,12 @@ const Wrapper = styled.div`
     padding: 0;
   }
   
+  .sign-up-text{
+    font-size : 16px;
+    color: blue;
+    text-decoration: underline;
+  }
+  
   .plan1{
     color: #70C1FF;
   }
@@ -164,6 +172,11 @@ const Wrapper = styled.div`
 
 const PaymentPlans = () => {
     const {t} = useTranslation();
+    const [userState, setUserState] = useState({});
+    const user = useAuth();
+    useEffect(() => {
+        setUserState(user.currentUser);
+    }, []);
 
     return (
         <Wrapper>
@@ -206,14 +219,17 @@ const PaymentPlans = () => {
 
                                 <p className="h-title">{t("howtoregister")}</p>
                                 <ul className="benefits-list">
-                                    <li className="benefits">
-                                        <AiFillCaretRight
-                                            size="25"
-                                            color="green"
-                                            className="mx-2 social-icon"
-                                        />
-                                        Sign up with student details
-                                    </li>
+                                    {userState == null &&
+                                        <li className="benefits">
+                                            <AiFillCaretRight
+                                                size="25"
+                                                color="green"
+                                                className="mx-2 social-icon"
+                                            />
+                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
+                                            student details
+                                        </li>
+                                    }
                                     <li className="benefits">
                                         <AiFillCaretRight
                                             size="25"
@@ -299,14 +315,17 @@ const PaymentPlans = () => {
                                 </ul>
                                 <p className="h-title">{t("howtoregister")}</p>
                                 <ul className="benefits-list">
-                                    <li className="benefits">
-                                        <AiFillCaretRight
-                                            size="25"
-                                            color="green"
-                                            className="mx-2 social-icon"
-                                        />
-                                        Sign up with student details
-                                    </li>
+                                    {userState == null &&
+                                        <li className="benefits">
+                                            <AiFillCaretRight
+                                                size="25"
+                                                color="green"
+                                                className="mx-2 social-icon"
+                                            />
+                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
+                                            student details
+                                        </li>
+                                    }
                                     <li className="benefits">
                                         <AiFillCaretRight
                                             size="25"
@@ -399,14 +418,17 @@ const PaymentPlans = () => {
                                 </ul>
                                 <p className="h-title">{t("howtoregister")}</p>
                                 <ul className="benefits-list">
-                                    <li className="benefits">
-                                        <AiFillCaretRight
-                                            size="25"
-                                            color="green"
-                                            className="mx-2 social-icon"
-                                        />
-                                        Sign up with student details
-                                    </li>
+                                    {userState == null &&
+                                        <li className="benefits">
+                                            <AiFillCaretRight
+                                                size="25"
+                                                color="green"
+                                                className="mx-2 social-icon"
+                                            />
+                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
+                                            student details
+                                        </li>
+                                    }
                                     <li className="benefits">
                                         <AiFillCaretRight
                                             size="25"

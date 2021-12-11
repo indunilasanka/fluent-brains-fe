@@ -176,7 +176,8 @@ const SignIn = () => {
     const [password, setPassword] = useState("");
     const history = useHistory();
     const [err, setErr] = useState("");
-    const {login} = useAuth();
+    const {getUserDetailsFromFirestore, login} = useAuth();
+
     const {
         successMessage, updateSuccessMessage,
     } = useMainContext();
@@ -198,7 +199,8 @@ const SignIn = () => {
                     setLoading(false);
                     return;
                 }
-                history.push('/learning');
+                // await getUserDetailsFromFirestore(email);
+                history.goBack();
             } catch (err) {
                 if (err.code == 'auth/user-not-found') {
                     err.message = "There is no user record corresponding to this email address. Please register first";

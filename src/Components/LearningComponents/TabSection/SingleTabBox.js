@@ -5,9 +5,12 @@ import {BiChevronRight} from "react-icons/bi";
 
 import {useTranslation} from "react-i18next";
 import {useMainContext} from "../../../Context/Context";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import {Link} from "react-router-dom";
+import {HtmlTooltip} from "../../Form/ToolTip";
 
 const Wrapper = styled.div`
-  ${"" /* background: #fff; */}
   font-family: "Roboto", sans-serif;
 
   margin: 20px 0;
@@ -57,9 +60,26 @@ const Wrapper = styled.div`
 
   .text {
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.7);
+    color: black;
     font-weight: 400;
     cursor: pointer;
+  }
+  
+  .hidden-text {
+    font-size: 16px;
+    color: #8c8c8c;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  
+  .tool-tip-box{
+    background-color: #e7e7e7;
+    color: rgba(0, 0, 0, 0.87);
+    max-width: 220px;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid #dadde9;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
   }
 
   .button-container {
@@ -86,6 +106,11 @@ const Wrapper = styled.div`
 
   .text {
     font-size: 16px;
+  }
+  
+  .tool-tip-text{
+    font-size: 12px;
+    font-weight: bold;
   }
 
   @media only screen and (max-width: 1199px) {
@@ -181,6 +206,41 @@ const urlArray = [
     ]
 ];
 
+const freeStatus = [
+    [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+];
+
 const SingleTabBox = (props) => {
     const {icon, name, text, color, title} = props;
     const [seeMore, setSeeMore] = useState(false);
@@ -188,8 +248,6 @@ const SingleTabBox = (props) => {
     const seemore = t("see_more");
     const seeless = t("see_less");
     const {showModals} = useMainContext();
-
-    console.log(title);
 
     const showActivityModal = (title, url) => {
         showModals(title, url);
@@ -218,14 +276,34 @@ const SingleTabBox = (props) => {
                             </div>
                         </div>
                     </Col>
+
                     <Col md={12} lg={10} xl={8} className="main-text-container ">
                         {!seeMore && (
                             <Row className="py-3">
                                 {text[0].map((el, i) => {
                                     return (
                                         <Col md={6} xl={5} key={i} className="text-container py-2">
-                                            <span className="text"
-                                                  onClick={() => showActivityModal(el, urlArray[0][i])}>{el}</span>
+                                            {((props.userData == null && !freeStatus[0][i]) || (props.userData != null && !props.userData.isRegistered && !freeStatus[0][i])) &&
+                                                <HtmlTooltip
+                                                    title={
+                                                        <React.Fragment>
+                                                            <Typography color="inherit" className="tool-tip-box">Become
+                                                                a member and get access to premium
+                                                                challenges</Typography>
+                                                            <Link to="membership">
+                                                                <Button section="true">Apply Membership</Button>
+                                                            </Link>
+                                                        </React.Fragment>
+                                                    }
+                                                >
+                                                    <span className="hidden-text">{el}</span>
+                                                </HtmlTooltip>
+                                            }
+
+                                            {((freeStatus[0][i]) || (props.userData != null && props.userData.isRegistered && !freeStatus[0][i])) &&
+                                                <span className="text"
+                                                      onClick={() => showActivityModal(el, urlArray[0][i])}>{el}</span>
+                                            }
                                         </Col>
                                     );
                                 })}
@@ -242,8 +320,27 @@ const SingleTabBox = (props) => {
                                                 xl={5}
                                                 className="text-container py-2 "
                                             >
-                                                <span className="text"
-                                                      onClick={() => showActivityModal(el, urlArray[j][i])}>{el}</span>
+                                                {((props.userData == null && !freeStatus[j][i]) || (props.userData != null && !props.userData.isRegistered && !freeStatus[j][i])) &&
+                                                    <HtmlTooltip
+                                                        title={
+                                                            <React.Fragment>
+                                                                <Typography color="inherit" className="tool-tip-text">Become
+                                                                    a member and get access to premium
+                                                                    challenges</Typography>
+                                                                <Link to="membership">
+                                                                    <Button section="true">Apply Membership</Button>
+                                                                </Link>
+                                                            </React.Fragment>
+                                                        }
+                                                    >
+                                                        <span className="hidden-text">{el}</span>
+                                                    </HtmlTooltip>
+                                                }
+
+                                                {((freeStatus[j][i]) || (props.userData != null && props.userData.isRegistered && !freeStatus[j][i])) &&
+                                                    <span className="text"
+                                                          onClick={() => showActivityModal(el, urlArray[j][i])}>{el}</span>
+                                                }
                                             </Col>
                                         ))}
                                     </Row>

@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     border-radius: 5px;
     position: absolute;
     width: 150px;
-    z-index: 5;
+    z-index: 100;
     top: 45px;
     left: 50%;
     transform: translateX(-50%);
@@ -130,11 +130,8 @@ const Navbar = () => {
         sidebar,
         showSidebar,
         showLanguage,
-
         showLanguageFunc,
-
         language,
-
         LanguageArray,
         singleLanguage,
     } = useMainContext();

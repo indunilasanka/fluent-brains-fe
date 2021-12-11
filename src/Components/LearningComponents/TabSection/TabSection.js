@@ -69,14 +69,12 @@ const Wrapper = styled.div`
     }
   }
 `;
-const TabSection = () => {
+const TabSection = (props) => {
     const [value, setValue] = useState(0);
-
     const tabIcon = [math, eng, science, general];
     const colorIcon = [colorMath, colorEng, colorScience, colorGeneral];
     const {t} = useTranslation();
     const newArrays = t("tab_section", {returnObjects: true});
-
     const newArray = Array.from(newArrays);
 
     const TabArray = newArray
@@ -128,7 +126,7 @@ const TabSection = () => {
                     ))}
                 </Row>
                 <Row>
-                    <SingleTab title={title} subtitle={subtitle} tabbox={tabbox}/>
+                    <SingleTab title={title} subtitle={subtitle} userData={props.userData} tabbox={tabbox}/>
                 </Row>
             </Container>
         </Wrapper>

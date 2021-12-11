@@ -5,6 +5,7 @@ const AuthContext = React.createContext();
 
 export const AuthProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState();
+    const [userData, setCurrentUserData] = useState();
     const [loading, setLoading] = useState(true);
 
     function signup(email, password) {
@@ -17,6 +18,16 @@ export const AuthProvider = ({children}) => {
 
     function addUserDetailsToFirestore(data) {
         return firestore.collection("userDetails").add(data);
+    }
+
+    function getUserDetailsFromFirestore(email) {
+        const doc = firestore.collection('registerData').doc(email).get()
+            .then((docRef) => {
+                setCurrentUserData(docRef.data());
+                console.log(docRef.data())
+            })
+            .catch((error) => {
+            });
     }
 
     function logout() {
@@ -46,11 +57,13 @@ export const AuthProvider = ({children}) => {
 
     const value = {
         currentUser,
+        userData,
         login,
         logout,
         signup,
         addUserDetailsToFirestore,
         resetPassword,
+        getUserDetailsFromFirestore
     };
 
     return (

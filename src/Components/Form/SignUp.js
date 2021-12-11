@@ -206,6 +206,7 @@ const SignUp = () => {
                 school: school,
                 phoneNumber: phoneNumber,
                 email: email,
+                password: password
             };
 
             try {
@@ -372,7 +373,7 @@ const SignUp = () => {
                                             <Col xs={12} className="py-3">
                                                 <button type="submit" className="w-100 submit-button"
                                                         onClick={handleSignup} disabled={loading}>
-                                                    <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                                                    <ClipLoader color={color} loading={loading} size={20}/>{" "}
                                                     <span></span>
                                                     {t("sign_up")}
                                                 </button>

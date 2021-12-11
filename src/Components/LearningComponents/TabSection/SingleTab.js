@@ -58,7 +58,7 @@ const SingleTab = (props) => {
                         </div>
                         <div>
                             {newTabbox.map((el, i) => (
-                                <SingleTabBox {...el} title={props.title} key={i}/>
+                                <SingleTabBox {...el} title={props.title} userData={props.userData} key={i}/>
                             ))}
                         </div>
                     </Row>

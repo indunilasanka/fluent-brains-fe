@@ -71,9 +71,11 @@ const Wrapper = styled.div`
     position: relative;
     cursor:pointer;
   }
+  
   .user-container {
     width: 195px;
   }
+  
   .logout {
     text-align: center;
     background: #b7b7b7;
@@ -86,6 +88,7 @@ const Wrapper = styled.div`
     transform: translateX(-50%) !important;
     z-index: 10;
   }
+  
   .logouts {
     text-align: center;
     background: #b7b7b7;
@@ -102,12 +105,13 @@ const Wrapper = styled.div`
     color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
+  
   .sidebar {
     position: absolute;
     background: #fff;
     top: 77px;
     left: 20px;
-    ${"" /* padding: 20px 0; */}
+    z-index: 100;
     width: 330px;
     display: none;
     border-radius: 5px;
@@ -116,8 +120,8 @@ const Wrapper = styled.div`
     margin-left: auto;
     padding: 5px 0;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-
   }
+  
   .language-container {
     position: relative;
     ${"" /* padding-top: 7px; */}
@@ -138,7 +142,7 @@ const Wrapper = styled.div`
     transform:translateX(-50%);
     box-shadow: 0 3px 10px #b7b7b7;
     cursor:pointer;
-    z-index: 10;
+    z-index: 100;
   }
 
   .language p:hover {
@@ -146,6 +150,7 @@ const Wrapper = styled.div`
     color: #fff;
     cursor:pointer;
   }
+  
   @media only screen and (max-width: 1199px) {
     ${
     "" /* .search-container {
@@ -185,17 +190,12 @@ const Wrapper = styled.div`
       font-size: 12px;
     }
   }
+  
   @media only screen and (max-width: 767px) {
     padding: 0 10px;
   }
+  
   @media only screen and (max-width: 520px) {
-    ${
-    "" /* .search-container2 {
-      width: 96%;
-      margin-right: 20px;
-      margin-left: 18px;
-    } */
-}
     .search-input {
       margin-left: 10px;
     }
@@ -203,6 +203,7 @@ const Wrapper = styled.div`
       width: 140px;
     }
   }
+  
   @media only screen and (max-width: 450px) {
     .sidebar {
       width: 100%;
@@ -215,6 +216,7 @@ const Wrapper = styled.div`
       font-size: 12px;
     }
   }
+  
   @media only screen and (max-width: 350px) {
     padding: 0 5px;
     .language-container {

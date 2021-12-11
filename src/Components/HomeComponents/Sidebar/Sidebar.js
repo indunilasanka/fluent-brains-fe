@@ -15,12 +15,11 @@ const Wrapper = styled.div`
 
   z-index: 1;
   border-radius: 5px;
-  z-index: 50;
+  z-index: 100;
   margin: 0;
   margin-left: auto;
   padding: 15px 20px;
   padding-bottom: 5px;
-
   font-size: 12px;
 
   .sidebar {
@@ -28,6 +27,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  
   .login {
     background: none;
     border-radius: 5px;

@@ -6,15 +6,28 @@ import TabSection from "../Components/LearningComponents/TabSection/TabSection";
 import Footer from "../Components/HomeComponents/Footer/Footer";
 import {useAuth} from "../Context/AuthContext";
 import Navbar1 from "../Components/LearningComponents/Navbar/Navbar";
+import {firestore} from "../config";
 
 const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 const Learning = () => {
     const [userState, setUserState] = useState({});
+    const [userData, setUserData] = useState({});
     const user = useAuth();
+
     useEffect(() => {
         setUserState(user.currentUser);
+        if (user.currentUser != null) {
+            firestore.collection('registerData').doc(user.currentUser.email).get()
+                .then((docRef) => {
+                    setUserData(docRef.data());
+                })
+                .catch((error) => {
+                });
+        } else {
+            setUserData(null);
+        }
     }, []);
 
     return (
@@ -25,7 +38,7 @@ const Learning = () => {
             {userState != null &&
                 <Navbar1/>
             }
-            <TabSection/>
+            <TabSection userData={userData}/>
             <Footer/>
         </Wrapper>
     );
