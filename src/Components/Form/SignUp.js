@@ -310,7 +310,7 @@ const SignUp = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="text"
-                                                    placeholder="School of Child"
+                                                    placeholder={t("child_school")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setSchool(event.target.value);
@@ -320,7 +320,7 @@ const SignUp = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="text"
-                                                    placeholder="Phone Number"
+                                                    placeholder={t("phone_number")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setPhoneNumber(event.target.value);
@@ -330,7 +330,7 @@ const SignUp = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="text"
-                                                    placeholder="Email"
+                                                    placeholder={t("email")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setEmail(event.target.value);
@@ -340,7 +340,7 @@ const SignUp = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="password"
-                                                    placeholder="Password"
+                                                    placeholder={t("password")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setPassword(event.target.value);
@@ -350,7 +350,7 @@ const SignUp = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="password"
-                                                    placeholder="Confirm Password"
+                                                    placeholder={t("confirm_pass")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setConfirmPassword(event.target.value);

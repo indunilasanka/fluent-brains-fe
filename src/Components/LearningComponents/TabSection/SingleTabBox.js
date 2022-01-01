@@ -173,12 +173,12 @@ const Wrapper = styled.div`
 
 const urlArray = [
     [
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
-        "http://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns2/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/adds1/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/adds2/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns1/q1/index.html",
+        "https://d2rfvil7mufd2n.cloudfront.net/maths/en/ptns2/q1/index.html",
     ],
     [
         "a",
@@ -209,9 +209,9 @@ const urlArray = [
 const freeStatus = [
     [
         true,
-        false,
-        false,
-        false,
+        true,
+        true,
+        true,
         false,
         false
     ],

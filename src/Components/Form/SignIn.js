@@ -290,7 +290,7 @@ const SignIn = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="text"
-                                                    placeholder="Email"
+                                                    placeholder={t("email")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setEmail(event.target.value);
@@ -301,7 +301,7 @@ const SignIn = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="password"
-                                                    placeholder="Password"
+                                                    placeholder={t("password")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setPassword(event.target.value);

@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   margin: 0 8px;
   
   .c-title {
+    font-weight: bold;
     font-size: 16px;
     padding: 10px 0;
     font-family: Manrope, sans-serif;
@@ -19,7 +20,6 @@ const Wrapper = styled.div`
   .img-container {
     position: relative;
     cursor: pointer;
-    height: 200px;
   }
   
   .play-container {
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     padding: 2px 0;
   }
   
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 1200px) {
     margin-bottom: 25px;
   }
   
@@ -60,7 +60,6 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 576px) {
     margin-bottom: 25px !important;
     .img-container{
-      height: 125px;
     }
   }
   
@@ -95,7 +94,7 @@ const SliderCard = (props) => {
                     <div className="img-container">
                         <img src={props.img} alt="" className="w-100 h-100"/>
                         <div className="play-container" onClick={showActivityModal}>
-                            <BiPlay className="play" color="#BDBDBD" size="25"/>
+                            <BiPlay className="play" color="black" size="25"/>
                         </div>
                     </div>
                 </div>

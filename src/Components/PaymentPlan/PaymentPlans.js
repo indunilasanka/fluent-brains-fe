@@ -182,7 +182,7 @@ const PaymentPlans = () => {
         <Wrapper>
             <Container fluid>
                 <Row className="px-2 px-sm-4">
-                    <h2 className="py-3 start">{t("paymentplans")}</h2>
+                    <h2 className="py-3 start">{t("member_plans")}</h2>
                 </Row>
 
                 <Row className="text-center px-2">
@@ -205,7 +205,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        1 month Period
+                                        {t("o_month")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -213,11 +213,11 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Unlimited access
+                                        {t("u_access")}
                                     </li>
                                 </ul>
 
-                                <p className="h-title">{t("howtoregister")}</p>
+                                <p className="h-title">{t("how_to_member")}</p>
                                 <ul className="benefits-list">
                                     {userState == null &&
                                         <li className="benefits">
@@ -226,8 +226,7 @@ const PaymentPlans = () => {
                                                 color="green"
                                                 className="mx-2 social-icon"
                                             />
-                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
-                                            student details
+                                            <Link to="signup"><span className="sign-up-text">{t("sign_up_mem")}</span></Link> {t("stu_details")}
                                         </li>
                                     }
                                     <li className="benefits">
@@ -236,7 +235,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Pay the registration fee({t("mp1value")}) into the following bank account
+                                        {t("pay_reg_fee1")}
                                     </li>
                                     <pre className="account-details">
                                         <p>Sampath Bank</p>
@@ -252,8 +251,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Forward the payment slip and student details to the +94771001001 via Whatsapp or
-                                        text message
+                                        {t("forward_slip")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCaretRight
@@ -261,7 +259,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        You will get access within 10 minutes
+                                        {t("access_msg")}
                                     </li>
                                 </ul>
                             </Col>
@@ -286,7 +284,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        1 year period
+                                        {t("o_year")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -294,26 +292,19 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Unlimited access
+                                        {t("u_access")}
                                     </li>
+
                                     <li className="benefits">
                                         <AiFillCheckCircle
                                             size="25"
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Leaderboard Access
-                                    </li>
-                                    <li className="benefits">
-                                        <AiFillCheckCircle
-                                            size="25"
-                                            color="purple"
-                                            className="mx-2 social-icon"
-                                        />
-                                        Compete and win gifts
+                                        {t("win_gifts")}
                                     </li>
                                 </ul>
-                                <p className="h-title">{t("howtoregister")}</p>
+                                <p className="h-title">{t("how_to_member")}</p>
                                 <ul className="benefits-list">
                                     {userState == null &&
                                         <li className="benefits">
@@ -322,8 +313,7 @@ const PaymentPlans = () => {
                                                 color="green"
                                                 className="mx-2 social-icon"
                                             />
-                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
-                                            student details
+                                            <Link to="signup"><span className="sign-up-text">{t("sign_up_mem")}</span></Link> {t("stu_details")}
                                         </li>
                                     }
                                     <li className="benefits">
@@ -332,7 +322,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Pay the registration fee({t("mp2value")}) into the following bank account
+                                        {t("pay_reg_fee2")}
                                     </li>
                                     <pre className="account-details">
                                         <p>Sampath Bank</p>
@@ -347,8 +337,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Forward the payment slip and student details to the +94771001001 via Whatsapp or
-                                        text message
+                                        {t("forward_slip")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCaretRight
@@ -356,7 +345,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        You will get access within 10 minutes
+                                        {t("access_msg")}
                                     </li>
                                 </ul>
                             </Col>
@@ -381,7 +370,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Lifetime access
+                                        {t("life_access")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -389,7 +378,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Unlimited access
+                                        {t("u_access")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -397,7 +386,7 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Leaderboard access
+                                        {t("sign_up_gift")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCheckCircle
@@ -405,18 +394,10 @@ const PaymentPlans = () => {
                                             color="purple"
                                             className="mx-2 social-icon"
                                         />
-                                        Sign up gift
-                                    </li>
-                                    <li className="benefits">
-                                        <AiFillCheckCircle
-                                            size="25"
-                                            color="purple"
-                                            className="mx-2 social-icon"
-                                        />
-                                        Compete and win gifts
+                                        {t("win_gifts")}
                                     </li>
                                 </ul>
-                                <p className="h-title">{t("howtoregister")}</p>
+                                <p className="h-title">{t("how_to_member")}</p>
                                 <ul className="benefits-list">
                                     {userState == null &&
                                         <li className="benefits">
@@ -425,8 +406,7 @@ const PaymentPlans = () => {
                                                 color="green"
                                                 className="mx-2 social-icon"
                                             />
-                                            <Link to="signup"><span className="sign-up-text">Sign up</span></Link> with
-                                            student details
+                                            <Link to="signup"><span className="sign-up-text">{t("sign_up_mem")}</span></Link> {t("stu_details")}
                                         </li>
                                     }
                                     <li className="benefits">
@@ -435,7 +415,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Pay the registration fee({t("mp3value")}) into the following bank account
+                                        {t("pay_reg_fee3")}
                                     </li>
                                     <pre className="account-details">
                                         <p>Sampath Bank</p>
@@ -450,8 +430,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        Forward the payment slip and student details to the +94771001001 via Whatsapp or
-                                        text message
+                                        {t("forward_slip")}
                                     </li>
                                     <li className="benefits">
                                         <AiFillCaretRight
@@ -459,7 +438,7 @@ const PaymentPlans = () => {
                                             color="green"
                                             className="mx-2 social-icon"
                                         />
-                                        You will get access within 10 minutes
+                                        {t("access_msg")}
                                     </li>
                                 </ul>
                             </Col>

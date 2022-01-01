@@ -92,13 +92,13 @@ const LearningPath = () => {
         <Wrapper>
             <Container fluid>
                 <h3 className="l-main-title py-4">{t("about_us_title")}</h3>
-                <Row className="py-2">
+                <Row>
                     {learningArray.map((el, i) => (
                         <Col
                             sm={6}
                             lg={4}
                             key={i}
-                            className="py-3 d-flex justify-content-center"
+                            className="py-2 d-flex justify-content-center"
                         >
                             <div
                                 className="m-0"

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import banner from "../../../images/Home/banner.png";
 import Button from "../Button/Button";
 import {useTranslation} from "react-i18next";
+import {Link} from "react-router-dom";
 
 const Wrapper = styled.div`
   .banner-container {
@@ -37,6 +38,8 @@ const Wrapper = styled.div`
     line-height: 25px;
     font-family: "Noto Serif", serif;
     font-weight: 400;
+    padding-top: 0.25rem !important;
+    padding-bottom: 1rem !important;
   }
   @media only screen and (max-width: 991px) {
     .banner-heading {
@@ -54,7 +57,7 @@ const Wrapper = styled.div`
       line-height: 45px;
     }
     .banner-summary {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 25px;
     }
     .banner-text {
@@ -64,10 +67,10 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 450px) {
     .banner-heading {
       font-size: 27px;
-      line-height: 45pxpx;
+      line-height: 45px;
     }
     .banner-summary {
-      font-size: 12px;
+      font-size: 14px;
       line-height: 25px;
     }
     .banner-text {
@@ -87,12 +90,14 @@ const Banner = () => {
                         {t("banner_heading2")}
                     </h2>
 
-                    <p className="banner-summary py-3">
+                    <p className="banner-summary">
                         {t("banner_text1")}
                         <br/> {t("banner_text2")}
                     </p>
 
-                    <Button>{t("get_started")}</Button>
+                    <Link to="signup">
+                        <Button>{t("get_started")}</Button>
+                    </Link>
                 </div>
             </div>
         </Wrapper>

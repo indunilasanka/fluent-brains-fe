@@ -280,7 +280,7 @@ const Reset = () => {
                                             <Col xs={12}>
                                                 <input
                                                     type="text"
-                                                    placeholder="Email"
+                                                    placeholder={t("email")}
                                                     className="w-100"
                                                     onChange={(event) => {
                                                         setEmail(event.target.value);

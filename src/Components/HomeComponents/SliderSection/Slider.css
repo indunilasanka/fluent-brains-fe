@@ -35,14 +35,14 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -60px;
+    top: -70px;
     height: 50px;
 
     justify-content: center;
 }
 
 .slick-track {
-    padding: 40px 0;
+    padding: 15px 0;
 }
 
 .slick-dots li {
@@ -68,7 +68,7 @@
 .my-slider-p {
     position: absolute;
     top: 50%;
-    left: 50;
+    left: 50%;
     margin: 10px 0;
     transform: translate(-50%, -50%);
     font-family: "Inter", sans-serif;
@@ -124,22 +124,26 @@
     }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 1200px) {
     .slider-container {
-        padding-top: 100px;
+        padding-top: 80px;
     }
 
     .slick-dots {
-        top: -90px;
+        top: -85px;
+    }
+
+    .slick-track {
+        padding: 0;
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 575px) {
     .slider-container {
-        padding-top: 130px;
+        padding-top: 80px;
     }
 
     .slick-dots {
-        top: -115px;
+        top: -85px;
     }
 }

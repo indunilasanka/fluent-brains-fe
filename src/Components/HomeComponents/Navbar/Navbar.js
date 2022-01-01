@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75px;
+  height: 60px;
   position: relative;
   .top-nav {
     display: flex;

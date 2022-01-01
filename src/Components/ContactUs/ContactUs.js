@@ -7,6 +7,7 @@ import {HiMail} from "react-icons/hi";
 import emailjs from "emailjs-com";
 
 import GoogleMapReact from "google-map-react";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Wrapper = styled.div`
   background: #f7f4f2;
@@ -124,32 +125,37 @@ const Wrapper = styled.div`
 const AnyReactComponent = ({text}) => <div>{text}</div>;
 
 const ContactUs = () => {
+    const [loading, setLoading] = useState(false);
+    const [color, setColor] = useState("white");
+
     const {t} = useTranslation();
     const [center] = useState({
-        lat: 59.95,
-        lng: 30.33,
+        lat: 6.9146261,
+        lng: 79.8498568,
     });
-    const [zoom] = useState(11);
+    const [zoom] = useState(15);
 
     const inputArray = t("contact_array", {returnObjects: true});
-    if (inputArray.length !== 4) {
+    if (inputArray.length !== 3) {
         return (
             <div className="my-2 text-center">
                 <h1>Loading....</h1>
             </div>
         );
     }
+
     const sendEmail = (e) => {
+        setLoading(true);
         e.preventDefault();
 
         emailjs
-            .sendForm("gmail", "template_q2ou9r9", "local_2h8hBygX1dcsRWL9p3oue")
+            .sendForm("service_vlorrwg", "template_ehth6kq", e.target, "user_h6tFU3MZHDPxaEET1qSqr")
             .then(
                 (result) => {
-                    console.log("dalim");
+                    setLoading(false);
                 },
                 (error) => {
-                    console.log("kumar");
+                    setLoading(false);
                 }
             );
     };
@@ -171,11 +177,11 @@ const ContactUs = () => {
                                     <div className="py-1">
                                         <div>
                                             <FaPhoneAlt/>{" "}
-                                            <span className="px-2">1300 014 419</span>
+                                            <span className="px-2">+9474 044 0302 / +9476 026 4085</span>
                                         </div>
                                         <div className="py-1">
                                             <HiMail/>{" "}
-                                            <span className="px-2"> hello@fluentbrains.com</span>
+                                            <span className="px-2">fluentbrains@gmail.com</span>
                                         </div>
                                     </div>
                                 </Row>
@@ -194,8 +200,8 @@ const ContactUs = () => {
                                     defaultZoom={zoom}
                                 >
                                     <AnyReactComponent
-                                        lat={6.9108605}
-                                        lng={79.8565388}
+                                        lat={6.9146261}
+                                        lng={79.8498568}
                                         text={<FaMapMarkerAlt size="30" color="#219653"/>}
                                     />
                                 </GoogleMapReact>
@@ -207,7 +213,7 @@ const ContactUs = () => {
                             <h2>{t("send_your_query")}</h2>
 
                             <Row>
-                                <form onSubmit={sendEmail}>
+                                <form id="contact-form" onSubmit={sendEmail}>
                                     {inputArray.map((el, i) => (
                                         <Col xs={12} key={i}>
                                             <input
@@ -226,11 +232,14 @@ const ContactUs = () => {
                                             rows="7"
                                             className="w-100"
                                             placeholder={t("message")}
+                                            name="message"
                                         ></textarea>
                                     </Col>
 
                                     <Col xs={12} className="py-3">
-                                        <button type="submit" className="w-100 submit-button">
+                                        <button type="submit" className="w-100 submit-button" disabled={loading}>
+                                            <ClipLoader color={color} loading={loading} size={18}/>{" "}
+                                            <span></span>
                                             {t("submit")}
                                         </button>
                                     </Col>
