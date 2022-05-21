@@ -113,9 +113,7 @@
       "title": "Get Started",
       "title_to": "/signup",
       "element1": "Sign Up",
-      "element2": "Apply Membership",
-      "element1_to": "/signup",
-      "element2_to": "/membership"
+      "element1_to": "/signup"
     }
   ],
   "placeholeder": "What do you want to learn",

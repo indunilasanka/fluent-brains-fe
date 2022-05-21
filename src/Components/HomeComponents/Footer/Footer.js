@@ -154,7 +154,7 @@ const Footer = () => {
                             />
                         </a>
                     </div>
-                    <p className="rights">© 2022 Fluent Bitz Private Limited. All right reserved</p>
+                    <p className="rights">© 2022 Fluent Brains Private Limited. All right reserved</p>
                 </Row>
             </Container>
         </Wrapper>
